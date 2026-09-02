@@ -6,196 +6,330 @@
 
     <title>Wes Gonter — Design / Engineering / Making</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header class="site-header">
-        <a href="index.html" class="logo">WES GONTER</a>
+<header class="site-header">
 
-        <nav>
-            <a href="#work">WORK</a>
-            <a href="#about">ABOUT</a>
-            <a href="#contact">CONTACT</a>
-        </nav>
-    </header>
+    <a href="index.html" class="logo">
+        WES GONTER
+    </a>
+
+    <nav>
+        <a href="#work">WORK</a>
+        <a href="#about">ABOUT</a>
+        <a href="#shop">SHOP</a>
+    </nav>
+
+</header>
 
 
-    <main>
+<main>
 
-        <!-- HERO -->
+    <!-- HERO -->
 
-        <section class="hero">
+    <section class="hero">
 
-            <p class="eyebrow">DESIGN / ENGINEERING / MAKING</p>
+        <div class="hero-top">
+            <span>SEATTLE, WA</span>
+            <span>DESIGN / ENGINEERING / MAKING</span>
+        </div>
 
+        <div class="hero-title">
             <h1>
-                I DESIGN<br>
-                AND MAKE<br>
-                THINGS.
+                I design<br>
+                <em>and make</em><br>
+                things.
             </h1>
+        </div>
 
-            <p class="intro">
-                Mechanical engineering, fabrication, research,
-                and creative work.
+        <div class="hero-bottom">
+
+            <p>
+                Mechanical engineering, fabrication,
+                research, and creative work.
             </p>
 
-        </section>
+            <span class="scroll-note">
+                SCROLL ↓
+            </span>
+
+        </div>
+
+    </section>
 
 
-        <!-- SELECTED WORK -->
+    <!-- FEATURED PROJECT -->
 
-        <section id="work" class="work">
+    <section class="featured" id="work">
 
-            <div class="section-heading">
-                <span>01</span>
-                <h2>SELECTED WORK</h2>
+        <div class="section-label">
+            <span>01</span>
+            <span>FEATURED WORK</span>
+        </div>
+
+        <a href="projects/guitar.html" class="featured-project">
+
+            <div class="guitar-placeholder">
+                <span>IMAGE</span>
             </div>
 
+            <div class="featured-caption">
 
-            <article class="project">
-                <div class="project-number">01</div>
+                <div>
+                    <span class="project-number">01 /</span>
+                    <h2>8-STRING<br>GUITAR</h2>
+                </div>
 
-                <div class="project-info">
-                    <h3>8-STRING ELECTRIC GUITAR</h3>
-
+                <div class="project-description">
                     <p>
-                        Custom instrument designed and manufactured
-                        from concept through functional prototype.
+                        A fully custom electric guitar designed
+                        and manufactured from concept through
+                        functional prototype.
                     </p>
 
-                    <div class="tags">
-                        CAD · CNC · MANUFACTURING · DESIGN
-                    </div>
+                    <span>
+                        CAD · CNC · WOOD · ELECTRONICS
+                    </span>
                 </div>
-            </article>
 
-
-            <article class="project">
-                <div class="project-number">02</div>
-
-                <div class="project-info">
-                    <h3>ANISOTROPIC ELASTICITY OF SNOW</h3>
-
-                    <p>
-                        Research investigating the relationship between
-                        snow microstructure, anisotropy, and elastic behavior.
-                    </p>
-
-                    <div class="tags">
-                        RESEARCH · FEM · MATERIALS
-                    </div>
-                </div>
-            </article>
-
-
-            <article class="project">
-                <div class="project-number">03</div>
-
-                <div class="project-info">
-                    <h3>5-DOF ROBOTIC ARM</h3>
-
-                    <p>
-                        Robotic arm designed around real-time human
-                        motion mapping and embedded control.
-                    </p>
-
-                    <div class="tags">
-                        MECHANICAL DESIGN · ARDUINO · CONTROLS
-                    </div>
-                </div>
-            </article>
-
-
-            <article class="project">
-                <div class="project-number">04</div>
-
-                <div class="project-info">
-                    <h3>SKI BENCH</h3>
-
-                    <p>
-                        Functional furniture combining reclaimed skis
-                        with traditional wood joinery.
-                    </p>
-
-                    <div class="tags">
-                        WOODWORKING · STRUCTURAL DESIGN · JOINERY
-                    </div>
-                </div>
-            </article>
-
-        </section>
-
-
-        <!-- ABOUT -->
-
-        <section id="about" class="about">
-
-            <div class="section-heading">
-                <span>02</span>
-                <h2>ABOUT</h2>
             </div>
 
-            <p class="about-text">
-                I'm Wes, a mechanical engineering student and hands-on
-                maker interested in the space between engineering,
-                fabrication, and creative design.
-            </p>
+        </a>
 
-            <p class="about-text">
-                My work ranges from engineering research and computational
-                analysis to CNC machining, woodworking, electronics,
-                painting, and sewing.
-            </p>
-
-        </section>
+    </section>
 
 
-        <!-- SHOP -->
+    <!-- SELECTED WORK -->
 
-        <section class="shop">
+    <section class="work">
 
-            <div class="section-heading">
-                <span>03</span>
-                <h2>SHOP</h2>
+        <div class="section-label">
+            <span>02</span>
+            <span>SELECTED WORK</span>
+        </div>
+
+
+        <div class="project-grid">
+
+
+            <a href="#" class="project-card project-purple">
+
+                <div class="project-image">
+                    <span>IMAGE</span>
+                </div>
+
+                <div class="project-meta">
+                    <span>02 / RESEARCH</span>
+                    <span>2025</span>
+                </div>
+
+                <h3>
+                    Anisotropic<br>
+                    Elasticity<br>
+                    <em>of Snow</em>
+                </h3>
+
+                <p>
+                    FEM · MATERIALS · RESEARCH
+                </p>
+
+            </a>
+
+
+            <a href="#" class="project-card project-green">
+
+                <div class="project-image">
+                    <span>IMAGE</span>
+                </div>
+
+                <div class="project-meta">
+                    <span>03 / ROBOTICS</span>
+                    <span>2025</span>
+                </div>
+
+                <h3>
+                    5-DOF<br>
+                    Robotic<br>
+                    <em>Arm</em>
+                </h3>
+
+                <p>
+                    MECHANICAL DESIGN · CONTROLS
+                </p>
+
+            </a>
+
+
+            <a href="#" class="project-card project-blue">
+
+                <div class="project-image">
+                    <span>IMAGE</span>
+                </div>
+
+                <div class="project-meta">
+                    <span>04 / FURNITURE</span>
+                    <span>2025</span>
+                </div>
+
+                <h3>
+                    Ski<br>
+                    <em>Bench</em>
+                </h3>
+
+                <p>
+                    WOODWORKING · JOINERY · STRUCTURE
+                </p>
+
+            </a>
+
+
+            <a href="#" class="project-card project-brown">
+
+                <div class="project-image">
+                    <span>IMAGE</span>
+                </div>
+
+                <div class="project-meta">
+                    <span>05 / MAKING</span>
+                    <span>ONGOING</span>
+                </div>
+
+                <h3>
+                    Objects &<br>
+                    <em>Experiments</em>
+                </h3>
+
+                <p>
+                    TEXTILES · PAINTING · FABRICATION
+                </p>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="section-label">
+            <span>03</span>
+            <span>ABOUT</span>
+        </div>
+
+        <div class="about-layout">
+
+            <div class="about-heading">
+                <h2>
+                    Engineer by training.<br>
+                    <em>Maker by nature.</em>
+                </h2>
             </div>
+
+            <div class="about-copy">
+
+                <p>
+                    I'm Wes, a mechanical engineering student
+                    interested in the space between engineering,
+                    fabrication, and creative design.
+                </p>
+
+                <p>
+                    My work moves between research, CAD,
+                    CNC machining, woodworking, electronics,
+                    textiles, painting, and whatever else
+                    seems worth making.
+                </p>
+
+                <a href="#" class="text-link">
+                    MORE ABOUT ME →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SHOP -->
+
+    <section class="shop" id="shop">
+
+        <div class="section-label">
+            <span>04</span>
+            <span>SHOP</span>
+        </div>
+
+        <div class="shop-content">
+
+            <h2>
+                Things worth<br>
+                <em>having around.</em>
+            </h2>
 
             <p>
                 Objects, prints, experiments, and future projects.
             </p>
 
-            <span class="coming-soon">COMING SOON</span>
+            <span class="shop-status">
+                COMING SOON
+            </span>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- CONTACT -->
+    <!-- CONTACT -->
 
-        <section id="contact" class="contact">
+    <section class="contact">
 
-            <div class="section-heading">
-                <span>04</span>
-                <h2>CONTACT</h2>
-            </div>
+        <div class="section-label">
+            <span>05</span>
+            <span>CONTACT</span>
+        </div>
+
+        <div class="contact-content">
 
             <p>
-                Interested in working together?
+                Have an idea?<br>
+                Want to make something?
             </p>
 
-            <a href="mailto:YOUR-EMAIL-HERE" class="email">
-                GET IN TOUCH →
+            <a href="mailto:YOUR-EMAIL-HERE">
+                LET'S TALK →
             </a>
 
-        </section>
+        </div>
 
-    </main>
+    </section>
+
+</main>
 
 
-    <footer>
-        <span>© 2026 WES GONTER</span>
-        <span>SEATTLE, WA</span>
-    </footer>
+<footer>
+
+    <span>WES GONTER © 2026</span>
+
+    <span>
+        DESIGN / ENGINEERING / MAKING
+    </span>
+
+</footer>
+
 
 </body>
 </html>
