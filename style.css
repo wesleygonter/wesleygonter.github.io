@@ -224,13 +224,21 @@ section {
     display: block;
 }
 
-.guitar-placeholder { 
 
-    height: 75vh; 
-    min-height: 550px;
+/* Smaller homepage guitar image */
+
+.guitar-placeholder {
+
+    height: 52vh;
+
+    min-height: 420px;
+
+    max-height: 620px;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     background: #3b2d31;
@@ -240,27 +248,37 @@ section {
     transition: transform 0.5s ease;
 }
 
+
+/* Guitar image itself */
+
 .guitar-placeholder img {
 
     width: 100%;
+
     height: 100%;
 
     display: block;
 
     object-fit: contain;
 
+    padding: 2rem;
+
     transition: transform 0.6s ease;
 }
 
+
+/* Hover */
+
 .featured-project:hover .guitar-placeholder {
 
-    transform: scale(0.985);
+    transform: scale(0.99);
 }
 
 .featured-project:hover .guitar-placeholder img {
 
-    transform: scale(1.025);
+    transform: scale(1.02);
 }
+
 
 .featured-caption {
 
@@ -671,7 +689,313 @@ footer {
 }
 
 
-/* ---------- MOBILE ---------- */
+/* =========================================================
+   PROJECT PAGE
+   ========================================================= */
+
+.project-page {
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 0 6vw;
+}
+
+
+/* More condensed project introduction */
+
+.project-intro {
+
+    min-height: 55vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 7vh 0;
+}
+
+.project-intro h1 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(4rem, 9vw, 9rem);
+
+    line-height: 0.85;
+
+    font-weight: 500;
+
+    letter-spacing: -0.04em;
+
+    margin: 1rem 0 2rem;
+}
+
+.project-description {
+
+    max-width: 600px;
+
+    font-size: 1.15rem;
+
+    line-height: 1.7;
+
+    color: var(--brown);
+}
+
+.project-meta {
+
+    display: flex;
+
+    gap: 5rem;
+
+    margin-top: 3rem;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.8rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+}
+
+.project-meta div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.5rem;
+}
+
+.project-meta span {
+
+    color: var(--purple);
+
+    font-size: 0.7rem;
+}
+
+
+/* ---------- PROJECT IMAGES ---------- */
+
+
+/*
+   Main project image.
+
+   Kept intentionally narrow so the page feels
+   like a portfolio/editorial layout instead
+   of a full-screen image gallery.
+*/
+
+.project-image-large {
+
+    background: transparent;
+
+    padding: 0;
+
+    margin: 2rem auto 5rem;
+
+    max-width: 900px;
+}
+
+.project-image-large img {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 550px;
+
+    object-fit: contain;
+
+    margin: 0 auto;
+
+    border-radius: 4px;
+}
+
+
+/*
+   Wide process images such as the CNC photograph.
+*/
+
+.project-image-wide {
+
+    margin: 5rem auto;
+
+    max-width: 950px;
+}
+
+.project-image-wide img {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 500px;
+
+    object-fit: contain;
+
+    margin: 0 auto;
+}
+
+
+/* ---------- TEXT SECTIONS ---------- */
+
+.project-section {
+
+    display: grid;
+
+    grid-template-columns: 120px 1fr;
+
+    gap: 3rem;
+
+    max-width: 850px;
+
+    margin: 7rem auto;
+}
+
+.section-number {
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.8rem;
+
+    color: var(--purple);
+}
+
+.project-section h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(2.5rem, 5vw, 5rem);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    margin: 0 0 2rem;
+}
+
+.project-section p {
+
+    max-width: 650px;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 1.5rem;
+}
+
+
+/* ---------- IMAGE GALLERIES ---------- */
+
+.project-gallery {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1.5rem;
+
+    margin: 5rem auto;
+
+    max-width: 950px;
+}
+
+.project-gallery figure {
+
+    margin: 0;
+}
+
+.project-gallery img {
+
+    width: 100%;
+
+    max-height: 500px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+.project-gallery figcaption {
+
+    margin-top: 0.8rem;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.7rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+
+    color: var(--brown-light);
+}
+
+.gallery-large {
+
+    grid-column: span 2;
+}
+
+
+/* ---------- FINAL ---------- */
+
+.project-final {
+
+    min-height: 60vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 6rem 0;
+}
+
+.project-final h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(5rem, 12vw, 12rem);
+
+    line-height: 0.78;
+
+    font-weight: 500;
+
+    letter-spacing: -0.05em;
+
+    margin: 1rem 0 4rem;
+}
+
+.back-link {
+
+    font-family: "Space Grotesk", sans-serif;
+
+    color: var(--brown-dark);
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
+
+    font-size: 0.75rem;
+}
+
+.back-link:hover {
+
+    color: var(--purple);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 700px) {
 
@@ -743,12 +1067,23 @@ footer {
         margin-bottom: 45px;
     }
 
+
+    /* Smaller mobile homepage guitar */
+
     .guitar-placeholder {
 
-        height: 65vh;
+        height: 38vh;
 
-        min-height: 450px;
+        min-height: 280px;
+
+        max-height: 400px;
     }
+
+    .guitar-placeholder img {
+
+        padding: 1rem;
+    }
+
 
     .featured-caption {
 
@@ -761,6 +1096,7 @@ footer {
 
         font-size: 20vw;
     }
+
 
     .project-grid {
 
@@ -779,6 +1115,7 @@ footer {
         font-size: 20vw;
     }
 
+
     .about-layout {
 
         grid-template-columns: 1fr;
@@ -795,6 +1132,7 @@ footer {
 
         font-size: 25px;
     }
+
 
     .shop-content {
 
@@ -821,6 +1159,7 @@ footer {
         font-size: 22vw;
     }
 
+
     .contact-content {
 
         min-height: 60vh;
@@ -833,219 +1172,104 @@ footer {
         font-size: 15vw;
     }
 
+
     footer {
 
         padding: 20px;
 
         font-size: 8px;
     }
-}
-/* =========================================
-   PROJECT PAGE
-========================================= */
-
-.project-page {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 6vw;
-}
-
-.project-intro {
-    min-height: 75vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10vh 0;
-}
-
-.project-intro h1 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(4rem, 9vw, 9rem);
-    line-height: 0.85;
-    font-weight: 500;
-    letter-spacing: -0.04em;
-    margin: 1rem 0 2rem;
-}
-
-.project-description {
-    max-width: 600px;
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: var(--brown);
-}
-
-.project-meta {
-    display: flex;
-    gap: 5rem;
-    margin-top: 4rem;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-}
-
-.project-meta div {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.project-meta span {
-    color: var(--purple);
-    font-size: 0.7rem;
-}
 
 
-/* IMAGES */
+    /* ---------- PROJECT PAGE MOBILE ---------- */
 
-.project-image-large {
-    background: #3b2d31;
-    padding: 5vw;
-    margin: 0 -6vw;
-}
+    .project-page {
 
-.project-image-large img {
-    display: block;
-    width: 100%;
-    max-height: 900px;
-    object-fit: contain;
-}
+        padding: 0 20px;
+    }
 
-.project-image-wide {
-    margin: 8rem 0;
-}
+    .project-intro {
 
-.project-image-wide img {
-    display: block;
-    width: 100%;
-}
+        min-height: 45vh;
 
+        padding: 5vh 0;
+    }
 
-/* TEXT SECTIONS */
+    .project-intro h1 {
 
-.project-section {
-    display: grid;
-    grid-template-columns: 160px 1fr;
-    gap: 4rem;
-    max-width: 950px;
-    margin: 12rem auto;
-}
-
-.section-number {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 0.8rem;
-    color: var(--purple);
-}
-
-.project-section h2 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(2.5rem, 5vw, 5rem);
-    font-weight: 500;
-    line-height: 0.95;
-    margin: 0 0 2rem;
-}
-
-.project-section p {
-    max-width: 650px;
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-}
-
-
-/* IMAGE GALLERIES */
-
-.project-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin: 8rem 0;
-}
-
-.project-gallery figure {
-    margin: 0;
-}
-
-.project-gallery img {
-    width: 100%;
-    display: block;
-}
-
-.project-gallery figcaption {
-    margin-top: 0.8rem;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--brown-light);
-}
-
-.gallery-large {
-    grid-column: span 2;
-}
-
-
-/* FINAL */
-
-.project-final {
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 8rem 0;
-}
-
-.project-final h2 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(5rem, 12vw, 12rem);
-    line-height: 0.78;
-    font-weight: 500;
-    letter-spacing: -0.05em;
-    margin: 1rem 0 4rem;
-}
-
-.back-link {
-    font-family: "Space Grotesk", sans-serif;
-    color: var(--brown-dark);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 0.75rem;
-}
-
-.back-link:hover {
-    color: var(--purple);
-}
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
+        font-size: clamp(3.5rem, 16vw, 6rem);
+    }
 
     .project-meta {
+
         flex-direction: column;
+
         gap: 1.5rem;
-    }
 
-    .project-section {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        margin: 7rem auto;
-    }
-
-    .project-gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-large {
-        grid-column: span 1;
+        margin-top: 2.5rem;
     }
 
     .project-image-large {
-        padding: 2rem;
+
+        max-width: 100%;
+
+        margin: 1rem auto 4rem;
+    }
+
+    .project-image-large img {
+
+        max-height: 450px;
+    }
+
+    .project-image-wide {
+
+        margin: 4rem auto;
+
+        max-width: 100%;
+    }
+
+    .project-image-wide img {
+
+        max-height: 400px;
+    }
+
+    .project-section {
+
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+
+        margin: 6rem auto;
+    }
+
+    .project-gallery {
+
+        grid-template-columns: 1fr;
+
+        gap: 1.25rem;
+
+        margin: 4rem auto;
+    }
+
+    .project-gallery img {
+
+        max-height: 450px;
+    }
+
+    .gallery-large {
+
+        grid-column: span 1;
+    }
+
+    .project-final {
+
+        min-height: 55vh;
+
+        padding: 5rem 0;
     }
 
     .project-final h2 {
+
         font-size: 5rem;
     }
 }
