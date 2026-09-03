@@ -143,13 +143,17 @@ a {
 
 .hero {
 
-    min-height: calc(100vh - 65px);
+    height: calc(100vh - 65px);
 
-    padding: 28px 32px 32px;
+    min-height: 0;
+
+    padding: 20px 32px 24px;
 
     display: flex;
 
     align-items: stretch;
+
+    overflow: hidden;
 }
 
 
@@ -159,13 +163,15 @@ a {
 
     width: 100%;
 
+    height: 100%;
+
+    min-height: 0;
+
     display: grid;
 
     grid-template-columns: 1.55fr 1fr;
 
     gap: 32px;
-
-    min-height: calc(100vh - 125px);
 }
 
 
@@ -175,11 +181,21 @@ a {
 
     position: relative;
 
-    min-height: 650px;
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 0;
 
     overflow: hidden;
 
     background: var(--brown-light);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 }
 
 
@@ -191,7 +207,14 @@ a {
 
     display: block;
 
-    object-fit: cover;
+    /*
+       "contain" keeps the ENTIRE photograph visible.
+       Nothing will be cropped.
+    */
+
+    object-fit: contain;
+
+    background: var(--brown-light);
 }
 
 
@@ -199,17 +222,21 @@ a {
 
 .hero-right {
 
+    height: 100%;
+
+    min-height: 0;
+
     display: grid;
 
-    grid-template-rows: 1fr auto;
-
-    min-height: 650px;
+    grid-template-rows: minmax(0, 1fr) auto;
 }
 
 
 /* ---------- GUITAR IMAGE ---------- */
 
 .hero-guitar {
+
+    min-height: 0;
 
     display: flex;
 
@@ -235,7 +262,7 @@ a {
 
     object-fit: contain;
 
-    padding: 2rem;
+    padding: 1.25rem;
 
     transition: transform 0.6s ease;
 }
@@ -251,7 +278,9 @@ a {
 
 .hero-featured {
 
-    min-height: 90px;
+    height: 64px;
+
+    min-height: 64px;
 
     display: flex;
 
@@ -1103,60 +1132,80 @@ footer {
     }
 
 
-    /* ---------- HOMEPAGE HERO MOBILE ---------- */
+ /* ---------- HOMEPAGE HERO MOBILE ---------- */
 
-    .hero {
+.hero {
 
-        min-height: auto;
+    height: auto;
 
-        padding: 20px;
-    }
+    min-height: auto;
 
-
-    .hero-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 20px;
-
-        min-height: auto;
-    }
+    padding: 20px;
+    
+    overflow: visible;
+}
 
 
-    .personal-image {
+.hero-grid {
 
-        min-height: 65vh;
-    }
+    height: auto;
 
+    min-height: auto;
 
-    .hero-right {
+    grid-template-columns: 1fr;
 
-        min-height: auto;
-
-        display: grid;
-
-        grid-template-rows: 60vh auto;
-    }
+    gap: 20px;
+}
 
 
-    .hero-guitar {
+.personal-image {
 
-        min-height: 400px;
-    }
+    height: auto;
 
+    min-height: 0;
 
-    .hero-guitar img {
-
-        padding: 1rem;
-    }
+    aspect-ratio: 16 / 9;
+}
 
 
-    .hero-featured {
+.personal-image img {
 
-        min-height: 75px;
+    object-fit: contain;
+}
 
-        font-size: 9px;
-    }
+
+.hero-right {
+
+    height: auto;
+
+    min-height: 0;
+
+    display: grid;
+
+    grid-template-rows: 60vh auto;
+}
+
+
+.hero-guitar {
+
+    min-height: 400px;
+}
+
+
+.hero-guitar img {
+
+    padding: 1rem;
+}
+
+
+.hero-featured {
+
+    height: 75px;
+
+    min-height: 75px;
+
+    font-size: 9px;
+}
 
 
     /* ---------- SELECTED WORK ---------- */
