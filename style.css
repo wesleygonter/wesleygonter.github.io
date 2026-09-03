@@ -207,12 +207,7 @@ a {
 
     display: block;
 
-    /*
-       "contain" keeps the ENTIRE photograph visible.
-       Nothing will be cropped.
-    */
-
-    object-fit: contain;
+    object-fit: cover;
 
     background: var(--brown-light);
 }
