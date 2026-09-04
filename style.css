@@ -3,10 +3,7 @@
    DESIGN / ENGINEERING / MAKING
    ========================================================= */
 
-/* ---------- ROOT ---------- */
-
 :root {
-
     --paper: #e7dfd1;
     --cream: #f1eadf;
     --espresso: #7f6244;
@@ -16,14 +13,16 @@
     --purple: #75657c;
     --blue: #637986;
     --green: #68745f;
-
     --line: rgba(48, 37, 31, 0.35);
 
     --serif: "Cormorant Garamond", Georgia, serif;
     --sans: "Space Grotesk", Arial, sans-serif;
 }
 
-/* ---------- RESET ---------- */
+
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
     margin: 0;
@@ -52,6 +51,7 @@ a {
 /* =========================================================
    HEADER
    ========================================================= */
+
 .site-header {
     position: sticky;
     top: 0;
@@ -61,12 +61,8 @@ a {
     align-items: center;
     padding: 22px 32px;
     background: var(--blue);
-    backdrop-filter: none;
     border-bottom: 1px solid var(--line);
 }
-
-
-/* Center name */
 
 .logo {
     justify-self: center;
@@ -75,20 +71,15 @@ a {
     letter-spacing: 0.1em;
 }
 
-
-/* Navigation */
-
 .site-header nav {
     display: flex;
     align-items: center;
     gap: 28px;
 }
 
-
 .nav-left {
     justify-self: start;
 }
-
 
 .nav-right {
     justify-self: end;
@@ -118,18 +109,16 @@ a {
     overflow: hidden;
 }
 
-/* ---------- HERO GRID ---------- */
-
 .hero-grid {
     width: 100%;
     height: 100%;
-    min-height: 0;
     display: grid;
     grid-template-columns: 1.55fr 1fr;
     gap: 32px;
 }
 
-/* ---------- PERSONAL IMAGE ---------- */
+
+/* ---------- PERSONAL PHOTO ---------- */
 
 .personal-image {
     position: relative;
@@ -138,9 +127,6 @@ a {
     min-height: 0;
     overflow: hidden;
     background: var(--blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .personal-image img {
@@ -148,7 +134,7 @@ a {
     height: 100%;
     display: block;
     object-fit: cover;
-    background: var(--brown-light);
+    object-position: 65% center;
 }
 
 
@@ -162,7 +148,7 @@ a {
 }
 
 
-/* ---------- GUITAR IMAGE ---------- */
+/* ---------- GUITAR ---------- */
 
 .hero-guitar {
     min-height: 0;
@@ -188,11 +174,10 @@ a {
 }
 
 
-/* ---------- FEATURED WORK LINK ---------- */
+/* ---------- FEATURED WORK ---------- */
 
 .hero-featured {
     height: 64px;
-    min-height: 64px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -212,12 +197,13 @@ a {
     line-height: 1;
 }
 
+
 /* =========================================================
    GENERAL SECTIONS
    ========================================================= */
 
 section {
-    padding: 110px 32px;
+    padding: 80px 32px;
 }
 
 .section-label {
@@ -225,92 +211,177 @@ section {
     justify-content: space-between;
     border-top: 1px solid var(--line);
     padding-top: 12px;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
     font-size: 10px;
     letter-spacing: 0.08em;
 }
 
+
 /* =========================================================
-   SELECTED WORK
+   PROJECT INDEX
    ========================================================= */
 
+/*
+   This section is intentionally designed as an irregular
+   studio/workshop index rather than a conventional grid.
+*/
+
 .work {
-    padding-top: 120px;
-    padding-bottom: 150px;
+    padding: 20px 32px 120px;
 }
 
-.project-grid {
+
+/* Hide the old section heading */
+
+.work > .section-label {
+    display: none;
+}
+
+
+.project-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 25px;
-    row-gap: 130px;
+    grid-template-columns: 1.35fr 1fr 0.72fr;
+    grid-template-rows: 390px 215px;
+    gap: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.project-card {
-    display: block;
+
+/* ---------- PROJECT TILES ---------- */
+
+.project-tile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .project-image {
-    height: 500px;
+    position: relative;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 18px;
-    transition: transform 0.45s ease;
+    overflow: hidden;
+    transition: transform 0.4s ease;
 }
 
-.project-card:hover .project-image {
-    transform: translateY(-8px);
-}
-
-.project-purple .project-image {
-    background: var(--purple);
-}
-
-.project-green .project-image {
-    background: var(--green);
-}
-
-.project-blue .project-image {
-    background: var(--blue);
-}
-
-.project-brown .project-image {
-    background: var(--brown);
+.project-tile:hover .project-image {
+    transform: translateY(-5px);
 }
 
 .project-image span {
     color: var(--cream);
     font-size: 10px;
     letter-spacing: 0.1em;
+    text-align: center;
 }
 
-.project-card .project-meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 9px;
-    letter-spacing: 0.08em;
-    margin-bottom: 20px;
+
+/* ---------- PROJECT LABEL ---------- */
+
+.project-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 145px;
+    height: 46px;
+    margin-top: 10px;
+    padding: 0 18px;
+    border: 2px solid var(--brown-dark);
+    background: var(--paper);
+    color: var(--brown-dark);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
-.project-card h3 {
-    font-family: var(--serif);
-    font-size: clamp(50px, 6vw, 90px);
-    font-weight: 500;
-    line-height: 0.78;
-    letter-spacing: -0.04em;
+
+/* =========================================================
+   BIKE BAG
+   ========================================================= */
+
+.project-bike {
+    grid-column: 1;
+    grid-row: 1;
+    align-items: flex-start;
 }
 
-.project-card h3 em {
-    font-weight: 400;
-    color: var(--brown-light);
+.project-bike .project-image {
+    width: min(360px, 100%);
+    height: 360px;
+    border-radius: 50%;
+    background: var(--purple);
 }
 
-.project-card p {
-    margin-top: 25px;
-    font-size: 9px;
-    letter-spacing: 0.08em;
+
+/* =========================================================
+   ROBOT
+   ========================================================= */
+
+.project-robot {
+    grid-column: 2;
+    grid-row: 1;
 }
+
+.project-robot .project-image {
+    height: 345px;
+    background: var(--green);
+}
+
+
+/* =========================================================
+   WOOD
+   ========================================================= */
+
+.project-wood {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+}
+
+.project-wood .project-image {
+    height: 100%;
+    background: var(--brown-light);
+}
+
+
+/* =========================================================
+   ROOF BOX / PAINT
+   ========================================================= */
+
+.project-paint {
+    grid-column: 1;
+    grid-row: 2;
+    align-items: flex-start;
+}
+
+.project-paint .project-image {
+    height: 215px;
+    background: var(--blue);
+}
+
+
+/* =========================================================
+   PAPERS
+   ========================================================= */
+
+.project-papers {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.project-papers .project-image {
+    width: 72%;
+    height: 215px;
+    background: var(--cream);
+    border: 1px solid var(--line);
+}
+
+.project-papers .project-image span {
+    color: var(--brown-dark);
+}
+
 
 /* =========================================================
    ABOUT
@@ -364,6 +435,7 @@ section {
     font-size: 10px;
     letter-spacing: 0.08em;
 }
+
 
 /* =========================================================
    SHOP
@@ -428,12 +500,14 @@ section {
     letter-spacing: 0.1em;
 }
 
+
 /* =========================================================
    CONTACT
    ========================================================= */
 
 .contact {
     background: var(--cream);
+    color: var(--brown-dark);
 }
 
 .contact-content {
@@ -460,6 +534,7 @@ section {
     line-height: 0.9;
 }
 
+
 /* =========================================================
    FOOTER
    ========================================================= */
@@ -474,6 +549,7 @@ footer {
     letter-spacing: 0.08em;
 }
 
+
 /* =========================================================
    PROJECT PAGE
    ========================================================= */
@@ -483,8 +559,6 @@ footer {
     margin: 0 auto;
     padding: 0 6vw;
 }
-
-/* ---------- PROJECT INTRO ---------- */
 
 .project-intro {
     min-height: 55vh;
@@ -531,11 +605,10 @@ footer {
     font-size: 0.7rem;
 }
 
+
 /* =========================================================
    PROJECT IMAGES
    ========================================================= */
-
-/* ---------- MAIN PROJECT IMAGE ---------- */
 
 .project-image-large {
     background: transparent;
@@ -553,8 +626,6 @@ footer {
     border-radius: 4px;
 }
 
-/* ---------- WIDE PROCESS IMAGE ---------- */
-
 .project-image-wide {
     margin: 5rem auto;
     max-width: 950px;
@@ -567,6 +638,7 @@ footer {
     object-fit: contain;
     margin: 0 auto;
 }
+
 
 /* =========================================================
    PROJECT TEXT SECTIONS
@@ -601,8 +673,9 @@ footer {
     margin-bottom: 1.5rem;
 }
 
+
 /* =========================================================
-   PROJECT IMAGE GALLERIES
+   PROJECT GALLERY
    ========================================================= */
 
 .project-gallery {
@@ -637,6 +710,7 @@ footer {
     grid-column: span 2;
 }
 
+
 /* =========================================================
    PROJECT FINAL
    ========================================================= */
@@ -661,7 +735,6 @@ footer {
 .back-link {
     font-family: var(--sans);
     color: var(--brown-dark);
-    text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: 0.75rem;
@@ -671,13 +744,14 @@ footer {
     color: var(--purple);
 }
 
+
 /* =========================================================
    MOBILE
    ========================================================= */
 
 @media (max-width: 700px) {
 
-    /* ---------- HEADER MOBILE ---------- */
+    /* ---------- HEADER ---------- */
 
     .site-header {
         grid-template-columns: 1fr auto;
@@ -711,87 +785,131 @@ footer {
         font-size: 8px;
     }
 
-    /* ---------- GENERAL MOBILE ---------- */
+
+    /* ---------- GENERAL ---------- */
 
     section {
-        padding: 75px 20px;
+        padding: 60px 20px;
     }
 
- /* ---------- HOMEPAGE HERO MOBILE ---------- */
 
-.hero {
-    height: auto;
-    min-height: auto;
-    padding: 20px;
-    overflow: visible;
-}
+    /* ---------- HERO ---------- */
 
-.hero-grid {
-    height: auto;
-    min-height: auto;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
+    .hero {
+        height: auto;
+        min-height: auto;
+        padding: 20px;
+        overflow: visible;
+    }
 
-.personal-image {
-    height: auto;
-    min-height: 0;
-    aspect-ratio: 16 / 9;
-}
+    .hero-grid {
+        height: auto;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 
-.personal-image img {
-    object-fit: cover;
-}
+    .personal-image {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
 
-.hero-right {
-    height: auto;
-    min-height: 0;
-    display: grid;
-    grid-template-rows: 60vh auto;
-}
+    .personal-image img {
+        object-fit: cover;
+        object-position: 65% center;
+    }
 
-.hero-guitar {
-    min-height: 400px;
-}
+    .hero-right {
+        height: auto;
+        grid-template-rows: 60vh auto;
+    }
 
-.hero-guitar img {
-    padding: 1rem;
-}
+    .hero-guitar {
+        min-height: 400px;
+    }
 
-.hero-featured {
-    height: 75px;
-    min-height: 75px;
-    font-size: 9px;
-}
+    .hero-guitar img {
+        padding: 1rem;
+    }
 
-    /* ---------- SELECTED WORK ---------- */
+    .hero-featured {
+        height: 75px;
+        font-size: 9px;
+    }
+
+
+    /* ---------- PROJECT INDEX ---------- */
 
     .work {
-        padding-top: 75px;
+        padding: 20px;
     }
 
-    .section-label {
-        margin-bottom: 45px;
+    .project-layout {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 20px;
     }
 
-    .project-grid {
-        grid-template-columns: 1fr;
-        row-gap: 80px;
+    .project-bike {
+        grid-column: 1;
+        grid-row: 1;
     }
 
-    .project-image {
-        height: 450px;
+    .project-bike .project-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
     }
 
-    .project-card h3 {
-        font-size: 20vw;
+    .project-robot {
+        grid-column: 2;
+        grid-row: 1;
     }
+
+    .project-robot .project-image {
+        height: 300px;
+    }
+
+    .project-wood {
+        grid-column: 2;
+        grid-row: 2 / span 2;
+    }
+
+    .project-wood .project-image {
+        height: 500px;
+    }
+
+    .project-paint {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .project-paint .project-image {
+        height: 200px;
+    }
+
+    .project-papers {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .project-papers .project-image {
+        width: 100%;
+        height: 180px;
+    }
+
+    .project-label {
+        min-width: 110px;
+        height: 40px;
+        font-size: 8px;
+        padding: 0 12px;
+    }
+
 
     /* ---------- ABOUT ---------- */
 
     .about-layout {
         grid-template-columns: 1fr;
-        gap: 70px;
+        gap: 60px;
     }
 
     .about-heading h2 {
@@ -801,6 +919,7 @@ footer {
     .about-copy p {
         font-size: 25px;
     }
+
 
     /* ---------- SHOP ---------- */
 
@@ -821,6 +940,7 @@ footer {
         font-size: 22vw;
     }
 
+
     /* ---------- CONTACT ---------- */
 
     .contact-content {
@@ -832,6 +952,7 @@ footer {
         font-size: 15vw;
     }
 
+
     /* ---------- FOOTER ---------- */
 
     footer {
@@ -839,9 +960,8 @@ footer {
         font-size: 8px;
     }
 
-    /* =====================================================
-       PROJECT PAGE MOBILE
-       ===================================================== */
+
+    /* ---------- PROJECT PAGE ---------- */
 
     .project-page {
         padding: 0 20px;
@@ -908,5 +1028,4 @@ footer {
     .project-final h2 {
         font-size: 5rem;
     }
-
 }
