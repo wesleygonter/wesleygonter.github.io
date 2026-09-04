@@ -202,8 +202,8 @@ a {
 
     padding: 22px 24px;
 
-    background: var(--cream);
-    color: var(--brown-dark);
+    background: var(--blue);
+    color: var(--cream);
 
     border: 1px solid var(--line);
 
@@ -303,7 +303,7 @@ a {
     padding: 24px 76px 22px;
 
     background: var(--blue);
-    color: var(--brown-dark);
+    color: var(--cream);
 
     border: 1px solid var(--brown-dark);
 
