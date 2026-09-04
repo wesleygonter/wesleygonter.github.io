@@ -40,8 +40,8 @@ html {
 }
 
 body {
-    background: var(--espresso);
-    color: var(--espresso);
+    background: var(--brown);
+    color: var(--paper);
 
     font-family: var(--sans);
 
