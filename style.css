@@ -309,7 +309,6 @@ section {
 }
 
 /* =========================================================
-/* =========================================================
    SEWING / BIKE BAG
    ========================================================= */
 
@@ -326,6 +325,7 @@ section {
     border-radius: 50%;
     background: var(--purple);
     overflow: hidden;
+    position: relative;
 }
 
 .project-bike .project-image img {
