@@ -1,576 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Wes Gonter — Design / Engineering / Making</title>
 
     <!-- Google Fonts -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 
 <body>
 
-
-<!-- =========================================================
-     HEADER
-     ========================================================= -->
-
 <header class="site-header">
-
-    <!-- LEFT NAVIGATION -->
-
     <nav class="nav-left">
-
-        <a href="#work">
-            WORK
-        </a>
-
-        <a href="#about">
-            ABOUT
-        </a>
-
+        <a href="#work">WORK</a>
+        <a href="#about">ABOUT</a>
     </nav>
 
-
-    <!-- CENTER LOGO -->
-
-    <a href="index.html" class="logo">
-        WES GONTER
-    </a>
-
-
-    <!-- RIGHT NAVIGATION -->
+    <a href="index.html" class="logo">WES GONTER</a>
 
     <nav class="nav-right">
-
-        <a href="#shop">
-            SHOP
-        </a>
-
-        <a href="#contact">
-            CONTACT
-        </a>
-
+        <a href="#shop">SHOP</a>
+        <a href="#contact">CONTACT</a>
     </nav>
-
 </header>
-
-
 
 <main>
 
-
-<!-- =========================================================
-     HOMEPAGE HERO
-     ========================================================= -->
+<!-- HOMEPAGE HERO -->
 
 <section class="hero">
-
     <div class="hero-grid">
 
-
-        <!-- =================================================
-             PERSONAL PHOTO
-             ================================================= -->
-
         <div class="personal-image">
-
-            <img
-                src="images/PersonalPhoto.png"
-                alt="Wes Gonter in the mountains"
-            >
-
+            <img src="images/PersonalPhoto.png" alt="Wes Gonter in the mountains">
         </div>
-
-
-        <!-- =================================================
-             RIGHT COLUMN
-             ================================================= -->
 
         <div class="hero-right">
 
-
-            <!-- ---------------------------------------------
-                 GUITAR
-                 --------------------------------------------- -->
-
-            <a
-                href="projects/guitar.html"
-                class="hero-guitar"
-            >
-
-                <img
-                    src="images/StudioGuitar.png"
-                    alt="Custom 8-string electric guitar"
-                >
-
+            <a href="projects/guitar.html" class="hero-guitar">
+                <img src="images/StudioGuitar.png" alt="Custom 8-string electric guitar">
             </a>
 
-
-            <!-- ---------------------------------------------
-                 FEATURED WORK
-                 --------------------------------------------- -->
-
-            <a
-                href="projects/guitar.html"
-                class="hero-featured"
-            >
-
-                <span>
-                    FEATURED WORK
-                </span>
-
-                <span class="arrow">
-                    ↗
-                </span>
-
+            <a href="projects/guitar.html" class="hero-featured">
+                <span>FEATURED WORK</span>
+                <span class="arrow">↗</span>
             </a>
-
 
         </div>
-
     </div>
-
 </section>
 
 
-
-<!-- =========================================================
-     SELECTED WORK
-     ========================================================= -->
+<!-- PROJECT INDEX -->
 
 <section class="work" id="work">
 
+    <div class="project-layout">
 
-    <div class="section-label">
+        <!-- BIKE BAG -->
 
-        <span>
-            01
-        </span>
-
-        <span>
-            SELECTED WORK
-        </span>
-
-    </div>
-
-
-
-    <div class="project-grid">
-
-
-        <!-- =================================================
-             SNOW RESEARCH
-             ================================================= -->
-
-        <a
-            href="#"
-            class="project-card project-purple"
-        >
-
-            <div class="project-image">
-
-                <span>
-                    IMAGE
-                </span>
-
+        <a href="#" class="project-tile project-bike">
+            <div class="project-image bike-image">
+                <span>BIKE BAG IMAGE</span>
             </div>
-
-
-            <div class="project-meta">
-
-                <span>
-                    01 / RESEARCH
-                </span>
-
-                <span>
-                    2025
-                </span>
-
-            </div>
-
-
-            <h3>
-
-                Anisotropic<br>
-                Elasticity<br>
-                <em>of Snow</em>
-
-            </h3>
-
-
-            <p>
-                FEM · MATERIALS · RESEARCH
-            </p>
-
+            <div class="project-label">SEWING</div>
         </a>
 
 
+        <!-- ROBOT -->
 
-        <!-- =================================================
-             ROBOTIC ARM
-             ================================================= -->
-
-        <a
-            href="#"
-            class="project-card project-green"
-        >
-
-            <div class="project-image">
-
-                <span>
-                    IMAGE
-                </span>
-
+        <a href="#" class="project-tile project-robot">
+            <div class="project-image robot-image">
+                <span>ROBOT IMAGE</span>
             </div>
-
-
-            <div class="project-meta">
-
-                <span>
-                    02 / ROBOTICS
-                </span>
-
-                <span>
-                    2025
-                </span>
-
-            </div>
-
-
-            <h3>
-
-                5-DOF<br>
-                Robotic<br>
-                <em>Arm</em>
-
-            </h3>
-
-
-            <p>
-                MECHANICAL DESIGN · CONTROLS
-            </p>
-
+            <div class="project-label">ENGINEERING</div>
         </a>
 
 
+        <!-- WOOD -->
 
-        <!-- =================================================
-             SKI BENCH
-             ================================================= -->
-
-        <a
-            href="#"
-            class="project-card project-blue"
-        >
-
-            <div class="project-image">
-
-                <span>
-                    IMAGE
-                </span>
-
+        <a href="#" class="project-tile project-wood">
+            <div class="project-image wood-image">
+                <span>WOOD IMAGE</span>
             </div>
-
-
-            <div class="project-meta">
-
-                <span>
-                    03 / FURNITURE
-                </span>
-
-                <span>
-                    2025
-                </span>
-
-            </div>
-
-
-            <h3>
-
-                Ski<br>
-                <em>Bench</em>
-
-            </h3>
-
-
-            <p>
-                WOODWORKING · JOINERY · STRUCTURE
-            </p>
-
+            <div class="project-label">WOOD</div>
         </a>
 
 
+        <!-- ROOF BOX -->
 
-        <!-- =================================================
-             OBJECTS & EXPERIMENTS
-             ================================================= -->
-
-        <a
-            href="#"
-            class="project-card project-brown"
-        >
-
-            <div class="project-image">
-
-                <span>
-                    IMAGE
-                </span>
-
+        <a href="#" class="project-tile project-paint">
+            <div class="project-image paint-image">
+                <span>ROOF BOX IMAGE</span>
             </div>
-
-
-            <div class="project-meta">
-
-                <span>
-                    04 / MAKING
-                </span>
-
-                <span>
-                    ONGOING
-                </span>
-
-            </div>
-
-
-            <h3>
-
-                Objects &<br>
-                <em>Experiments</em>
-
-            </h3>
-
-
-            <p>
-                TEXTILES · PAINTING · FABRICATION
-            </p>
-
+            <div class="project-label">PAINT</div>
         </a>
 
+
+        <!-- PAPERS -->
+
+        <a href="#" class="project-tile project-papers">
+            <div class="project-image papers-image">
+                <span>PAPERS</span>
+            </div>
+            <div class="project-label">PAPERS</div>
+        </a>
 
     </div>
 
 </section>
 
 
-
-<!-- =========================================================
-     ABOUT
-     ========================================================= -->
+<!-- ABOUT -->
 
 <section class="about" id="about">
 
-
     <div class="section-label">
-
-        <span>
-            02
-        </span>
-
-        <span>
-            ABOUT
-        </span>
-
+        <span>02</span>
+        <span>ABOUT</span>
     </div>
-
 
     <div class="about-layout">
 
-
         <div class="about-heading">
-
             <h2>
-
                 Engineer by training.<br>
-
-                <em>
-                    Maker by nature.
-                </em>
-
+                <em>Maker by nature.</em>
             </h2>
-
         </div>
-
-
 
         <div class="about-copy">
 
-
             <p>
-
                 I'm Wes, a mechanical engineering student
                 interested in the space between engineering,
                 fabrication, and creative design.
-
             </p>
 
-
             <p>
-
                 My work moves between research, CAD,
                 CNC machining, woodworking, electronics,
                 textiles, painting, and whatever else
                 seems worth making.
-
             </p>
 
-
-            <a
-                href="#"
-                class="text-link"
-            >
+            <a href="#" class="text-link">
                 MORE ABOUT ME →
             </a>
 
-
         </div>
-
 
     </div>
 
 </section>
 
 
-
-<!-- =========================================================
-     SHOP
-     ========================================================= -->
+<!-- SHOP -->
 
 <section class="shop" id="shop">
 
-
     <div class="section-label">
-
-        <span>
-            03
-        </span>
-
-        <span>
-            SHOP
-        </span>
-
+        <span>03</span>
+        <span>SHOP</span>
     </div>
-
 
     <div class="shop-content">
 
-
         <h2>
-
             Things worth<br>
-
-            <em>
-                having around.
-            </em>
-
+            <em>having around.</em>
         </h2>
 
-
         <p>
-
             Objects, prints, experiments,
             and future projects.
-
         </p>
 
-
         <span class="shop-status">
-
             COMING SOON
-
         </span>
-
 
     </div>
 
 </section>
 
 
-
-<!-- =========================================================
-     CONTACT
-     ========================================================= -->
+<!-- CONTACT -->
 
 <section class="contact" id="contact">
 
-
     <div class="section-label">
-
-        <span>
-            04
-        </span>
-
-        <span>
-            CONTACT
-        </span>
-
+        <span>04</span>
+        <span>CONTACT</span>
     </div>
-
 
     <div class="contact-content">
 
-
         <p>
-
             Have an idea?<br>
             Want to make something?
-
         </p>
 
-
         <a href="mailto:YOUR-EMAIL-HERE">
-
             LET'S TALK →
-
         </a>
-
 
     </div>
 
 </section>
-
 
 </main>
 
 
-
-<!-- =========================================================
-     FOOTER
-     ========================================================= -->
+<!-- FOOTER -->
 
 <footer>
-
-
-    <span>
-        WES GONTER © 2026
-    </span>
-
-
-    <span>
-        DESIGN / ENGINEERING / MAKING
-    </span>
-
-
+    <span>WES GONTER © 2026</span>
+    <span>DESIGN / ENGINEERING / MAKING</span>
 </footer>
 
-
 </body>
-
 </html>
