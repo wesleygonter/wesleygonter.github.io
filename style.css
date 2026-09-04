@@ -3,20 +3,29 @@
    DESIGN / ENGINEERING / MAKING
    ========================================================= */
 
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
 :root {
     --paper: #e7dfd1;
     --cream: #f1eadf;
-    --espresso: #7f6244;
+
     --brown-dark: #30251f;
     --brown: #695044;
     --brown-light: #9a806e;
+
     --purple: #75657c;
     --blue: #637986;
     --green: #68745f;
+
     --line: rgba(48, 37, 31, 0.35);
 
     --serif: "Cormorant Garamond", Georgia, serif;
     --sans: "Space Grotesk", Arial, sans-serif;
+
+    --project-gap: 34px;
 }
 
 
@@ -35,8 +44,8 @@ html {
 }
 
 body {
-    background: var(--brown);
-    color: var(--paper);
+    background: var(--paper);
+    color: var(--brown-dark);
     font-family: var(--sans);
     font-weight: 400;
     line-height: 1.4;
@@ -45,6 +54,10 @@ body {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+img {
+    max-width: 100%;
 }
 
 
@@ -56,25 +69,32 @@ a {
     position: sticky;
     top: 0;
     z-index: 100;
+
+    height: 88px;
+
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    padding: 22px 32px;
+
+    padding: 0 46px;
+
     background: var(--blue);
+
     border-bottom: 1px solid var(--line);
 }
 
 .logo {
     justify-self: center;
-    font-size: 13px;
+
+    font-size: 18px;
     font-weight: 500;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
 }
 
 .site-header nav {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 42px;
 }
 
 .nav-left {
@@ -86,8 +106,8 @@ a {
 }
 
 .site-header nav a {
-    font-size: 10px;
-    letter-spacing: 0.1em;
+    font-size: 12px;
+    letter-spacing: 0.08em;
     transition: opacity 0.25s ease;
 }
 
@@ -97,112 +117,105 @@ a {
 
 
 /* =========================================================
-   HOMEPAGE HERO
+   HERO
    ========================================================= */
 
 .hero {
-    height: calc(100vh - 65px);
-    min-height: 0;
-    padding: 20px 32px 24px;
-    display: flex;
-    align-items: stretch;
-    overflow: hidden;
+    padding: 0 46px 38px;
 }
 
 .hero-grid {
-    width: 100%;
-    height: 100%;
     display: grid;
-    grid-template-columns: 1.55fr 1fr;
-    gap: 32px;
+
+    grid-template-columns: minmax(0, 1.65fr) minmax(300px, 1fr);
+
+    height: calc(100vh - 126px);
+
+    min-height: 560px;
+    max-height: 820px;
 }
 
-
-/* =========================================================
-   PERSONAL PHOTO
-   ========================================================= */
-
 .personal-image {
-    position: relative;
-    width: 100%;
     height: 100%;
-    min-height: 0;
     overflow: hidden;
-    background: var(--blue);
 }
 
 .personal-image img {
     width: 100%;
     height: 100%;
+
     display: block;
+
     object-fit: cover;
-    object-position: 65% center;
+    object-position: center center;
 }
-
-
-/* =========================================================
-   HERO RIGHT COLUMN
-   ========================================================= */
 
 .hero-right {
-    height: 100%;
-    min-height: 0;
     display: grid;
+
     grid-template-rows: minmax(0, 1fr) auto;
+
+    height: 100%;
 }
-
-
-/* =========================================================
-   GUITAR
-   ========================================================= */
 
 .hero-guitar {
     min-height: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     overflow: hidden;
+
     background: #3b2d31;
-    border: 1px solid var(--line);
 }
 
 .hero-guitar img {
     width: 100%;
     height: 100%;
+
     display: block;
+
     object-fit: contain;
-    padding: 1.25rem;
-    transition: transform 0.6s ease;
+
+    padding: 28px;
+
+    transition: transform 0.5s ease;
 }
 
 .hero-guitar:hover img {
     transform: scale(1.025);
 }
 
-
-/* =========================================================
-   FEATURED WORK LINK
-   ========================================================= */
-
 .hero-featured {
-    height: 64px;
+    height: 78px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 4px;
+
+    padding: 0 28px;
+
+    background: var(--cream);
+
+    border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
+
     font-size: 11px;
     letter-spacing: 0.1em;
-    transition: color 0.25s ease;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
 }
 
 .hero-featured:hover {
-    color: var(--purple);
+    background: var(--brown-dark);
+    color: var(--cream);
 }
 
 .hero-featured .arrow {
-    font-size: 20px;
-    line-height: 1;
+    font-size: 22px;
 }
 
 
@@ -211,47 +224,69 @@ a {
    ========================================================= */
 
 section {
-    padding: 80px 32px;
+    padding: 90px 46px;
 }
 
 .section-label {
     display: flex;
     justify-content: space-between;
+
     border-top: 1px solid var(--line);
-    padding-top: 12px;
-    margin-bottom: 50px;
+
+    padding-top: 11px;
+
+    margin-bottom: 45px;
+
     font-size: 10px;
     letter-spacing: 0.08em;
 }
 
 
 /* =========================================================
-   PROJECT INDEX
+   PROJECT SECTION
    ========================================================= */
 
 .work {
-    padding: 20px 32px 120px;
-}
-
-/* Remove old SELECTED WORK heading/border */
-
-.work > .section-label {
-    display: none;
+    padding-top: 42px;
+    padding-bottom: 100px;
 }
 
 
-/* =========================================================
-   PROJECT LAYOUT
-   ========================================================= */
+/*
+   The project layout is deliberately constructed as:
+
+   ┌──────────────┬──────────────┬──────────────┐
+   │              │              │              │
+   │    SEWING    │ ENGINEERING  │              │
+   │              │              │     WOOD     │
+   ├──────────────┼──────────────┤              │
+   │              │              │              │
+   │    PAINT     │    PAPERS    │              │
+   │              │              │              │
+   └──────────────┴──────────────┴──────────────┘
+
+   The right-hand Wood tile spans both rows.
+*/
 
 .project-layout {
     display: grid;
-    grid-template-columns: 1.25fr 1.05fr 0.83fr;
-    grid-template-rows: 390px 255px;
-    column-gap: 24px;
-    row-gap: 24px;
-    max-width: 1400px;
-    margin: 0 auto;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr)
+        minmax(0, 0.78fr);
+
+    grid-template-rows:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    grid-template-areas:
+        "bike robot wood"
+        "paint papers wood";
+
+    gap: var(--project-gap);
+
+    width: 100%;
 }
 
 
@@ -261,30 +296,171 @@ section {
 
 .project-tile {
     position: relative;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
+
+    min-width: 0;
+
+    color: var(--brown-dark);
 }
 
-.project-image {
+.project-bike {
+    grid-area: bike;
+}
+
+.project-robot {
+    grid-area: robot;
+}
+
+.project-wood {
+    grid-area: wood;
+}
+
+.project-paint {
+    grid-area: paint;
+}
+
+.project-papers {
+    grid-area: papers;
+}
+
+
+/* =========================================================
+   PROJECT IMAGES
+   ========================================================= */
+
+.project-tile .project-image {
     position: relative;
+
     width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     overflow: hidden;
+
     transition: transform 0.4s ease;
 }
 
-.project-tile:hover .project-image {
-    transform: translateY(-5px);
+
+/*
+   TOP ROW
+
+   Sewing and Engineering are forced to have
+   exactly the same image height.
+*/
+
+.project-bike .project-image,
+.project-robot .project-image {
+    height: 300px;
 }
+
+
+/*
+   BOTTOM ROW
+
+   Paint and Papers are also exactly the same height.
+*/
+
+.project-paint .project-image,
+.project-papers .project-image {
+    height: 300px;
+}
+
+
+/*
+   WOOD
+
+   Wood spans the complete two-row height.
+
+   Its height therefore equals:
+
+   top image
+   + project gap
+   + bottom image
+*/
+
+.project-wood .project-image {
+    height: calc(600px + var(--project-gap));
+}
+
+
+/* =========================================================
+   PROJECT IMAGE COLORS
+   ========================================================= */
+
+.project-bike .project-image {
+    background: var(--purple);
+}
+
+.project-robot .project-image {
+    background: var(--green);
+}
+
+.project-paint .project-image {
+    background: var(--blue);
+}
+
+.project-papers .project-image {
+    background: var(--cream);
+}
+
+.project-wood .project-image {
+    background: var(--brown-light);
+}
+
+
+/* =========================================================
+   PROJECT IMAGE PLACEHOLDER TEXT
+   ========================================================= */
 
 .project-image span {
     color: var(--cream);
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-align: center;
+
+    font-size: 11px;
+    letter-spacing: 0.08em;
+}
+
+.project-papers .project-image span {
+    color: var(--brown-dark);
+}
+
+
+/* =========================================================
+   SEWING CIRCLE
+   ========================================================= */
+
+/*
+   The Sewing image is circular while its overall
+   tile remains the same height as Engineering.
+*/
+
+.project-bike .project-image {
+    background: transparent;
+    overflow: visible;
+}
+
+.project-bike .project-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 285px;
+    height: 285px;
+
+    max-width: 92%;
+    max-height: 92%;
+
+    border-radius: 50%;
+
+    background: var(--purple);
+}
+
+.project-bike .project-image span {
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -293,127 +469,59 @@ section {
    ========================================================= */
 
 .project-label {
-    display: inline-flex;
+    align-self: center;
+
+    display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 145px;
-    height: 46px;
-    margin-top: 10px;
-    padding: 0 18px;
-    border: 2px solid var(--brown-dark);
-    background: var(--paper);
-    color: var(--brown-dark);
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
 
+    min-width: 210px;
+    height: 66px;
 
-/* =========================================================
-   SEWING / BIKE BAG
-   ========================================================= */
+    margin-top: var(--project-gap);
 
-.project-bike {
-    grid-column: 1;
-    grid-row: 1;
-    align-items: center;
-}
+    padding: 0 28px;
 
-.project-bike .project-image {
-    width: 72%;
-    height: auto;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: var(--purple);
-}
-
-.project-bike .project-label {
-    margin-top: 12px;
-}
-
-
-/* =========================================================
-   ROBOT
-   ========================================================= */
-
-.project-robot {
-    grid-column: 2;
-    grid-row: 1;
-    align-items: center;
-}
-
-.project-robot .project-image {
-    width: 100%;
-    height: 255px;
-    background: var(--green);
-}
-
-.project-robot .project-label {
-    margin-top: 12px;
-}
-
-
-/* =========================================================
-   WOOD
-   ========================================================= */
-
-.project-wood {
-    grid-column: 3;
-    grid-row: 1 / span 2;
-    align-items: center;
-}
-
-.project-wood .project-image {
-    width: 115%;
-    height: 100%;
-    background: var(--brown-light);
-}
-
-
-/* =========================================================
-   PAINT / ROOF BOX
-   ========================================================= */
-
-.project-paint {
-    grid-column: 1;
-    grid-row: 2;
-    align-items: center;
-}
-
-.project-paint .project-image {
-    width: 100%;
-    height: 255px;
-    background: var(--blue);
-}
-
-.project-paint .project-label {
-    margin-top: 12px;
-}
-
-
-/* =========================================================
-   PAPERS
-   ========================================================= */
-
-.project-papers {
-    grid-column: 2;
-    grid-row: 2;
-    align-items: center;
-}
-
-.project-papers .project-image {
-    width: 100%;
-    height: 255px;
     background: var(--cream);
-    border: 1px solid var(--line);
+
+    border: 2px solid var(--brown-dark);
+
+    font-size: 12px;
+    letter-spacing: 0.1em;
+
+    text-align: center;
 }
 
-.project-papers .project-image span {
-    color: var(--brown-dark);
+
+/*
+   Keep labels centered beneath their respective images.
+*/
+
+.project-bike .project-label,
+.project-paint .project-label,
+.project-robot .project-label,
+.project-papers .project-label,
+.project-wood .project-label {
+    align-self: center;
 }
 
-.project-papers .project-label {
-    margin-top: 12px;
+
+/*
+   The Wood label sits beneath the entire
+   tall Wood image.
+*/
+
+.project-wood .project-label {
+    margin-top: var(--project-gap);
+}
+
+
+/* =========================================================
+   PROJECT HOVER
+   ========================================================= */
+
+.project-tile:hover .project-image {
+    transform: translateY(-5px);
 }
 
 
@@ -424,6 +532,9 @@ section {
 .about {
     background: var(--brown-dark);
     color: var(--cream);
+
+    padding-top: 100px;
+    padding-bottom: 110px;
 }
 
 .about .section-label {
@@ -432,15 +543,21 @@ section {
 
 .about-layout {
     display: grid;
+
     grid-template-columns: 1.4fr 0.6fr;
+
     gap: 8vw;
 }
 
 .about-heading h2 {
     font-family: var(--serif);
+
     font-weight: 400;
+
     font-size: clamp(65px, 9vw, 140px);
+
     line-height: 0.75;
+
     letter-spacing: -0.05em;
 }
 
@@ -451,22 +568,31 @@ section {
 
 .about-copy {
     align-self: end;
+
     max-width: 430px;
 }
 
 .about-copy p {
     font-family: var(--serif);
+
     font-size: 27px;
+
     line-height: 1.05;
+
     margin-bottom: 30px;
 }
 
 .text-link {
     display: inline-block;
+
     margin-top: 20px;
+
     padding-bottom: 6px;
+
     border-bottom: 1px solid var(--cream);
+
     font-size: 10px;
+
     letter-spacing: 0.08em;
 }
 
@@ -477,37 +603,55 @@ section {
 
 .shop {
     min-height: 90vh;
+
+    padding-top: 100px;
+    padding-bottom: 110px;
 }
 
 .shop-content {
     position: relative;
+
     min-height: 500px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     padding-left: 10vw;
 }
 
 .shop-content::before {
     content: "";
+
     position: absolute;
+
     width: 260px;
     height: 260px;
+
     border-radius: 50%;
+
     background: var(--green);
+
     left: 0;
     top: 50%;
+
     transform: translateY(-50%);
+
     opacity: 0.85;
 }
 
 .shop h2 {
     position: relative;
     z-index: 1;
+
     font-family: var(--serif);
+
     font-weight: 500;
+
     font-size: clamp(80px, 13vw, 190px);
+
     line-height: 0.72;
+
     letter-spacing: -0.055em;
 }
 
@@ -519,18 +663,26 @@ section {
 .shop-content p {
     position: relative;
     z-index: 1;
+
     margin-top: 55px;
+
     max-width: 400px;
+
     font-family: var(--serif);
+
     font-size: 25px;
+
     line-height: 1;
 }
 
 .shop-status {
     position: relative;
     z-index: 1;
+
     margin-top: 25px;
+
     font-size: 10px;
+
     letter-spacing: 0.1em;
 }
 
@@ -541,11 +693,14 @@ section {
 
 .contact {
     background: var(--cream);
-    color: var(--brown-dark);
+
+    padding-top: 100px;
+    padding-bottom: 110px;
 }
 
 .contact-content {
     min-height: 55vh;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -553,18 +708,27 @@ section {
 
 .contact-content p {
     font-family: var(--serif);
+
     font-size: clamp(55px, 9vw, 130px);
+
     line-height: 0.75;
+
     letter-spacing: -0.05em;
 }
 
 .contact-content a {
     align-self: flex-end;
+
     font-family: var(--serif);
+
     font-size: clamp(45px, 7vw, 100px);
+
     font-style: italic;
+
     color: var(--purple);
+
     border-bottom: 2px solid var(--purple);
+
     line-height: 0.9;
 }
 
@@ -576,10 +740,15 @@ section {
 footer {
     display: flex;
     justify-content: space-between;
-    padding: 25px 32px;
+
+    padding: 25px 46px;
+
     background: var(--brown-dark);
+
     color: var(--cream);
+
     font-size: 9px;
+
     letter-spacing: 0.08em;
 }
 
@@ -590,120 +759,164 @@ footer {
 
 .project-page {
     max-width: 1400px;
+
     margin: 0 auto;
+
     padding: 0 6vw;
 }
 
 .project-intro {
     min-height: 55vh;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     padding: 7vh 0;
 }
 
 .project-intro h1 {
     font-family: var(--serif);
+
     font-size: clamp(4rem, 9vw, 9rem);
+
     line-height: 0.85;
+
     font-weight: 500;
+
     letter-spacing: -0.04em;
+
     margin: 1rem 0 2rem;
 }
 
-.project-page .project-description {
+.project-intro .project-description {
     max-width: 600px;
+
     font-size: 1.15rem;
+
     line-height: 1.7;
+
     color: var(--brown);
 }
 
-.project-page .project-meta {
+.project-intro .project-meta {
     display: flex;
+
     gap: 5rem;
+
     margin-top: 3rem;
+
     font-family: var(--sans);
+
     font-size: 0.8rem;
+
     text-transform: uppercase;
+
     letter-spacing: 0.08em;
 }
 
-.project-page .project-meta div {
+.project-intro .project-meta div {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-.project-page .project-meta span {
+.project-intro .project-meta span {
     color: var(--purple);
     font-size: 0.7rem;
 }
 
 
 /* =========================================================
-   PROJECT IMAGES
+   PROJECT PAGE IMAGES
    ========================================================= */
 
 .project-image-large {
     background: transparent;
+
     padding: 0;
+
     margin: 2rem auto 5rem;
+
     max-width: 900px;
 }
 
 .project-image-large img {
     display: block;
+
     width: 100%;
+
     max-height: 550px;
+
     object-fit: contain;
+
     margin: 0 auto;
+
     border-radius: 4px;
 }
 
 .project-image-wide {
     margin: 5rem auto;
+
     max-width: 950px;
 }
 
 .project-image-wide img {
     display: block;
+
     width: 100%;
+
     max-height: 500px;
+
     object-fit: contain;
+
     margin: 0 auto;
 }
 
 
 /* =========================================================
-   PROJECT TEXT SECTIONS
+   PROJECT PAGE TEXT
    ========================================================= */
 
 .project-section {
     display: grid;
+
     grid-template-columns: 120px 1fr;
+
     gap: 3rem;
+
     max-width: 850px;
+
     margin: 7rem auto;
 }
 
 .section-number {
     font-family: var(--sans);
+
     font-size: 0.8rem;
+
     color: var(--purple);
 }
 
 .project-section h2 {
     font-family: var(--serif);
+
     font-size: clamp(2.5rem, 5vw, 5rem);
+
     font-weight: 500;
+
     line-height: 0.95;
+
     margin: 0 0 2rem;
 }
 
 .project-section p {
     max-width: 650px;
+
     font-size: 1.05rem;
+
     line-height: 1.8;
+
     margin-bottom: 1.5rem;
 }
 
@@ -714,9 +927,13 @@ footer {
 
 .project-gallery {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
+
     gap: 1.5rem;
+
     margin: 5rem auto;
+
     max-width: 950px;
 }
 
@@ -726,17 +943,25 @@ footer {
 
 .project-gallery img {
     width: 100%;
+
     max-height: 500px;
+
     object-fit: contain;
+
     display: block;
 }
 
 .project-gallery figcaption {
     margin-top: 0.8rem;
+
     font-family: var(--sans);
+
     font-size: 0.7rem;
+
     text-transform: uppercase;
+
     letter-spacing: 0.08em;
+
     color: var(--brown-light);
 }
 
@@ -751,26 +976,39 @@ footer {
 
 .project-final {
     min-height: 60vh;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     padding: 6rem 0;
 }
 
 .project-final h2 {
     font-family: var(--serif);
+
     font-size: clamp(5rem, 12vw, 12rem);
+
     line-height: 0.78;
+
     font-weight: 500;
+
     letter-spacing: -0.05em;
+
     margin: 1rem 0 4rem;
 }
 
 .back-link {
     font-family: var(--sans);
+
     color: var(--brown-dark);
+
+    text-decoration: none;
+
     text-transform: uppercase;
+
     letter-spacing: 0.1em;
+
     font-size: 0.75rem;
 }
 
@@ -783,32 +1021,85 @@ footer {
    MOBILE
    ========================================================= */
 
-@media (max-width: 700px) {
-
-    /* ---------- HEADER ---------- */
+@media (max-width: 900px) {
 
     .site-header {
-        grid-template-columns: 1fr auto;
-        padding: 18px 20px;
+        padding: 0 25px;
     }
 
-    .logo {
-        grid-column: 1 / -1;
-        grid-row: 1;
-        justify-self: center;
-        font-size: 11px;
+    .site-header nav {
+        gap: 20px;
     }
 
-    .nav-left {
-        grid-column: 1;
-        grid-row: 1;
-        justify-self: start;
+    .hero {
+        padding: 0 25px 25px;
     }
 
-    .nav-right {
-        grid-column: 2;
-        grid-row: 1;
-        justify-self: end;
+    .hero-grid {
+        grid-template-columns: 1.4fr 1fr;
+
+        height: calc(100vh - 113px);
+
+        min-height: 500px;
+    }
+
+    section {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .project-layout {
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-rows:
+            auto
+            auto
+            auto;
+
+        grid-template-areas:
+            "bike robot"
+            "paint papers"
+            "wood wood";
+    }
+
+    .project-bike .project-image,
+    .project-robot .project-image,
+    .project-paint .project-image,
+    .project-papers .project-image {
+        height: 280px;
+    }
+
+    .project-wood .project-image {
+        height: 400px;
+    }
+
+    .project-bike .project-image::before {
+        width: 250px;
+        height: 250px;
+    }
+
+    .project-label {
+        min-width: 170px;
+        height: 58px;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 70px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .site-header {
+        height: 72px;
+
+        padding: 0 18px;
     }
 
     .site-header nav {
@@ -816,161 +1107,101 @@ footer {
     }
 
     .site-header nav a {
-        font-size: 8px;
+        font-size: 9px;
     }
 
-
-    /* ---------- GENERAL ---------- */
-
-    section {
-        padding: 60px 20px;
+    .logo {
+        font-size: 13px;
     }
-
-
-    /* ---------- HERO ---------- */
 
     .hero {
-        height: auto;
-        min-height: auto;
-        padding: 20px;
-        overflow: visible;
+        padding: 0 18px 20px;
     }
 
     .hero-grid {
-        height: auto;
         grid-template-columns: 1fr;
-        gap: 20px;
+
+        height: auto;
+
+        min-height: 0;
     }
 
     .personal-image {
-        height: auto;
-        aspect-ratio: 16 / 9;
-    }
-
-    .personal-image img {
-        object-fit: cover;
-        object-position: 65% center;
+        height: 52vh;
+        min-height: 350px;
     }
 
     .hero-right {
-        height: auto;
-        grid-template-rows: 60vh auto;
-    }
-
-    .hero-guitar {
+        height: 60vh;
         min-height: 400px;
     }
 
     .hero-guitar img {
-        padding: 1rem;
-    }
-
-    .hero-featured {
-        height: 75px;
-        font-size: 9px;
-    }
-
-
-    /* ---------- PROJECT INDEX ---------- */
-
-    .work {
         padding: 20px;
     }
 
+    .hero-featured {
+        height: 65px;
+    }
+
+    section {
+        padding: 70px 18px;
+    }
+
+    .work {
+        padding-top: 30px;
+    }
+
     .project-layout {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+
         grid-template-rows: auto;
-        gap: 20px;
+
+        grid-template-areas:
+            "bike"
+            "robot"
+            "paint"
+            "papers"
+            "wood";
+
+        gap: 55px;
     }
 
-    .project-bike {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .project-bike .project-image {
-        width: 85%;
-        height: auto;
-        aspect-ratio: 1;
-    }
-
-    .project-robot {
-        grid-column: 2;
-        grid-row: 1;
-    }
-
-    .project-robot .project-image {
-        width: 100%;
-        height: 210px;
-    }
-
-    .project-wood {
-        grid-column: 2;
-        grid-row: 2 / span 2;
+    .project-bike .project-image,
+    .project-robot .project-image,
+    .project-paint .project-image,
+    .project-papers .project-image {
+        height: 280px;
     }
 
     .project-wood .project-image {
-        width: 115%;
-        height: 500px;
+        height: 350px;
     }
 
-    .project-paint {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .project-paint .project-image {
-        width: 100%;
-        height: 240px;
-    }
-
-    .project-papers {
-        grid-column: 1;
-        grid-row: 3;
-    }
-
-    .project-papers .project-image {
-        width: 100%;
-        height: 220px;
+    .project-bike .project-image::before {
+        width: 260px;
+        height: 260px;
     }
 
     .project-label {
-        min-width: 110px;
-        height: 40px;
-        margin-top: 10px;
-        padding: 0 12px;
-        font-size: 8px;
+        min-width: 180px;
+        height: 55px;
+
+        margin-top: 20px;
     }
-
-
-    /* ---------- ABOUT ---------- */
-
-    .about-layout {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
-
-    .about-heading h2 {
-        font-size: 20vw;
-    }
-
-    .about-copy p {
-        font-size: 25px;
-    }
-
-
-    /* ---------- SHOP ---------- */
 
     .shop-content {
         padding-left: 0;
-        min-height: 550px;
+        min-height: 500px;
     }
 
     .shop-content::before {
         width: 180px;
         height: 180px;
+
         left: auto;
         right: 0;
+
         top: 35%;
     }
 
@@ -978,11 +1209,8 @@ footer {
         font-size: 22vw;
     }
 
-
-    /* ---------- CONTACT ---------- */
-
     .contact-content {
-        min-height: 60vh;
+        min-height: 55vh;
     }
 
     .contact-content a {
@@ -990,16 +1218,10 @@ footer {
         font-size: 15vw;
     }
 
-
-    /* ---------- FOOTER ---------- */
-
     footer {
         padding: 20px;
         font-size: 8px;
     }
-
-
-    /* ---------- PROJECT PAGE ---------- */
 
     .project-page {
         padding: 0 20px;
@@ -1014,7 +1236,7 @@ footer {
         font-size: clamp(3.5rem, 16vw, 6rem);
     }
 
-    .project-page .project-meta {
+    .project-intro .project-meta {
         flex-direction: column;
         gap: 1.5rem;
         margin-top: 2.5rem;
