@@ -10,7 +10,7 @@
 
     --paper: #e7dfd1;
     --cream: #f1eadf;
-    --espresso: #4b382a;
+    --espresso: #a9846a;
 
     --brown-dark: #30251f;
     --brown: #695044;
@@ -41,7 +41,7 @@ html {
 
 body {
     background: var(--espresso);
-    color: var(--paper);
+    color: var(--espresso);
 
     font-family: var(--sans);
 
