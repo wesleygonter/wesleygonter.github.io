@@ -212,7 +212,7 @@ a {
 }
 
 .hero-featured:hover {
-    background: var(--paper);
+    background: var(--blue);
 }
 
 .arrow {
@@ -302,7 +302,7 @@ a {
 
     padding: 24px 76px 22px;
 
-    background: var(--cream);
+    background: var(--blue);
     color: var(--brown-dark);
 
     border: 1px solid var(--brown-dark);
