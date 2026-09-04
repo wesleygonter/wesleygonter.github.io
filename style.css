@@ -118,7 +118,9 @@ a {
 }
 
 
-/* ---------- PERSONAL PHOTO ---------- */
+/* =========================================================
+   PERSONAL PHOTO
+   ========================================================= */
 
 .personal-image {
     position: relative;
@@ -138,7 +140,9 @@ a {
 }
 
 
-/* ---------- RIGHT COLUMN ---------- */
+/* =========================================================
+   HERO RIGHT COLUMN
+   ========================================================= */
 
 .hero-right {
     height: 100%;
@@ -148,7 +152,9 @@ a {
 }
 
 
-/* ---------- GUITAR ---------- */
+/* =========================================================
+   GUITAR
+   ========================================================= */
 
 .hero-guitar {
     min-height: 0;
@@ -174,7 +180,9 @@ a {
 }
 
 
-/* ---------- FEATURED WORK ---------- */
+/* =========================================================
+   FEATURED WORK LINK
+   ========================================================= */
 
 .hero-featured {
     height: 64px;
@@ -221,34 +229,35 @@ section {
    PROJECT INDEX
    ========================================================= */
 
-/*
-   This section is intentionally designed as an irregular
-   studio/workshop index rather than a conventional grid.
-*/
-
 .work {
     padding: 20px 32px 120px;
 }
 
-
-/* Hide the old section heading */
+/* Remove old SELECTED WORK heading/border */
 
 .work > .section-label {
     display: none;
 }
 
 
+/* =========================================================
+   PROJECT LAYOUT
+   ========================================================= */
+
 .project-layout {
     display: grid;
-    grid-template-columns: 1.35fr 1fr 0.72fr;
-    grid-template-rows: 390px 215px;
-    gap: 24px;
+    grid-template-columns: 1.25fr 1.05fr 0.83fr;
+    grid-template-rows: 390px 255px;
+    column-gap: 24px;
+    row-gap: 24px;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 
-/* ---------- PROJECT TILES ---------- */
+/* =========================================================
+   PROJECT TILES
+   ========================================================= */
 
 .project-tile {
     position: relative;
@@ -279,7 +288,9 @@ section {
 }
 
 
-/* ---------- PROJECT LABEL ---------- */
+/* =========================================================
+   PROJECT LABELS
+   ========================================================= */
 
 .project-label {
     display: inline-flex;
@@ -299,20 +310,25 @@ section {
 
 
 /* =========================================================
-   BIKE BAG
+   SEWING / BIKE BAG
    ========================================================= */
 
 .project-bike {
     grid-column: 1;
     grid-row: 1;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .project-bike .project-image {
-    width: min(360px, 100%);
-    height: 360px;
+    width: 72%;
+    height: auto;
+    aspect-ratio: 1;
     border-radius: 50%;
     background: var(--purple);
+}
+
+.project-bike .project-label {
+    margin-top: 12px;
 }
 
 
@@ -323,11 +339,17 @@ section {
 .project-robot {
     grid-column: 2;
     grid-row: 1;
+    align-items: center;
 }
 
 .project-robot .project-image {
-    height: 345px;
+    width: 100%;
+    height: 255px;
     background: var(--green);
+}
+
+.project-robot .project-label {
+    margin-top: 12px;
 }
 
 
@@ -338,27 +360,34 @@ section {
 .project-wood {
     grid-column: 3;
     grid-row: 1 / span 2;
+    align-items: center;
 }
 
 .project-wood .project-image {
+    width: 115%;
     height: 100%;
     background: var(--brown-light);
 }
 
 
 /* =========================================================
-   ROOF BOX / PAINT
+   PAINT / ROOF BOX
    ========================================================= */
 
 .project-paint {
     grid-column: 1;
     grid-row: 2;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .project-paint .project-image {
-    height: 215px;
+    width: 100%;
+    height: 255px;
     background: var(--blue);
+}
+
+.project-paint .project-label {
+    margin-top: 12px;
 }
 
 
@@ -369,17 +398,22 @@ section {
 .project-papers {
     grid-column: 2;
     grid-row: 2;
+    align-items: center;
 }
 
 .project-papers .project-image {
-    width: 72%;
-    height: 215px;
+    width: 100%;
+    height: 255px;
     background: var(--cream);
     border: 1px solid var(--line);
 }
 
 .project-papers .project-image span {
     color: var(--brown-dark);
+}
+
+.project-papers .project-label {
+    margin-top: 12px;
 }
 
 
@@ -855,7 +889,7 @@ footer {
     }
 
     .project-bike .project-image {
-        width: 100%;
+        width: 85%;
         height: auto;
         aspect-ratio: 1;
     }
@@ -866,7 +900,8 @@ footer {
     }
 
     .project-robot .project-image {
-        height: 300px;
+        width: 100%;
+        height: 210px;
     }
 
     .project-wood {
@@ -875,6 +910,7 @@ footer {
     }
 
     .project-wood .project-image {
+        width: 115%;
         height: 500px;
     }
 
@@ -884,7 +920,8 @@ footer {
     }
 
     .project-paint .project-image {
-        height: 200px;
+        width: 100%;
+        height: 240px;
     }
 
     .project-papers {
@@ -894,14 +931,15 @@ footer {
 
     .project-papers .project-image {
         width: 100%;
-        height: 180px;
+        height: 220px;
     }
 
     .project-label {
         min-width: 110px;
         height: 40px;
-        font-size: 8px;
+        margin-top: 10px;
         padding: 0 12px;
+        font-size: 8px;
     }
 
 
