@@ -229,7 +229,7 @@ a {
        Contain keeps the entire guitar visible.
        The previous "cover" setting cropped the guitar.
     */
-    object-fit: contain;
+    object-fit: cover;
     object-position: center center;
 }
 
