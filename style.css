@@ -954,7 +954,8 @@ footer {
     display: inline-block;
     margin-top: 30px;
     padding: 12px 22px;
-    border: 1px solid var(--cream);
+    border: 1px solid var(--brown-dark);
+    background: var(--blue);
     color: var(--cream);
     font-family: var(--sans);
     font-size: 0.78rem;
@@ -963,8 +964,8 @@ footer {
 }
 
 .thank-you-link:hover {
-    background: var(--purple);
-    color: var(--cream);
+    background: var(--cream);
+    color: var(--brown-dark);
 }
 
 /* =========================================================
