@@ -131,20 +131,9 @@ a {
    ========================================================= */
 
 .hero {
-    /*
-       The header is approximately 78px tall.
-       This keeps the complete hero inside the remaining
-       browser viewport on desktop.
-    */
-
     height: calc(100vh - 78px);
 
     min-height: 0;
-
-    /*
-       Reduced vertical padding gives the imagery more
-       usable height while preserving the spacious layout.
-    */
 
     padding: 24px 48px 10px;
 }
@@ -155,11 +144,6 @@ a {
 
     grid-template-columns: 1.55fr 1fr;
     gap: 32px;
-
-    /*
-       Fill the available hero height rather than allowing
-       the grid to become taller than the viewport.
-    */
 
     height: 100%;
 
@@ -187,12 +171,8 @@ a {
 
     display: block;
 
-    /*
-       The personal photograph should fill the panel.
-    */
-
     object-fit: cover;
-    object-position: center center;
+    object-position: 65% center;
 }
 
 
@@ -203,10 +183,6 @@ a {
 .hero-right {
     display: flex;
     flex-direction: column;
-
-    /*
-       Smaller gap between the guitar and Featured Work.
-    */
 
     gap: 12px;
 
@@ -224,11 +200,6 @@ a {
     align-items: center;
     justify-content: center;
 
-    /*
-       The guitar takes up all available space above
-       the Featured Work link.
-    */
-
     flex: 1;
 
     min-height: 0;
@@ -245,13 +216,7 @@ a {
 
     display: block;
 
-    /*
-       IMPORTANT:
-       Contain keeps the entire guitar visible.
-       The previous "cover" setting cropped the guitar.
-    */
-
-    object-fit: cover;
+    object-fit: contain;
     object-position: center center;
 }
 
@@ -264,11 +229,6 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    /*
-       Slightly shorter link area preserves more room
-       for the full guitar.
-    */
 
     padding: 14px 24px;
 
@@ -285,7 +245,7 @@ a {
 
 
 .hero-featured:hover {
-    background: var(--blue);
+    opacity: 0.85;
 }
 
 
@@ -299,32 +259,12 @@ a {
    ========================================================= */
 
 .work {
-    /*
-       Very small gap between the homepage and Projects.
-       Previously this was 100px, then 48px.
-       18px creates a much more cohesive transition.
-    */
-
     padding: 18px 48px 100px;
 }
 
 
 /* =========================================================
    PROJECT GRID
-
-   Desktop arrangement:
-
-   ┌──────────────────┬──────────────────┬──────────────────┐
-   │                  │                  │                  │
-   │    BIKE BAG      │   ROBOT ARM      │                  │
-   │                  │                  │      PAPERS      │
-   │                  │                  │                  │
-   ├──────────────────┴──────────────────┤                  │
-   │                  │                  │                  │
-   │      PAINT       │       WOOD       │                  │
-   │                  │                  │                  │
-   └──────────────────┴──────────────────┴──────────────────┘
-
    ========================================================= */
 
 .project-layout {
@@ -475,7 +415,6 @@ a {
 
 /* =========================================================
    PAPERS
-   TALL RIGHT-HAND PROJECT
    ========================================================= */
 
 .project-papers {
@@ -708,9 +647,8 @@ a {
 
 .contact {
     /*
-       Reduced from the previous 120px so Contact
-       feels like a smaller closing section rather
-       than a major feature of the homepage.
+       Smaller homepage contact section so it functions
+       as a closing invitation rather than a major feature.
     */
 
     padding: 55px 48px 60px;
@@ -775,11 +713,15 @@ a {
    ========================================================= */
 
 .contact-page {
+    /*
+       Same brown background as the main site.
+    */
+
     min-height: calc(100vh - 78px);
 
-    padding: 32px 48px 40px;
+    padding: 16px 48px 20px;
 
-    background: var(--espresso);
+    background: var(--brown);
     color: var(--paper);
 
     display: flex;
@@ -796,15 +738,17 @@ a {
 
 
 /* ---------------------------------------------------------
-   CONTACT PAGE TITLE
+   CONTACT TITLE
    --------------------------------------------------------- */
 
 .contact-page h1 {
-    margin: 0 0 32px;
+    margin: 0 0 18px;
 
     font-family: var(--sans);
-    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    font-size: clamp(2.3rem, 4vw, 3rem);
     font-weight: 400;
+
+    line-height: 1;
 
     letter-spacing: 0.08em;
     text-align: center;
@@ -827,23 +771,21 @@ a {
    --------------------------------------------------------- */
 
 .form-field {
-    margin-bottom: 20px;
+    margin-bottom: 11px;
 }
 
 
 .form-field label {
     display: block;
 
-    margin-bottom: 6px;
+    margin-bottom: 3px;
 
     font-family: var(--sans);
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
+    font-size: 0.78rem;
 
-    /*
-       Cream labels for Name, Email Address,
-       and Message.
-    */
+    line-height: 1.2;
+
+    letter-spacing: 0.08em;
 
     color: var(--cream);
 }
@@ -857,7 +799,7 @@ a {
 .form-field textarea {
     width: 100%;
 
-    padding: 10px 14px;
+    padding: 7px 13px;
 
     border: 1px solid var(--brown-dark);
     border-radius: 3px;
@@ -866,28 +808,28 @@ a {
     color: var(--cream);
 
     font-family: var(--sans);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
 
     outline: none;
 }
 
 
 /* ---------------------------------------------------------
-   INPUT HEIGHT
+   NAME + EMAIL
    --------------------------------------------------------- */
 
 .form-field input {
-    height: 44px;
+    height: 36px;
 }
 
 
 /* ---------------------------------------------------------
-   MESSAGE BOX
+   MESSAGE
    --------------------------------------------------------- */
 
 .form-field textarea {
-    height: 115px;
-    min-height: 115px;
+    height: 84px;
+    min-height: 84px;
 
     resize: vertical;
 }
@@ -905,7 +847,7 @@ a {
 
 
 /* ---------------------------------------------------------
-   FORM FOCUS
+   FOCUS
    --------------------------------------------------------- */
 
 .form-field input:focus,
@@ -921,7 +863,11 @@ a {
 .contact-submit {
     display: inline-block;
 
-    padding: 11px 34px;
+    margin-top: 2px;
+
+    padding: 8px 28px;
+
+    min-height: 38px;
 
     border: 1px solid var(--brown-dark);
     border-radius: 4px;
@@ -930,7 +876,8 @@ a {
     color: var(--cream);
 
     font-family: var(--sans);
-    font-size: 0.85rem;
+    font-size: 0.78rem;
+
     letter-spacing: 0.08em;
 
     cursor: pointer;
@@ -973,7 +920,6 @@ footer {
 
 @media (max-width: 900px) {
 
-
     /* -------------------------------------------------------
        HERO
        ------------------------------------------------------- */
@@ -1001,15 +947,6 @@ footer {
 
     .hero-right {
         min-height: 500px;
-    }
-
-
-    /*
-       Keep the complete guitar visible on tablet too.
-    */
-
-    .hero-guitar img {
-        object-fit: contain;
     }
 
 
@@ -1085,12 +1022,11 @@ footer {
 
 
     /* -------------------------------------------------------
-       OTHER SECTIONS
+       ABOUT / SHOP
        ------------------------------------------------------- */
 
     .about,
-    .shop,
-    .contact {
+    .shop {
         padding: 100px 32px;
     }
 
@@ -1126,7 +1062,7 @@ footer {
     .contact-page {
         min-height: calc(100vh - 78px);
 
-        padding: 35px 32px 45px;
+        padding: 28px 32px 35px;
     }
 
 
@@ -1142,7 +1078,6 @@ footer {
     footer {
         padding: 24px 32px;
     }
-
 }
 
 
@@ -1151,7 +1086,6 @@ footer {
    ========================================================= */
 
 @media (max-width: 600px) {
-
 
     /* -------------------------------------------------------
        HEADER
@@ -1208,11 +1142,6 @@ footer {
     }
 
 
-    .hero-guitar img {
-        object-fit: contain;
-    }
-
-
     .hero-featured {
         padding: 18px;
     }
@@ -1246,10 +1175,6 @@ footer {
     }
 
 
-    /* -------------------------------------------------------
-       BIKE BAG
-       ------------------------------------------------------- */
-
     .project-bike {
         grid-column: 1;
         grid-row: 1;
@@ -1262,10 +1187,6 @@ footer {
         aspect-ratio: 1 / 1;
     }
 
-
-    /* -------------------------------------------------------
-       ROBOT
-       ------------------------------------------------------- */
 
     .project-robot {
         grid-column: 2;
@@ -1280,10 +1201,6 @@ footer {
     }
 
 
-    /* -------------------------------------------------------
-       PAINT
-       ------------------------------------------------------- */
-
     .project-paint {
         grid-column: 1;
         grid-row: 2;
@@ -1294,10 +1211,6 @@ footer {
         height: 240px;
     }
 
-
-    /* -------------------------------------------------------
-       WOOD
-       ------------------------------------------------------- */
 
     .project-wood {
         grid-column: 1;
@@ -1310,10 +1223,6 @@ footer {
     }
 
 
-    /* -------------------------------------------------------
-       PAPERS
-       ------------------------------------------------------- */
-
     .project-papers {
         grid-column: 2;
         grid-row: 2 / span 2;
@@ -1325,10 +1234,6 @@ footer {
         height: 500px;
     }
 
-
-    /* -------------------------------------------------------
-       PROJECT LABELS
-       ------------------------------------------------------- */
 
     .project-label {
         padding: 18px 24px 16px;
@@ -1376,7 +1281,7 @@ footer {
 
 
     /* -------------------------------------------------------
-       CONTACT
+       HOMEPAGE CONTACT
        ------------------------------------------------------- */
 
     .contact {
@@ -1401,44 +1306,44 @@ footer {
     .contact-page {
         min-height: calc(100vh - 65px);
 
-        padding: 28px 20px 40px;
+        padding: 22px 20px 28px;
 
         display: block;
     }
 
 
     .contact-page h1 {
-        margin-bottom: 28px;
+        margin-bottom: 20px;
 
-        font-size: 2.6rem;
+        font-size: 2.4rem;
     }
 
 
     .form-field {
-        margin-bottom: 18px;
+        margin-bottom: 13px;
     }
 
 
     .form-field label {
-        margin-bottom: 5px;
+        margin-bottom: 4px;
 
-        font-size: 0.8rem;
+        font-size: 0.76rem;
     }
 
 
     .form-field input {
-        height: 42px;
+        height: 38px;
     }
 
 
     .form-field textarea {
-        height: 110px;
-        min-height: 110px;
+        height: 95px;
+        min-height: 95px;
     }
 
 
     .contact-submit {
-        padding: 10px 30px;
+        padding: 9px 28px;
     }
 
 
@@ -1449,9 +1354,9 @@ footer {
     footer {
         flex-direction: column;
         align-items: flex-start;
+
         gap: 10px;
 
         padding: 24px 20px;
     }
-
 }
