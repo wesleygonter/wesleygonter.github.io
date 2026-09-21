@@ -30,27 +30,21 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
     margin: 0;
-
     background: var(--brown);
     color: var(--paper);
-
     font-family: var(--sans);
     font-weight: 400;
 }
 
-
 img {
     max-width: 100%;
 }
-
 
 a {
     color: inherit;
@@ -77,7 +71,6 @@ a {
     border-bottom: 1px solid var(--line);
 }
 
-
 .nav-left,
 .nav-right {
     display: flex;
@@ -85,11 +78,9 @@ a {
     gap: 32px;
 }
 
-
 .nav-right {
     justify-content: flex-end;
 }
-
 
 .site-header a {
     font-family: var(--sans);
@@ -97,11 +88,9 @@ a {
     letter-spacing: 0.08em;
 }
 
-
 .site-header a:hover {
     opacity: 0.65;
 }
-
 
 .logo {
     font-weight: 500;
@@ -117,9 +106,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     margin-bottom: 48px;
-
     font-family: var(--sans);
     font-size: 0.75rem;
     letter-spacing: 0.12em;
@@ -132,21 +119,15 @@ a {
 
 .hero {
     height: calc(100vh - 78px);
-
     min-height: 0;
-
     padding: 24px 48px 10px;
 }
 
-
 .hero-grid {
     display: grid;
-
     grid-template-columns: 1.55fr 1fr;
     gap: 32px;
-
     height: 100%;
-
     min-height: 0;
 }
 
@@ -158,19 +139,14 @@ a {
 .personal-image {
     width: 100%;
     height: 100%;
-
     overflow: hidden;
-
     background: var(--cream);
 }
-
 
 .personal-image img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
     object-position: 65% center;
 }
@@ -183,9 +159,7 @@ a {
 .hero-right {
     display: flex;
     flex-direction: column;
-
     gap: 12px;
-
     min-height: 0;
 }
 
@@ -196,26 +170,18 @@ a {
 
 .hero-guitar {
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     flex: 1;
-
     min-height: 0;
-
     overflow: hidden;
-
     background: var(--purple);
 }
-
 
 .hero-guitar img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
     object-position: center center;
 }
@@ -229,25 +195,18 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 14px 24px;
-
     min-height: 52px;
-
     background: var(--blue);
     color: var(--cream);
-
     border: 1px solid var(--line);
-
     font-size: 0.8rem;
     letter-spacing: 0.1em;
 }
 
-
 .hero-featured:hover {
     opacity: 0.85;
 }
-
 
 .arrow {
     font-size: 1.1rem;
@@ -262,78 +221,50 @@ a {
     padding: 18px 48px 100px;
 }
 
-
-/* =========================================================
-   PROJECT GRID
-   ========================================================= */
-
 .project-layout {
     display: grid;
-
     grid-template-columns: 1.25fr 1.05fr 0.83fr;
     grid-template-rows: 390px 255px;
-
     column-gap: 24px;
     row-gap: 24px;
-
     max-width: 1400px;
     margin: 0 auto;
 }
 
-
-/* =========================================================
-   GENERAL PROJECT TILE
-   ========================================================= */
-
 .project-tile {
     position: relative;
-
     display: flex;
     flex-direction: column;
-
     min-width: 0;
 }
 
-
 .project-image {
     position: relative;
-
     overflow: hidden;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-family: var(--sans);
     font-size: 0.8rem;
     letter-spacing: 0.08em;
 }
 
-
 .project-image img {
     display: block;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
 }
 
-
 .project-label {
     align-self: center;
-
     padding: 24px 76px 22px;
-
     background: var(--blue);
     color: var(--cream);
-
     border: 1px solid var(--brown-dark);
-
     font-family: var(--sans);
     font-size: 0.8rem;
     letter-spacing: 0.1em;
-
     text-align: center;
 }
 
@@ -345,33 +276,24 @@ a {
 .project-bike {
     grid-column: 1;
     grid-row: 1;
-
     align-items: center;
 }
-
 
 .project-bike .project-image {
     width: min(72%, 390px);
     height: 390px;
-
     aspect-ratio: 1 / 1;
-
     border-radius: 50%;
-
     background: var(--purple);
     overflow: hidden;
 }
 
-
 .project-bike .project-image img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
 }
-
 
 .project-bike .project-label {
     margin-top: 12px;
@@ -385,28 +307,21 @@ a {
 .project-robot {
     grid-column: 2;
     grid-row: 1;
-
     align-items: center;
 }
-
 
 .project-robot .project-image {
     width: 100%;
     height: 390px;
-
     background: var(--green);
 }
-
 
 .project-robot .project-image img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
 }
-
 
 .project-robot .project-label {
     margin-top: 12px;
@@ -420,30 +335,22 @@ a {
 .project-papers {
     grid-column: 3;
     grid-row: 1 / span 2;
-
     align-items: center;
 }
-
 
 .project-papers .project-image {
     width: 100%;
     height: 669px;
-
     background: var(--cream);
-
     border: 1px solid var(--line);
 }
-
 
 .project-papers .project-image img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
 }
-
 
 .project-papers .project-label {
     margin-top: 12px;
@@ -457,29 +364,22 @@ a {
 .project-paint {
     grid-column: 1;
     grid-row: 2;
-
     justify-content: flex-end;
     align-items: center;
 }
 
-
 .project-paint .project-image {
     width: 100%;
     height: 255px;
-
     background: var(--blue);
 }
-
 
 .project-paint .project-image img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
 }
-
 
 .project-paint .project-label {
     margin-top: 12px;
@@ -493,29 +393,22 @@ a {
 .project-wood {
     grid-column: 2;
     grid-row: 2;
-
     justify-content: flex-end;
     align-items: center;
 }
 
-
 .project-wood .project-image {
     width: 100%;
     height: 255px;
-
     background: var(--brown-light);
 }
-
 
 .project-wood .project-image img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
 }
-
 
 .project-wood .project-label {
     margin-top: 12px;
@@ -528,59 +421,46 @@ a {
 
 .about {
     padding: 120px 48px;
-
     background: var(--paper);
     color: var(--brown-dark);
 }
-
 
 .about-layout {
     display: grid;
     grid-template-columns: 1.25fr 1fr;
     gap: 64px;
-
     max-width: 1400px;
     margin: 0 auto;
 }
 
-
 .about-heading h2 {
     margin: 0;
-
     font-family: var(--serif);
     font-size: clamp(3rem, 6vw, 6.5rem);
     font-weight: 400;
     line-height: 0.9;
 }
 
-
 .about-heading em {
     color: var(--purple);
 }
-
 
 .about-copy {
     max-width: 560px;
 }
 
-
 .about-copy p {
     margin: 0 0 28px;
-
     font-family: var(--serif);
     font-size: 1.45rem;
     line-height: 1.35;
 }
 
-
 .text-link {
     display: inline-block;
-
     margin-top: 20px;
-
     font-size: 0.8rem;
     letter-spacing: 0.1em;
-
     border-bottom: 1px solid var(--brown-dark);
     padding-bottom: 5px;
 }
@@ -592,50 +472,38 @@ a {
 
 .shop {
     padding: 120px 48px;
-
     background: var(--purple);
     color: var(--paper);
 }
-
 
 .shop-content {
     max-width: 1400px;
     margin: 0 auto;
 }
 
-
 .shop-content h2 {
     margin: 0 0 32px;
-
     font-family: var(--serif);
     font-size: clamp(3rem, 7vw, 7rem);
     font-weight: 400;
     line-height: 0.9;
 }
 
-
 .shop-content h2 em {
     color: var(--cream);
 }
 
-
 .shop-content p {
     max-width: 500px;
-
     margin: 0 0 40px;
-
     font-family: var(--serif);
     font-size: 1.4rem;
 }
 
-
 .shop-status {
     display: inline-block;
-
     padding: 14px 20px;
-
     border: 1px solid var(--paper);
-
     font-size: 0.75rem;
     letter-spacing: 0.12em;
 }
@@ -646,61 +514,39 @@ a {
    ========================================================= */
 
 .contact {
-    /*
-       Smaller homepage contact section so it functions
-       as a closing invitation rather than a major feature.
-    */
-
     padding: 55px 48px 60px;
-
     background: var(--brown-dark);
     color: var(--paper);
 }
-
 
 .contact .section-label {
     margin-bottom: 28px;
 }
 
-
 .contact-content {
     max-width: 1400px;
     margin: 0 auto;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 40px;
 }
 
-
 .contact-content p {
     margin: 0;
-
     font-family: var(--serif);
-
     font-size: clamp(1.8rem, 3vw, 3.2rem);
-
     line-height: 0.95;
 }
 
-
 .contact-content a {
     display: inline-block;
-
     padding: 13px 22px;
-
     border: 1px solid var(--paper);
-
     font-size: 0.8rem;
     letter-spacing: 0.12em;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease;
 }
-
 
 .contact-content a:hover {
     background: var(--paper);
@@ -713,131 +559,71 @@ a {
    ========================================================= */
 
 .contact-page {
-    /*
-       Same brown background as the main site.
-    */
-
     min-height: calc(100vh - 78px);
-
     padding: 16px 48px 20px;
-
     background: var(--brown);
     color: var(--paper);
-
     display: flex;
     align-items: center;
 }
 
-
 .contact-page-inner {
     width: 100%;
     max-width: 600px;
-
     margin: 0 auto;
 }
 
-
-/* ---------------------------------------------------------
-   CONTACT TITLE
-   --------------------------------------------------------- */
-
 .contact-page h1 {
     margin: 0 0 18px;
-
     font-family: var(--sans);
     font-size: clamp(2.3rem, 4vw, 3rem);
     font-weight: 400;
-
     line-height: 1;
-
     letter-spacing: 0.08em;
     text-align: center;
-
     color: var(--cream);
 }
-
-
-/* ---------------------------------------------------------
-   CONTACT FORM
-   --------------------------------------------------------- */
 
 .contact-form {
     width: 100%;
 }
 
-
-/* ---------------------------------------------------------
-   FORM FIELD
-   --------------------------------------------------------- */
-
 .form-field {
     margin-bottom: 11px;
 }
 
-
 .form-field label {
     display: block;
-
     margin-bottom: 3px;
-
     font-family: var(--sans);
     font-size: 0.78rem;
-
     line-height: 1.2;
-
     letter-spacing: 0.08em;
-
     color: var(--cream);
 }
-
-
-/* ---------------------------------------------------------
-   INPUTS
-   --------------------------------------------------------- */
 
 .form-field input,
 .form-field textarea {
     width: 100%;
-
     padding: 7px 13px;
-
     border: 1px solid var(--brown-dark);
     border-radius: 3px;
-
     background: var(--purple);
     color: var(--cream);
-
     font-family: var(--sans);
     font-size: 0.88rem;
-
     outline: none;
 }
-
-
-/* ---------------------------------------------------------
-   NAME + EMAIL
-   --------------------------------------------------------- */
 
 .form-field input {
     height: 36px;
 }
 
-
-/* ---------------------------------------------------------
-   MESSAGE
-   --------------------------------------------------------- */
-
 .form-field textarea {
     height: 84px;
     min-height: 84px;
-
     resize: vertical;
 }
-
-
-/* ---------------------------------------------------------
-   PLACEHOLDER
-   --------------------------------------------------------- */
 
 .form-field input::placeholder,
 .form-field textarea::placeholder {
@@ -845,51 +631,151 @@ a {
     opacity: 0.55;
 }
 
-
-/* ---------------------------------------------------------
-   FOCUS
-   --------------------------------------------------------- */
-
 .form-field input:focus,
 .form-field textarea:focus {
     border-color: var(--cream);
 }
 
-
-/* ---------------------------------------------------------
-   SUBMIT BUTTON
-   --------------------------------------------------------- */
-
 .contact-submit {
     display: inline-block;
-
     margin-top: 2px;
-
     padding: 8px 28px;
-
     min-height: 38px;
-
     border: 1px solid var(--brown-dark);
     border-radius: 4px;
-
     background: var(--purple);
     color: var(--cream);
-
     font-family: var(--sans);
     font-size: 0.78rem;
-
     letter-spacing: 0.08em;
-
     cursor: pointer;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease;
 }
-
 
 .contact-submit:hover {
     background: var(--blue);
+}
+
+
+/* =========================================================
+   SEWING PROJECT PAGE
+   ========================================================= */
+
+.sewing-page {
+    padding: 0 48px 70px;
+    background: var(--brown);
+    color: var(--paper);
+}
+
+.sewing-title {
+    margin: 0;
+    padding: 18px 0 24px;
+    font-family: var(--sans);
+    font-size: clamp(1.9rem, 3vw, 2.7rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    text-align: center;
+}
+
+.sewing-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(250px, 0.72fr) minmax(0, 1fr);
+    grid-template-rows: 235px 360px 190px;
+    column-gap: 48px;
+    row-gap: 22px;
+    max-width: 1250px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.sewing-copy {
+    font-family: var(--sans);
+    font-size: 0.86rem;
+    line-height: 1.25;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.sewing-copy p {
+    margin: 0;
+}
+
+.sewing-intro {
+    align-self: start;
+    padding-top: 28px;
+    max-width: 330px;
+}
+
+.sewing-copy-top-right {
+    align-self: start;
+    padding-top: 30px;
+    justify-self: start;
+}
+
+.sewing-copy-center {
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+}
+
+.sewing-copy-bottom-left {
+    justify-self: start;
+    align-self: center;
+    padding-left: 12px;
+}
+
+.sewing-copy-bottom-right {
+    justify-self: start;
+    align-self: center;
+    padding-left: 4px;
+}
+
+.sewing-image {
+    margin: 0;
+    overflow: hidden;
+    background: var(--cream);
+}
+
+.sewing-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sewing-image-top {
+    grid-column: 2;
+    grid-row: 1;
+    width: 250px;
+    height: 185px;
+    justify-self: center;
+}
+
+.sewing-image-large {
+    grid-column: 1;
+    grid-row: 2;
+    width: min(100%, 390px);
+    height: 320px;
+    justify-self: center;
+}
+
+.sewing-image-square {
+    grid-column: 3;
+    grid-row: 2;
+    width: min(100%, 330px);
+    aspect-ratio: 1 / 1;
+    justify-self: center;
+}
+
+.sewing-image-bag {
+    grid-column: 2;
+    grid-row: 3;
+    width: 220px;
+    height: 165px;
+    justify-self: center;
+    align-self: start;
+    background: var(--purple);
 }
 
 
@@ -901,17 +787,15 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 24px 48px;
-
     background: var(--brown-dark);
     color: var(--paper);
-
     border-top: 1px solid var(--line);
-
     font-size: 0.7rem;
     letter-spacing: 0.08em;
 }
+
+
 /* =========================================================
    THANK YOU PAGE
    ========================================================= */
@@ -968,88 +852,67 @@ footer {
     color: var(--brown-dark);
 }
 
+
 /* =========================================================
    TABLET
    ========================================================= */
 
 @media (max-width: 900px) {
 
-    /* -------------------------------------------------------
-       HERO
-       ------------------------------------------------------- */
-
     .hero {
         height: auto;
         min-height: auto;
-
         padding: 32px;
     }
 
-
     .hero-grid {
         grid-template-columns: 1fr;
-
         height: auto;
         min-height: auto;
     }
-
 
     .personal-image {
         min-height: 60vh;
     }
 
-
     .hero-right {
         min-height: 500px;
     }
-
-
-    /* -------------------------------------------------------
-       PROJECTS
-       ------------------------------------------------------- */
 
     .work {
         padding: 50px 32px 100px;
     }
 
-
     .project-layout {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto auto;
-
         gap: 20px;
     }
-
 
     .project-bike {
         grid-column: 1;
         grid-row: 1;
     }
 
-
     .project-robot {
         grid-column: 2;
         grid-row: 1;
     }
-
 
     .project-paint {
         grid-column: 1;
         grid-row: 2;
     }
 
-
     .project-wood {
         grid-column: 1;
         grid-row: 3;
     }
 
-
     .project-papers {
         grid-column: 2;
         grid-row: 2 / span 2;
     }
-
 
     .project-bike .project-image {
         width: 85%;
@@ -1057,77 +920,78 @@ footer {
         aspect-ratio: 1 / 1;
     }
 
-
     .project-robot .project-image {
         height: auto;
         aspect-ratio: 1 / 1;
     }
-
 
     .project-paint .project-image,
     .project-wood .project-image {
         height: 240px;
     }
 
-
     .project-papers .project-image {
         height: 500px;
     }
-
-
-    /* -------------------------------------------------------
-       ABOUT / SHOP
-       ------------------------------------------------------- */
 
     .about,
     .shop {
         padding: 100px 32px;
     }
 
-
     .about-layout {
         grid-template-columns: 1fr;
         gap: 48px;
     }
 
-
-    /* -------------------------------------------------------
-       HOMEPAGE CONTACT
-       ------------------------------------------------------- */
-
     .contact {
         padding: 60px 32px;
     }
 
-
     .contact-content {
         align-items: flex-start;
-
         flex-direction: column;
-
         gap: 28px;
     }
 
-
-    /* -------------------------------------------------------
-       CONTACT PAGE
-       ------------------------------------------------------- */
-
     .contact-page {
         min-height: calc(100vh - 78px);
-
         padding: 28px 32px 35px;
     }
-
 
     .contact-page-inner {
         max-width: 600px;
     }
 
+    /* Sewing page */
+    .sewing-page {
+        padding: 0 32px 60px;
+    }
 
-    /* -------------------------------------------------------
-       FOOTER
-       ------------------------------------------------------- */
+    .sewing-grid {
+        grid-template-columns: 1fr 0.85fr 1fr;
+        grid-template-rows: 210px 300px 165px;
+        column-gap: 28px;
+        row-gap: 20px;
+    }
+
+    .sewing-image-top {
+        width: 210px;
+        height: 155px;
+    }
+
+    .sewing-image-large {
+        height: 280px;
+    }
+
+    .sewing-image-square {
+        width: min(100%, 260px);
+    }
+
+    .sewing-image-bag {
+        width: 185px;
+        height: 140px;
+    }
 
     footer {
         padding: 24px 32px;
@@ -1141,99 +1005,65 @@ footer {
 
 @media (max-width: 600px) {
 
-    /* -------------------------------------------------------
-       HEADER
-       ------------------------------------------------------- */
-
     .site-header {
         grid-template-columns: 1fr auto;
-
         padding: 18px 20px;
     }
-
 
     .nav-left {
         gap: 18px;
     }
 
-
     .nav-right {
         display: none;
     }
-
 
     .site-header a {
         font-size: 0.72rem;
     }
 
-
-    /* -------------------------------------------------------
-       HERO
-       ------------------------------------------------------- */
-
     .hero {
         height: auto;
         min-height: auto;
-
         padding: 20px;
     }
 
-
     .hero-grid {
         gap: 20px;
-
         height: auto;
     }
-
 
     .personal-image {
         min-height: 55vh;
     }
 
-
     .hero-right {
         min-height: 420px;
     }
-
 
     .hero-featured {
         padding: 18px;
     }
 
-
-    /* -------------------------------------------------------
-       SECTION LABEL
-       ------------------------------------------------------- */
-
     .section-label {
         margin-bottom: 32px;
     }
-
-
-    /* -------------------------------------------------------
-       PROJECTS
-       ------------------------------------------------------- */
 
     .work {
         padding: 40px 20px 80px;
     }
 
-
     .project-layout {
         display: grid;
-
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto auto;
-
         gap: 20px;
     }
-
 
     .project-bike {
         grid-column: 1;
         grid-row: 1;
     }
-
 
     .project-bike .project-image {
         width: 85%;
@@ -1241,12 +1071,10 @@ footer {
         aspect-ratio: 1 / 1;
     }
 
-
     .project-robot {
         grid-column: 2;
         grid-row: 1;
     }
-
 
     .project-robot .project-image {
         width: 100%;
@@ -1254,163 +1082,195 @@ footer {
         aspect-ratio: 1 / 1;
     }
 
-
     .project-paint {
         grid-column: 1;
         grid-row: 2;
     }
 
-
     .project-paint .project-image {
         height: 240px;
     }
-
 
     .project-wood {
         grid-column: 1;
         grid-row: 3;
     }
 
-
     .project-wood .project-image {
         height: 240px;
     }
-
 
     .project-papers {
         grid-column: 2;
         grid-row: 2 / span 2;
     }
 
-
     .project-papers .project-image {
         width: 100%;
         height: 500px;
     }
 
-
     .project-label {
         padding: 18px 24px 16px;
-
         font-size: 0.7rem;
     }
-
-
-    /* -------------------------------------------------------
-       ABOUT
-       ------------------------------------------------------- */
 
     .about {
         padding: 80px 20px;
     }
 
-
     .about-layout {
         gap: 40px;
     }
-
 
     .about-heading h2 {
         font-size: clamp(3rem, 15vw, 5rem);
     }
 
-
     .about-copy p {
         font-size: 1.25rem;
     }
-
-
-    /* -------------------------------------------------------
-       SHOP
-       ------------------------------------------------------- */
 
     .shop {
         padding: 80px 20px;
     }
 
-
     .shop-content h2 {
         font-size: clamp(3rem, 15vw, 5rem);
     }
-
-
-    /* -------------------------------------------------------
-       HOMEPAGE CONTACT
-       ------------------------------------------------------- */
 
     .contact {
         padding: 55px 20px;
     }
 
-
     .contact-content p {
         font-size: clamp(2rem, 11vw, 3.5rem);
     }
-
 
     .contact-content a {
         padding: 12px 20px;
     }
 
-
-    /* -------------------------------------------------------
-       CONTACT PAGE
-       ------------------------------------------------------- */
-
     .contact-page {
         min-height: calc(100vh - 65px);
-
         padding: 22px 20px 28px;
-
         display: block;
     }
 
-
     .contact-page h1 {
         margin-bottom: 20px;
-
         font-size: 2.4rem;
     }
-
 
     .form-field {
         margin-bottom: 13px;
     }
 
-
     .form-field label {
         margin-bottom: 4px;
-
         font-size: 0.76rem;
     }
-
 
     .form-field input {
         height: 38px;
     }
-
 
     .form-field textarea {
         height: 95px;
         min-height: 95px;
     }
 
-
     .contact-submit {
         padding: 9px 28px;
     }
 
+    /* Sewing page */
+    .sewing-page {
+        padding: 0 20px 50px;
+    }
 
-    /* -------------------------------------------------------
-       FOOTER
-       ------------------------------------------------------- */
+    .sewing-title {
+        padding: 18px 0 26px;
+        font-size: 2rem;
+    }
+
+    .sewing-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 22px 18px;
+    }
+
+    .sewing-intro {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .sewing-image-top {
+        grid-column: 1;
+        grid-row: auto;
+        width: 100%;
+        height: 170px;
+    }
+
+    .sewing-copy-top-right {
+        grid-column: 2;
+        grid-row: auto;
+        padding: 0;
+        align-self: center;
+    }
+
+    .sewing-image-large {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        width: 100%;
+        height: 300px;
+    }
+
+    .sewing-copy-center {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        justify-self: center;
+    }
+
+    .sewing-image-square {
+        grid-column: 2;
+        grid-row: auto;
+        width: 100%;
+        max-width: none;
+    }
+
+    .sewing-copy-bottom-left {
+        grid-column: 1;
+        grid-row: auto;
+        padding-left: 0;
+    }
+
+    .sewing-image-bag {
+        grid-column: 1;
+        grid-row: auto;
+        width: 100%;
+        height: 170px;
+        align-self: center;
+    }
+
+    .sewing-copy-bottom-right {
+        grid-column: 2;
+        grid-row: auto;
+        padding-left: 0;
+        align-self: center;
+    }
+
+    .sewing-copy {
+        font-size: 0.72rem;
+    }
 
     footer {
         flex-direction: column;
         align-items: flex-start;
-
         gap: 10px;
-
         padding: 24px 20px;
     }
 }
