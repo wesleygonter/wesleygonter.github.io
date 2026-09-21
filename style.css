@@ -1419,10 +1419,20 @@ footer {
    SEWING PAGE
    ========================================================= */
 
+body:has(.sewing-page) {
+    background: var(--brown);
+}
+
+
+/* =========================================================
+   SEWING PAGE — MAIN
+   ========================================================= */
+
 .sewing-page {
+    width: 100%;
+    padding: 0 48px 90px;
     background: var(--brown);
     color: var(--paper);
-    padding: 0 48px 90px;
 }
 
 
@@ -1430,42 +1440,48 @@ footer {
    SEWING INTRO
    ========================================================= */
 
-.sewing-intro {
+.sewing-page .sewing-intro {
+    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
     padding: 28px 0 55px;
     text-align: center;
 }
 
-.sewing-intro h1 {
+.sewing-page .sewing-intro h1 {
     margin: 0 0 4px;
+
     font-family: var(--serif);
     font-size: clamp(4rem, 8vw, 7rem);
     font-weight: 400;
     line-height: 0.9;
     letter-spacing: 0.02em;
+
     color: var(--cream);
 }
 
-.sewing-intro p {
+.sewing-page .sewing-intro p {
     max-width: 600px;
     margin: 14px auto 0;
+
     font-family: var(--sans);
     font-size: 0.82rem;
     line-height: 1.5;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+
     color: var(--cream);
 }
 
 
 /* =========================================================
-   PROJECT ROW
+   SEWING PROJECT ROWS
    ========================================================= */
 
-.sewing-project {
+.sewing-page .sewing-project {
     width: 100%;
     max-width: 1400px;
+
     margin: 0 auto 70px;
 
     display: grid;
@@ -1477,24 +1493,45 @@ footer {
 
 
 /* =========================================================
-   PROJECT IMAGE
+   IMAGE LEFT / TEXT RIGHT
    ========================================================= */
 
-.sewing-project-image {
+.sewing-page .sewing-project-image-left {
+    grid-template-columns: 1.05fr 0.95fr;
+}
+
+
+/* =========================================================
+   TEXT LEFT / IMAGE RIGHT
+   ========================================================= */
+
+.sewing-page .sewing-project-text-left {
+    grid-template-columns: 0.95fr 1.05fr;
+}
+
+
+/* =========================================================
+   SEWING IMAGES
+   ========================================================= */
+
+.sewing-page .sewing-project-image {
     width: 100%;
     overflow: hidden;
     background: var(--purple);
 }
 
-.sewing-project-image img {
+.sewing-page .sewing-project-image img {
     display: block;
+
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     transition: transform 0.4s ease;
 }
 
-.sewing-project:hover .sewing-project-image img {
+.sewing-page .sewing-project:hover .sewing-project-image img {
     transform: scale(1.015);
 }
 
@@ -1503,32 +1540,32 @@ footer {
    IMAGE PROPORTIONS
    ========================================================= */
 
-.sewing-landscape {
+.sewing-page .sewing-landscape {
     aspect-ratio: 4319 / 3458;
 }
 
-.sewing-square {
+.sewing-page .sewing-square {
     aspect-ratio: 1 / 1;
 }
 
-.sewing-portrait {
+.sewing-page .sewing-portrait {
     aspect-ratio: 3455 / 4319;
 }
 
-.sewing-bike-bag {
+.sewing-page .sewing-bike-bag {
     aspect-ratio: 1.25 / 1;
 }
 
 
 /* =========================================================
-   PROJECT TEXT
+   SEWING PROJECT TEXT
    ========================================================= */
 
-.sewing-project-text {
+.sewing-page .sewing-project-text {
     max-width: 480px;
 }
 
-.sewing-project-number {
+.sewing-page .sewing-project-number {
     display: block;
     margin-bottom: 10px;
 
@@ -1539,7 +1576,7 @@ footer {
     color: var(--cream);
 }
 
-.sewing-project-text h2 {
+.sewing-page .sewing-project-text h2 {
     margin: 0 0 18px;
 
     font-family: var(--serif);
@@ -1550,7 +1587,7 @@ footer {
     color: var(--cream);
 }
 
-.sewing-project-text p {
+.sewing-page .sewing-project-text p {
     max-width: 420px;
     margin: 0;
 
@@ -1564,20 +1601,7 @@ footer {
 
 
 /* =========================================================
-   ALTERNATING PROJECT SPACING
-   ========================================================= */
-
-.sewing-project-image-left {
-    grid-template-columns: 1.05fr 0.95fr;
-}
-
-.sewing-project-text-left {
-    grid-template-columns: 0.95fr 1.05fr;
-}
-
-
-/* =========================================================
-   MOBILE
+   SEWING PAGE — TABLET / MOBILE
    ========================================================= */
 
 @media (max-width: 800px) {
@@ -1586,42 +1610,38 @@ footer {
         padding: 0 20px 60px;
     }
 
-    .sewing-intro {
+    .sewing-page .sewing-intro {
         padding: 25px 0 40px;
     }
 
-    .sewing-intro h1 {
+    .sewing-page .sewing-intro h1 {
         font-size: 4rem;
     }
 
-    .sewing-intro p {
+    .sewing-page .sewing-intro p {
         font-size: 0.72rem;
         line-height: 1.45;
     }
 
-    .sewing-project,
-    .sewing-project-image-left,
-    .sewing-project-text-left {
+    .sewing-page .sewing-project,
+    .sewing-page .sewing-project-image-left,
+    .sewing-page .sewing-project-text-left {
         grid-template-columns: 1fr;
+
         gap: 24px;
         margin-bottom: 55px;
     }
 
-    .sewing-project-text {
+    .sewing-page .sewing-project-text {
         max-width: none;
         padding: 0 4px;
     }
 
-    .sewing-project-text h2 {
+    .sewing-page .sewing-project-text h2 {
         font-size: 2.5rem;
     }
 
-    /*
-       Keep the image first on mobile so the page reads
-       naturally from image → project information.
-    */
-
-    .sewing-project-text-left .sewing-project-image {
+    .sewing-page .sewing-project-text-left .sewing-project-image {
         order: -1;
     }
 
