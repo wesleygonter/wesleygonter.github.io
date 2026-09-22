@@ -658,124 +658,119 @@ a {
 
 
 /* =========================================================
-   SEWING PROJECT PAGE
+   SEWING PAGE
    ========================================================= */
 
 .sewing-page {
-    padding: 0 48px 70px;
-    background: var(--brown);
-    color: var(--paper);
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 12px 34px 90px;
 }
 
 .sewing-title {
-    margin: 0;
-    padding: 18px 0 24px;
+    margin: 0 0 36px;
+    color: var(--cream);
     font-family: var(--sans);
-    font-size: clamp(1.9rem, 3vw, 2.7rem);
+    font-size: clamp(2.7rem, 4.5vw, 4.6rem);
     font-weight: 400;
     line-height: 1;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     text-align: center;
-}
-
-.sewing-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(250px, 0.72fr) minmax(0, 1fr);
-    grid-template-rows: 235px 360px 190px;
-    column-gap: 48px;
-    row-gap: 22px;
-    max-width: 1250px;
-    margin: 0 auto;
-    align-items: center;
-}
-
-.sewing-copy {
-    font-family: var(--sans);
-    font-size: 0.86rem;
-    line-height: 1.25;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-}
-
-.sewing-copy p {
-    margin: 0;
 }
 
 .sewing-intro {
-    align-self: start;
-    padding-top: 28px;
-    max-width: 330px;
+    display: grid;
+    grid-template-columns: minmax(190px, 0.72fr) minmax(420px, 1.55fr) minmax(190px, 0.72fr);
+    align-items: center;
+    gap: clamp(22px, 3vw, 54px);
+    margin-bottom: 58px;
 }
 
-.sewing-copy-top-right {
-    align-self: start;
-    padding-top: 30px;
-    justify-self: start;
-}
-
-.sewing-copy-center {
+.sewing-intro-copy {
+    max-width: 320px;
     justify-self: center;
-    align-self: center;
-    text-align: center;
 }
 
-.sewing-copy-bottom-left {
-    justify-self: start;
-    align-self: center;
-    padding-left: 12px;
+.sewing-intro-copy p {
+    margin: 0;
+    font-size: clamp(0.78rem, 1vw, 0.95rem);
+    line-height: 1.42;
+    letter-spacing: 0.07em;
 }
 
-.sewing-copy-bottom-right {
-    justify-self: start;
-    align-self: center;
-    padding-left: 4px;
+.sewing-project {
+    min-width: 0;
 }
 
 .sewing-image {
-    margin: 0;
+    width: 100%;
     overflow: hidden;
+    line-height: 0;
     background: var(--cream);
 }
 
+/* Images retain their original proportions. Nothing is cropped. */
 .sewing-image img {
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
 }
 
-.sewing-image-top {
-    grid-column: 2;
-    grid-row: 1;
-    width: 250px;
-    height: 185px;
+.sewing-image-featured {
+    width: 100%;
+}
+
+.sewing-text-card {
+    width: min(260px, 82%);
+    padding: 20px 24px 22px;
+    border: 1px solid rgba(241, 234, 223, 0.65);
+    color: var(--cream);
+    text-align: center;
+}
+
+.sewing-text-card p {
+    margin: 10px 0 0;
+    font-family: var(--sans);
+    font-size: 0.76rem;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+}
+
+.sewing-card-title {
+    display: block;
+    font-size: 0.82rem;
+    letter-spacing: 0.11em;
+}
+
+.sewing-featured-card {
     justify-self: center;
 }
 
-.sewing-image-large {
-    grid-column: 1;
-    grid-row: 2;
-    width: min(100%, 390px);
-    height: 320px;
-    justify-self: center;
+.sewing-projects {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(34px, 5vw, 82px);
+    align-items: start;
 }
 
-.sewing-image-square {
-    grid-column: 3;
-    grid-row: 2;
-    width: min(100%, 330px);
-    aspect-ratio: 1 / 1;
-    justify-self: center;
+.sewing-wallet,
+.sewing-hip-pack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.sewing-image-bag {
-    grid-column: 2;
-    grid-row: 3;
-    width: 220px;
-    height: 165px;
-    justify-self: center;
-    align-self: start;
-    background: var(--purple);
+.sewing-wallet .sewing-text-card,
+.sewing-hip-pack .sewing-text-card {
+    margin-top: 18px;
+}
+
+.sewing-bottom-card {
+    display: flex;
+    justify-content: center;
+    margin-top: 38px;
 }
 
 
@@ -963,34 +958,32 @@ footer {
         max-width: 600px;
     }
 
-    /* Sewing page */
+    /* Sewing */
     .sewing-page {
-        padding: 0 32px 60px;
+        padding: 14px 24px 70px;
     }
 
-    .sewing-grid {
-        grid-template-columns: 1fr 0.85fr 1fr;
-        grid-template-rows: 210px 300px 165px;
-        column-gap: 28px;
-        row-gap: 20px;
+    .sewing-intro {
+        grid-template-columns: 1fr 1.65fr;
+        gap: 26px;
     }
 
-    .sewing-image-top {
-        width: 210px;
-        height: 155px;
+    .sewing-intro-copy {
+        order: 1;
     }
 
-    .sewing-image-large {
-        height: 280px;
+    .sewing-featured {
+        order: 2;
     }
 
-    .sewing-image-square {
-        width: min(100%, 260px);
+    .sewing-featured-card {
+        order: 3;
+        grid-column: 1 / -1;
+        margin: -4px auto 0;
     }
 
-    .sewing-image-bag {
-        width: 185px;
-        height: 140px;
+    .sewing-projects {
+        gap: 28px;
     }
 
     footer {
@@ -1184,87 +1177,50 @@ footer {
         padding: 9px 28px;
     }
 
-    /* Sewing page */
+    /* Sewing */
     .sewing-page {
-        padding: 0 20px 50px;
+        padding: 10px 16px 60px;
     }
 
     .sewing-title {
-        padding: 18px 0 26px;
-        font-size: 2rem;
-    }
-
-    .sewing-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-        gap: 22px 18px;
+        margin-bottom: 28px;
+        font-size: 2.5rem;
     }
 
     .sewing-intro {
-        grid-column: 1 / -1;
-        grid-row: auto;
-        padding: 0;
-        max-width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 22px;
+        margin-bottom: 42px;
     }
 
-    .sewing-image-top {
-        grid-column: 1;
-        grid-row: auto;
-        width: 100%;
-        height: 170px;
-    }
-
-    .sewing-copy-top-right {
-        grid-column: 2;
-        grid-row: auto;
-        padding: 0;
-        align-self: center;
-    }
-
-    .sewing-image-large {
-        grid-column: 1 / -1;
-        grid-row: auto;
-        width: 100%;
-        height: 300px;
-    }
-
-    .sewing-copy-center {
-        grid-column: 1 / -1;
-        grid-row: auto;
+    .sewing-intro-copy {
+        max-width: 420px;
         justify-self: center;
+        text-align: center;
     }
 
-    .sewing-image-square {
-        grid-column: 2;
-        grid-row: auto;
+    .sewing-featured {
         width: 100%;
-        max-width: none;
     }
 
-    .sewing-copy-bottom-left {
-        grid-column: 1;
-        grid-row: auto;
-        padding-left: 0;
+    .sewing-featured-card {
+        grid-column: auto;
+        margin: 0 auto;
     }
 
-    .sewing-image-bag {
-        grid-column: 1;
-        grid-row: auto;
-        width: 100%;
-        height: 170px;
-        align-self: center;
+    .sewing-projects {
+        grid-template-columns: 1fr;
+        gap: 38px;
     }
 
-    .sewing-copy-bottom-right {
-        grid-column: 2;
-        grid-row: auto;
-        padding-left: 0;
-        align-self: center;
+    .sewing-text-card {
+        width: min(280px, 90%);
+        padding: 18px 20px 20px;
     }
 
-    .sewing-copy {
-        font-size: 0.72rem;
+    .sewing-bottom-card {
+        margin-top: 38px;
     }
 
     footer {
