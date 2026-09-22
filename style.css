@@ -668,6 +668,10 @@ a {
     padding: 12px 34px 90px;
 }
 
+.sewing-page-inner {
+    width: 100%;
+}
+
 .sewing-title {
     margin: 0 0 36px;
     color: var(--cream);
@@ -679,172 +683,274 @@ a {
     text-align: center;
 }
 
-.sewing-intro {
+
+/* =========================================================
+   MAIN SEWING GRID
+   ========================================================= */
+
+.sewing-grid {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
     display: grid;
-    grid-template-columns: minmax(190px, 0.72fr) minmax(420px, 1.55fr) minmax(190px, 0.72fr);
+
+    /*
+       Left and right columns are intentionally
+       different widths so the center divider is
+       slightly off-center, matching the drawing.
+    */
+
+    grid-template-columns:
+        minmax(180px, 1.45fr)
+        28px
+        minmax(180px, 0.95fr);
+
+    grid-template-rows:
+        auto
+        auto
+        auto
+        auto;
+
+    column-gap: 0;
+    row-gap: 0;
+
     align-items: center;
-    gap: clamp(22px, 3vw, 54px);
-    margin-bottom: 58px;
 }
 
-.sewing-intro-copy {
-    max-width: 320px;
+
+/* =========================================================
+   TOP ROW
+   ========================================================= */
+
+.sewing-top-left {
+    grid-column: 1;
+    grid-row: 1;
+
+    width: 100%;
+    max-width: 210px;
+
+    justify-self: end;
+    align-self: center;
+
+    margin-right: 28px;
+}
+
+.sewing-bike-burrito {
+    grid-column: 2;
+    grid-row: 1;
+
+    width: 420px;
+    max-width: 420px;
+
     justify-self: center;
+    align-self: center;
+
+    background: var(--cream);
 }
 
-.sewing-intro-copy p {
+.sewing-bike-text {
+    grid-column: 3;
+    grid-row: 1;
+
+    width: 100%;
+    max-width: 210px;
+
+    justify-self: start;
+    align-self: center;
+
+    margin-left: 28px;
+}
+
+
+/* =========================================================
+   TOP ROW TEXT
+   ========================================================= */
+
+.sewing-intro p {
     margin: 0;
-    font-size: clamp(0.78rem, 1vw, 0.95rem);
-    line-height: 1.42;
-    letter-spacing: 0.07em;
+
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    line-height: 1.35;
+    letter-spacing: 0.045em;
 }
 
-.sewing-project {
-    min-width: 0;
+.sewing-project-text {
+    padding: 14px 18px 16px;
+
+    border: 1px solid rgba(241, 234, 223, 0.65);
+
+    color: var(--cream);
+    text-align: center;
 }
+
+.sewing-project-text h2 {
+    margin: 0;
+
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: 0.09em;
+}
+
+.sewing-project-text p {
+    margin: 9px 0 0;
+
+    font-family: var(--sans);
+    font-size: 0.58rem;
+    line-height: 1.35;
+    letter-spacing: 0.015em;
+}
+
+
+/* =========================================================
+   SEWING IMAGES
+   ========================================================= */
 
 .sewing-image {
-    width: 100%;
     overflow: hidden;
     line-height: 0;
     background: var(--cream);
 }
 
-/* Images retain their original proportions. Nothing is cropped. */
 .sewing-image img {
     display: block;
     width: 100%;
     height: auto;
+}
+
+
+/* =========================================================
+   MIDDLE ROW
+   HIP PACK + WALLET
+   ========================================================= */
+
+/*
+   Both images use the exact same height.
+
+   Width is calculated automatically from each image's
+   original aspect ratio, so neither image gets cropped
+   or stretched.
+*/
+
+
+/* -------------------------
+   HIP PACK
+   ------------------------- */
+
+.sewing-hip-pack {
+    grid-column: 1;
+    grid-row: 2;
+
+    width: 100%;
+
+    justify-self: center;
+    align-self: start;
+}
+
+.sewing-hip-pack img {
+    width: auto;
+    height: 300px;
+    max-width: 100%;
+
     object-fit: contain;
 }
 
-.sewing-image-featured {
+
+/* -------------------------
+   WALLET
+   ------------------------- */
+
+.sewing-wallet {
+    grid-column: 3;
+    grid-row: 2;
+
     width: 100%;
-}
 
-.sewing-text-card {
-    width: min(260px, 82%);
-    padding: 20px 24px 22px;
-    border: 1px solid rgba(241, 234, 223, 0.65);
-    color: var(--cream);
-    text-align: center;
-}
-
-.sewing-text-card p {
-    margin: 10px 0 0;
-    font-family: var(--sans);
-    font-size: 0.76rem;
-    line-height: 1.45;
-    letter-spacing: 0.02em;
-}
-
-.sewing-card-title {
-    display: block;
-    font-size: 0.82rem;
-    letter-spacing: 0.11em;
-}
-
-.sewing-featured-card {
     justify-self: center;
+    align-self: start;
 }
 
-.sewing-projects {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: clamp(34px, 5vw, 82px);
-    align-items: start;
-}
+.sewing-wallet img {
+    width: auto;
+    height: 300px;
+    max-width: 100%;
 
-.sewing-wallet,
-.sewing-hip-pack {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.sewing-wallet .sewing-text-card,
-.sewing-hip-pack .sewing-text-card {
-    margin-top: 18px;
-}
-
-.sewing-bottom-card {
-    display: flex;
-    justify-content: center;
-    margin-top: 38px;
+    object-fit: contain;
 }
 
 
 /* =========================================================
-   FOOTER
+   MIDDLE ROW TEXT
    ========================================================= */
 
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 24px 48px;
-    background: var(--brown-dark);
-    color: var(--paper);
-    border-top: 1px solid var(--line);
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
+.sewing-hip-text {
+    grid-column: 1;
+    grid-row: 3;
+
+    width: min(240px, 80%);
+
+    justify-self: center;
+    align-self: start;
+
+    margin-top: 12px;
+}
+
+.sewing-wallet-text {
+    grid-column: 3;
+    grid-row: 3;
+
+    width: min(210px, 80%);
+
+    justify-self: center;
+    align-self: start;
+
+    margin-top: 12px;
 }
 
 
 /* =========================================================
-   THANK YOU PAGE
+   BOTTOM ROW
+   BIKE BAG + PROCESS
    ========================================================= */
 
-.thank-you-page {
-    min-height: calc(100vh - 78px);
-    padding: 20px 48px;
-    background: var(--brown);
-    color: var(--paper);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+.sewing-bike-bag {
+    grid-column: 1;
+    grid-row: 4;
 
-.thank-you-content {
     width: 100%;
-    max-width: 700px;
-    text-align: center;
+    max-width: 520px;
+
+    justify-self: center;
+    align-self: start;
+
+    margin-top: 48px;
 }
 
-.thank-you-content h1 {
-    margin: 0 0 22px;
-    font-family: var(--sans);
-    font-size: clamp(3rem, 6vw, 5rem);
-    font-weight: 400;
-    line-height: 1;
-    letter-spacing: 0.06em;
-    color: var(--cream);
+.sewing-bike-bag img {
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
 }
 
-.thank-you-content p {
-    margin: 0 0 8px;
-    font-family: var(--serif);
-    font-size: clamp(1.4rem, 2.2vw, 2rem);
-    line-height: 1.1;
-    color: var(--cream);
-}
 
-.thank-you-link {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 12px 22px;
-    border: 1px solid var(--brown-dark);
-    background: var(--blue);
-    color: var(--cream);
-    font-family: var(--sans);
-    font-size: 0.78rem;
-    letter-spacing: 0.12em;
-    transition: background 0.2s ease, color 0.2s ease;
-}
+/* -------------------------
+   PROCESS
+   ------------------------- */
 
-.thank-you-link:hover {
-    background: var(--cream);
-    color: var(--brown-dark);
+.sewing-bottom-text {
+    grid-column: 3;
+    grid-row: 4;
+
+    width: min(210px, 80%);
+
+    justify-self: center;
+    align-self: center;
+
+    margin-top: 48px;
 }
 
 
@@ -958,32 +1064,44 @@ footer {
         max-width: 600px;
     }
 
-    /* Sewing */
+
+    /* =====================================================
+       SEWING — TABLET
+       ===================================================== */
+
     .sewing-page {
         padding: 14px 24px 70px;
     }
 
-    .sewing-intro {
-        grid-template-columns: 1fr 1.65fr;
-        gap: 26px;
+    .sewing-grid {
+        max-width: 760px;
+
+        grid-template-columns:
+            minmax(150px, 1.25fr)
+            24px
+            minmax(150px, 0.9fr);
     }
 
-    .sewing-intro-copy {
-        order: 1;
+    .sewing-bike-burrito {
+        width: 360px;
+        max-width: 360px;
     }
 
-    .sewing-featured {
-        order: 2;
+    .sewing-top-left {
+        margin-right: 22px;
     }
 
-    .sewing-featured-card {
-        order: 3;
-        grid-column: 1 / -1;
-        margin: -4px auto 0;
+    .sewing-bike-text {
+        margin-left: 22px;
     }
 
-    .sewing-projects {
-        gap: 28px;
+    .sewing-hip-pack img,
+    .sewing-wallet img {
+        height: 250px;
+    }
+
+    .sewing-bike-bag {
+        max-width: 400px;
     }
 
     footer {
@@ -1177,7 +1295,11 @@ footer {
         padding: 9px 28px;
     }
 
-    /* Sewing */
+
+    /* =====================================================
+       SEWING — MOBILE
+       ===================================================== */
+
     .sewing-page {
         padding: 10px 16px 60px;
     }
@@ -1187,41 +1309,133 @@ footer {
         font-size: 2.5rem;
     }
 
-    .sewing-intro {
+    .sewing-grid {
+        max-width: 440px;
+
         display: grid;
         grid-template-columns: 1fr;
-        gap: 22px;
-        margin-bottom: 42px;
+        grid-template-rows: auto;
+
+        row-gap: 24px;
     }
 
-    .sewing-intro-copy {
+
+    /* -------------------------
+       TOP ROW
+       ------------------------- */
+
+    .sewing-top-left {
+        grid-column: 1;
+        grid-row: 1;
+
         max-width: 420px;
-        justify-self: center;
+        margin: 0 auto;
+
         text-align: center;
     }
 
-    .sewing-featured {
-        width: 100%;
-    }
+    .sewing-bike-burrito {
+        grid-column: 1;
+        grid-row: 2;
 
-    .sewing-featured-card {
-        grid-column: auto;
+        width: 100%;
+        max-width: 420px;
         margin: 0 auto;
     }
 
-    .sewing-projects {
-        grid-template-columns: 1fr;
-        gap: 38px;
+    .sewing-bike-text {
+        grid-column: 1;
+        grid-row: 3;
+
+        max-width: 280px;
+        margin: 0 auto;
     }
 
-    .sewing-text-card {
+
+    /* -------------------------
+       HIP PACK
+       ------------------------- */
+
+    .sewing-hip-pack {
+        grid-column: 1;
+        grid-row: 4;
+
+        width: 100%;
+    }
+
+    .sewing-hip-pack img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+    }
+
+    .sewing-hip-text {
+        grid-column: 1;
+        grid-row: 5;
+
         width: min(280px, 90%);
-        padding: 18px 20px 20px;
+        margin: 0 auto;
     }
 
-    .sewing-bottom-card {
-        margin-top: 38px;
+
+    /* -------------------------
+       WALLET
+       ------------------------- */
+
+    .sewing-wallet {
+        grid-column: 1;
+        grid-row: 6;
+
+        width: 100%;
     }
+
+    .sewing-wallet img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+    }
+
+    .sewing-wallet-text {
+        grid-column: 1;
+        grid-row: 7;
+
+        width: min(280px, 90%);
+        margin: 0 auto;
+    }
+
+
+    /* -------------------------
+       BIKE BAG
+       ------------------------- */
+
+    .sewing-bike-bag {
+        grid-column: 1;
+        grid-row: 8;
+
+        width: 100%;
+        max-width: none;
+
+        margin-top: 24px;
+    }
+
+
+    /* -------------------------
+       PROCESS
+       ------------------------- */
+
+    .sewing-bottom-text {
+        grid-column: 1;
+        grid-row: 9;
+
+        width: min(280px, 90%);
+
+        margin: 0 auto;
+    }
+
+
+    /* -------------------------
+       FOOTER
+       ------------------------- */
 
     footer {
         flex-direction: column;
@@ -1229,4 +1443,61 @@ footer {
         gap: 10px;
         padding: 24px 20px;
     }
+}
+
+
+/* =========================================================
+   THANK YOU PAGE
+   ========================================================= */
+
+.thank-you-page {
+    min-height: calc(100vh - 78px);
+    padding: 20px 48px;
+    background: var(--brown);
+    color: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thank-you-content {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.thank-you-content h1 {
+    margin: 0 0 22px;
+    font-family: var(--sans);
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    color: var(--cream);
+}
+
+.thank-you-content p {
+    margin: 0 0 8px;
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 2.2vw, 2rem);
+    line-height: 1.1;
+    color: var(--cream);
+}
+
+.thank-you-link {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 22px;
+    border: 1px solid var(--brown-dark);
+    background: var(--blue);
+    color: var(--cream);
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.thank-you-link:hover {
+    background: var(--cream);
+    color: var(--brown-dark);
 }
