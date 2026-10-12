@@ -659,34 +659,25 @@ a {
 
 /* =========================================================
    SEWING PAGE
+   ---------------------------------------------------------
+   Layout idea: the page is three separate rows. Each row
+   handles its own alignment, so text boxes stay attached
+   to their images instead of depending on a shared grid.
+
+   ROW 1 (.sw-top):    intro | bike burrito | bike bag text
+   ROW 2 (.sw-middle): hip pack + text | wallet + text
+   ROW 3 (.sw-bottom): bike frame bag | text
    ========================================================= */
-
-/*
-   Overall page.
-
-   The sewing content is intentionally narrower than the
-   browser window so the composition feels like a designed
-   portfolio spread rather than stretching edge-to-edge.
-*/
 
 .sewing-page {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1180px;
     margin: 0 auto;
-    padding: 12px 40px 90px;
+    padding: 24px 40px 100px;
 }
-
-.sewing-page-inner {
-    width: 100%;
-}
-
-
-/* =========================================================
-   SEWING TITLE
-   ========================================================= */
 
 .sewing-title {
-    margin: 0 0 30px;
+    margin: 0 0 56px;
 
     color: var(--cream);
     font-family: var(--sans);
@@ -698,98 +689,34 @@ a {
 }
 
 
-/* =========================================================
-   MAIN SEWING GRID
-   ========================================================= */
+/* ---------------------------------------------------------
+   Shared pieces
+   --------------------------------------------------------- */
 
-/*
-   12-column grid lets the different pieces sit slightly
-   off-center, matching the hand-drawn layout.
-
-   TOP:
-   intro | bike burrito | bike bag text
-
-   MIDDLE:
-   large hip pack | small wallet
-
-   BOTTOM:
-   bike frame bag | process
-*/
-
-.sewing-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(12, minmax(0, 1fr));
-
-    column-gap: 26px;
-    row-gap: 44px;
-
-    align-items: start;
-
-    width: 100%;
+.sw-row {
+    max-width: 1000px;
+    margin: 0 auto 72px;
 }
 
-
-/* =========================================================
-   TOP ROW
-   ========================================================= */
-
-.sewing-top-left {
-    grid-column: 1 / span 3;
-    grid-row: 1;
-
-    align-self: center;
-
-    padding-right: 8px;
+.sw-row:last-child {
+    margin-bottom: 0;
 }
 
-.sewing-top-left p {
+.sw-photo {
     margin: 0;
-
-    font-family: var(--sans);
-    font-size: 0.68rem;
-    line-height: 1.35;
-    letter-spacing: 0.04em;
-}
-
-
-/* BIKE BURRITO */
-
-.sewing-bike-burrito {
-    grid-column: 5 / span 4;
-    grid-row: 1;
-
-    width: 100%;
     overflow: hidden;
 }
 
-.sewing-bike-burrito img {
+.sw-photo img {
     display: block;
     width: 100%;
     height: auto;
 }
 
-
-/* BIKE BAG TEXT */
-
-.sewing-bike-text {
-    grid-column: 10 / span 3;
-    grid-row: 1;
-
-    align-self: center;
-}
-
-
-/* =========================================================
-   PROJECT TEXT CARDS
-   ========================================================= */
-
-.sewing-project-text {
-    width: 100%;
-    max-width: 250px;
-
-    padding: 13px 16px 15px;
+/* Text box */
+.sw-card {
+    width: min(100%, 280px);
+    padding: 16px 20px 18px;
 
     border: 1px solid rgba(241, 234, 223, 0.65);
 
@@ -797,154 +724,188 @@ a {
     text-align: center;
 }
 
-.sewing-project-text h2 {
+.sw-card h2 {
     margin: 0 0 8px;
 
     font-family: var(--sans);
-    font-size: 0.68rem;
+    font-size: 0.8rem;
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: 0.09em;
 }
 
-.sewing-project-text p {
+.sw-card p {
     margin: 0;
 
     font-family: var(--sans);
-    font-size: 0.58rem;
-    line-height: 1.4;
+    font-size: 0.75rem;
+    line-height: 1.5;
     letter-spacing: 0.015em;
 }
 
 
-/* =========================================================
-   MIDDLE ROW
-   ========================================================= */
+/* ---------------------------------------------------------
+   ROW 1 — intro | bike burrito | bike bag text
+   --------------------------------------------------------- */
 
-/*
-   Both images use the SAME HEIGHT.
+.sw-top {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 1.15fr) 1fr;
+    gap: clamp(24px, 4vw, 56px);
+    align-items: center;
+}
 
-   Their widths are determined by their natural image ratios,
-   so neither image gets stretched or cropped.
+.sw-intro {
+    margin: 0;
 
-   The columns intentionally aren't equal, which creates the
-   slightly off-center divider from the drawing.
-*/
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+}
 
-
-/* HIP PACK — LEFT */
-
-.sewing-hip-pack {
-    grid-column: 1 / span 7;
-    grid-row: 2;
-
-    width: fit-content;
-    max-width: 100%;
-
-    height: 280px;
-
+.sw-top .sw-card {
     justify-self: start;
-    overflow: hidden;
-}
-
-.sewing-hip-pack img {
-    display: block;
-
-    height: 280px;
-    width: auto;
-    max-width: none;
-
-    object-fit: contain;
 }
 
 
-/* HIP PACK TEXT */
+/* ---------------------------------------------------------
+   ROW 2 — hip pack + wallet, same height, text below each
 
-.sewing-hip-text {
-    grid-column: 3 / span 4;
-    grid-row: 3;
+   Each item gets a width proportional to its photo's
+   aspect ratio (width ÷ height), set with --ratio in the
+   HTML. That makes both photos exactly the same height at
+   every screen size without cropping or stretching.
+   --------------------------------------------------------- */
 
-    justify-self: center;
+.sw-middle {
+    max-width: 840px;
 
-    margin-top: -22px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: clamp(20px, 3vw, 40px);
 }
 
+.sw-item {
+    flex: var(--ratio, 1) 1 0%;
+    min-width: 0;
 
-/* WALLET — RIGHT */
-
-.sewing-wallet {
-    grid-column: 8 / span 5;
-    grid-row: 2;
-
-    width: fit-content;
-    max-width: 100%;
-
-    height: 280px;
-
-    justify-self: end;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.sewing-wallet img {
-    display: block;
-
-    height: 280px;
-    width: auto;
-    max-width: none;
-
-    object-fit: contain;
-}
-
-
-/* WALLET TEXT */
-
-.sewing-wallet-text {
-    grid-column: 9 / span 3;
-    grid-row: 3;
-
-    justify-self: center;
-
-    margin-top: -22px;
-}
-
-
-/* =========================================================
-   BOTTOM ROW
-   ========================================================= */
-
-/*
-   Bike frame bag sits on the left.
-   Process card sits to its right.
-*/
-
-.sewing-bike-bag {
-    grid-column: 2 / span 6;
-    grid-row: 4;
-
+.sw-item .sw-photo {
     width: 100%;
-
-    overflow: hidden;
 }
 
-.sewing-bike-bag img {
-    display: block;
+/* aspect-ratio keeps the frame correct even if --ratio is
+   slightly off (the photo crops a hair instead of warping) */
+.sw-item .sw-photo img {
+    aspect-ratio: var(--ratio, 1);
+    object-fit: cover;
+}
 
-    width: 100%;
-    height: auto;
+.sw-item .sw-card {
+    margin-top: 22px;
+}
+
+/* Sketch has the hip pack text sitting left of center */
+.sw-hip .sw-card {
+    align-self: flex-start;
+    margin-left: 10%;
 }
 
 
-/* PROCESS */
+/* ---------------------------------------------------------
+   ROW 3 — bike frame bag | text
+   --------------------------------------------------------- */
 
-.sewing-bottom-text {
-    grid-column: 9 / span 3;
-    grid-row: 4;
+.sw-bottom {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: clamp(24px, 4vw, 56px);
+    align-items: center;
 
-    align-self: center;
+    max-width: 920px;
+}
 
+.sw-bottom .sw-card {
     justify-self: start;
+}
 
-    margin-top: 0;
+/* The bike frame bag photo is tall (3:4) with the bike in its
+   lower half, so crop it to a 5:4 frame anchored near the
+   bottom. Raise the second number in object-position (95%)
+   toward 100% to show more ground, or lower it to show
+   more wall above the bike. */
+.sw-bottom .sw-photo img {
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    object-position: center 95%;
+}
+
+
+/* ---------------------------------------------------------
+   SEWING — MOBILE (everything stacks in one column)
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .sewing-page {
+        padding: 10px 20px 60px;
+    }
+
+    .sewing-title {
+        margin-bottom: 36px;
+        font-size: 2.5rem;
+    }
+
+    .sw-row {
+        margin-bottom: 48px;
+    }
+
+    .sw-top,
+    .sw-bottom {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .sw-intro {
+        text-align: center;
+    }
+
+    .sw-top .sw-card,
+    .sw-bottom .sw-card {
+        justify-self: center;
+    }
+
+    /* Keep photo order natural: image first, then its text */
+    .sw-top .sw-photo {
+        order: 1;
+    }
+
+    .sw-top .sw-card {
+        order: 2;
+    }
+
+    .sw-middle {
+        flex-direction: column;
+        align-items: center;
+        gap: 48px;
+    }
+
+    .sw-item {
+        flex: none;
+        width: 100%;
+        max-width: 460px;
+    }
+
+    .sw-hip .sw-card {
+        align-self: center;
+        margin-left: 0;
+    }
 }
 
 
@@ -1136,60 +1097,6 @@ footer {
         max-width: 600px;
     }
 
-
-    /* =====================================================
-       SEWING — TABLET
-       ===================================================== */
-
-    .sewing-page {
-        max-width: 100%;
-        padding: 14px 30px 70px;
-    }
-
-    .sewing-grid {
-        column-gap: 20px;
-        row-gap: 36px;
-    }
-
-    .sewing-top-left {
-        grid-column: 1 / span 3;
-    }
-
-    .sewing-bike-burrito {
-        grid-column: 4 / span 5;
-    }
-
-    .sewing-bike-text {
-        grid-column: 10 / span 3;
-    }
-
-    .sewing-hip-pack {
-        grid-column: 1 / span 7;
-        height: 220px;
-    }
-
-    .sewing-hip-pack img {
-        height: 220px;
-    }
-
-    .sewing-wallet {
-        grid-column: 8 / span 5;
-        height: 220px;
-    }
-
-    .sewing-wallet img {
-        height: 220px;
-    }
-
-    .sewing-bike-bag {
-        grid-column: 1 / span 7;
-    }
-
-    .sewing-bottom-text {
-        grid-column: 9 / span 3;
-    }
-
-
     footer {
         padding: 24px 32px;
     }
@@ -1380,87 +1287,6 @@ footer {
     .contact-submit {
         padding: 9px 28px;
     }
-
-
-    /* =====================================================
-       SEWING — MOBILE
-       ===================================================== */
-
-    .sewing-page {
-        padding: 10px 20px 60px;
-    }
-
-    .sewing-title {
-        margin-bottom: 28px;
-        font-size: 2.5rem;
-    }
-
-    .sewing-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        row-gap: 30px;
-    }
-
-    .sewing-top-left,
-    .sewing-bike-burrito,
-    .sewing-bike-text,
-    .sewing-hip-pack,
-    .sewing-hip-text,
-    .sewing-wallet,
-    .sewing-wallet-text,
-    .sewing-bike-bag,
-    .sewing-bottom-text {
-        grid-column: 1;
-        grid-row: auto;
-    }
-
-    .sewing-top-left {
-        text-align: center;
-        padding: 0;
-    }
-
-    .sewing-bike-burrito {
-        width: 100%;
-    }
-
-    .sewing-bike-text,
-    .sewing-hip-text,
-    .sewing-wallet-text,
-    .sewing-bottom-text {
-        justify-self: center;
-        margin-top: -14px;
-    }
-
-    .sewing-hip-pack,
-    .sewing-wallet {
-        width: 100%;
-        height: auto;
-        justify-self: center;
-    }
-
-    .sewing-hip-pack img,
-    .sewing-wallet img {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-    }
-
-    .sewing-bike-bag {
-        width: 100%;
-    }
-
-    .sewing-project-text {
-        max-width: 280px;
-    }
-
-    .sewing-project-text h2 {
-        font-size: 0.72rem;
-    }
-
-    .sewing-project-text p {
-        font-size: 0.62rem;
-    }
-
 
     footer {
         flex-direction: column;
