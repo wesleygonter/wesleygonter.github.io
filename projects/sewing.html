@@ -53,169 +53,104 @@
 
 <main class="sewing-page">
 
-    <div class="sewing-page-inner">
-
-        <!-- PAGE TITLE -->
-
-        <h1 class="sewing-title">
-            SEWING
-        </h1>
+    <h1 class="sewing-title">SEWING</h1>
 
 
-        <!-- =================================================
-             TOP ROW
-             ================================================= -->
+    <!-- =====================================================
+         ROW 1: intro | bike burrito | bike bag text
+         ===================================================== -->
 
-        <section class="sewing-grid">
+    <section class="sw-row sw-top">
+
+        <p class="sw-intro">
+            SHORT SEWING INTRODUCTION TO MY SEWING
+            WORK, FOCUSED ON MAKING USEFUL
+            OBJECTS, EXPERIMENTING WITH
+            DIFFERENT FABRICS, AND LEARNING
+            THE PROCESS OF BUILDING EACH PIECE
+            BY HAND.
+        </p>
+
+        <figure class="sw-photo">
+            <img src="../images/BikeBurrito.JPG" alt="Bike Burrito sewing project">
+        </figure>
+
+        <div class="sw-card">
+            <h2>BIKE BAG</h2>
+            <p>
+                A handmade bag built around practical use, material
+                experimentation, and patchwork construction.
+            </p>
+        </div>
+
+    </section>
 
 
-            <!-- INTRO -->
+    <!-- =====================================================
+         ROW 2: hip pack + wallet (same height, text below)
 
-            <div class="sewing-intro sewing-top-left">
+         --ratio is each photo's width ÷ height.
+         Example: a 4000 x 3000 photo is 1.33,
+                  a 3000 x 4000 photo is 0.75.
+         These are set to your current photos (hip pack 1:1,
+         wallet 0.8). Update them if you swap in new photos.
+         ===================================================== -->
 
+    <section class="sw-row sw-middle">
+
+        <div class="sw-item sw-hip" style="--ratio: 1;">
+            <figure class="sw-photo">
+                <img src="../images/HipPack.JPG" alt="Hip Pack sewing project">
+            </figure>
+
+            <div class="sw-card">
+                <h2>HIP PACK</h2>
                 <p>
-                    SHORT SEWING INTRODUCTION TO MY SEWING
-                    WORK, FOCUSED ON MAKING USEFUL
-                    OBJECTS, EXPERIMENTING WITH
-                    DIFFERENT FABRICS, AND LEARNING
-                    THE PROCESS OF BUILDING EACH PIECE
-                    BY HAND.
-                </p>
-
-            </div>
-
-
-            <!-- BIKE BURRITO IMAGE -->
-
-            <div class="sewing-image sewing-bike-burrito">
-
-                <img
-                    src="../images/BikeBurrito.JPG"
-                    alt="Bike Burrito sewing project"
-                >
-
-            </div>
-
-
-            <!-- BIKE BAG TEXT -->
-
-            <div class="sewing-project-text sewing-bike-text">
-
-                <h2>
-                    BIKE BAG
-                </h2>
-
-                <p>
-                    A handmade bag built around
-                    practical use, material
-                    experimentation, and patchwork
+                    A compact everyday piece combining reclaimed
+                    materials, hand detailing, and practical
                     construction.
                 </p>
-
             </div>
+        </div>
 
+        <div class="sw-item sw-wallet" style="--ratio: 0.8;">
+            <figure class="sw-photo">
+                <img src="../images/Wallet.JPG" alt="Wallet sewing project">
+            </figure>
 
-            <!-- =================================================
-                 MIDDLE ROW
-                 ================================================= -->
-
-
-            <!-- HIP PACK IMAGE -->
-
-            <div class="sewing-image sewing-hip-pack">
-
-                <img
-                    src="../images/HipPack.JPG"
-                    alt="Hip Pack sewing project"
-                >
-
-            </div>
-
-
-            <!-- HIP PACK TEXT -->
-
-            <div class="sewing-project-text sewing-hip-text">
-
-                <h2>
-                    HIP PACK
-                </h2>
-
+            <div class="sw-card">
+                <h2>WALLET</h2>
                 <p>
-                    A compact everyday piece combining
-                    reclaimed materials, hand detailing,
-                    and practical construction.
+                    A small sewing project exploring contrasting
+                    fabric, geometric forms, and functional
+                    construction.
                 </p>
-
             </div>
+        </div>
+
+    </section>
 
 
-            <!-- WALLET IMAGE -->
+    <!-- =====================================================
+         ROW 3: bike frame bag | text
+         ===================================================== -->
 
-            <div class="sewing-image sewing-wallet">
+    <section class="sw-row sw-bottom">
 
-                <img
-                    src="../images/Wallet.JPG"
-                    alt="Wallet sewing project"
-                >
+        <figure class="sw-photo">
+            <img src="../images/BikeBagHomePage.JPG" alt="Bike frame bag sewing project">
+        </figure>
 
-            </div>
+        <div class="sw-card">
+            <h2>PROCESS</h2>
+            <p>
+                Sewing has become a way to work through design
+                physically, from sketching and material choices
+                to finished objects.
+            </p>
+        </div>
 
-
-            <!-- WALLET TEXT -->
-
-            <div class="sewing-project-text sewing-wallet-text">
-
-                <h2>
-                    WALLET
-                </h2>
-
-                <p>
-                    A small sewing project exploring
-                    contrasting fabric, geometric
-                    forms, and functional construction.
-                </p>
-
-            </div>
-
-
-            <!-- =================================================
-                 BOTTOM ROW
-                 ================================================= -->
-
-
-            <!-- BIKE FRAME BAG -->
-
-            <div class="sewing-image sewing-bike-bag">
-
-                <img
-                    src="../images/BikeBagHomePage.JPG"
-                    alt="Bike frame bag sewing project"
-                >
-
-            </div>
-
-
-            <!-- PROCESS -->
-
-            <div class="sewing-project-text sewing-bottom-text">
-
-                <h2>
-                    PROCESS
-                </h2>
-
-                <p>
-                    Sewing has become a way to work
-                    through design physically, from
-                    sketching and material choices
-                    to finished objects.
-                </p>
-
-            </div>
-
-
-        </section>
-
-    </div>
+    </section>
 
 </main>
 
@@ -226,13 +161,9 @@
 
 <footer>
 
-    <span>
-        WES GONTER © 2026
-    </span>
+    <span>WES GONTER © 2026</span>
 
-    <span>
-        DESIGN / ENGINEERING / MAKING
-    </span>
+    <span>DESIGN / ENGINEERING / MAKING</span>
 
 </footer>
 
