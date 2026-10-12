@@ -660,32 +660,55 @@ a {
 /* =========================================================
    SEWING PAGE
    ---------------------------------------------------------
-   Layout idea: the page is three separate rows. Each row
-   handles its own alignment, so text boxes stay attached
-   to their images instead of depending on a shared grid.
+   Compact layout, built to need as little scrolling as
+   possible while keeping the same look and feel:
 
-   ROW 1 (.sw-top):    intro | bike burrito | bike bag text
-   ROW 2 (.sw-middle): hip pack + text | wallet + text
-   ROW 3 (.sw-bottom): bike frame bag | text
+   TOP:     title + intro, centered
+   GALLERY: bike burrito | hip pack | wallet
+            (one shared photo height, text under each)
+   BOTTOM:  bike frame bag | process text
+
+   Desktop: all three gallery photos sit in one row.
+   Tablet:  burrito on top, hip pack + wallet side by side.
+   Phone:   single column.
    ========================================================= */
 
 .sewing-page {
     width: 100%;
-    max-width: 1180px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 24px 40px 100px;
+    padding: 20px 40px 56px;
+}
+
+
+/* ---------------------------------------------------------
+   Title + intro
+   --------------------------------------------------------- */
+
+.sw-head {
+    max-width: 760px;
+    margin: 0 auto 32px;
+    text-align: center;
 }
 
 .sewing-title {
-    margin: 0 0 56px;
+    margin: 0 0 14px;
 
     color: var(--cream);
     font-family: var(--sans);
-    font-size: clamp(2.7rem, 4.5vw, 4.6rem);
+    font-size: clamp(2.4rem, 4vw, 3.8rem);
     font-weight: 400;
     line-height: 1;
     letter-spacing: 0.04em;
-    text-align: center;
+}
+
+.sw-intro {
+    margin: 0;
+
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
 }
 
 
@@ -694,8 +717,8 @@ a {
    --------------------------------------------------------- */
 
 .sw-row {
-    max-width: 1000px;
-    margin: 0 auto 72px;
+    max-width: 960px;
+    margin: 0 auto 40px;
 }
 
 .sw-row:last-child {
@@ -716,7 +739,7 @@ a {
 /* Text box */
 .sw-card {
     width: min(100%, 280px);
-    padding: 16px 20px 18px;
+    padding: 14px 18px 16px;
 
     border: 1px solid rgba(241, 234, 223, 0.65);
 
@@ -725,7 +748,7 @@ a {
 }
 
 .sw-card h2 {
-    margin: 0 0 8px;
+    margin: 0 0 6px;
 
     font-family: var(--sans);
     font-size: 0.8rem;
@@ -745,46 +768,19 @@ a {
 
 
 /* ---------------------------------------------------------
-   ROW 1 — intro | bike burrito | bike bag text
-   --------------------------------------------------------- */
-
-.sw-top {
-    display: grid;
-    grid-template-columns: 1fr minmax(0, 1.15fr) 1fr;
-    gap: clamp(24px, 4vw, 56px);
-    align-items: center;
-}
-
-.sw-intro {
-    margin: 0;
-
-    font-family: var(--sans);
-    font-size: 0.8rem;
-    line-height: 1.6;
-    letter-spacing: 0.04em;
-}
-
-.sw-top .sw-card {
-    justify-self: start;
-}
-
-
-/* ---------------------------------------------------------
-   ROW 2 — hip pack + wallet, same height, text below each
+   GALLERY — three photos, one shared height
 
    Each item gets a width proportional to its photo's
    aspect ratio (width ÷ height), set with --ratio in the
-   HTML. That makes both photos exactly the same height at
-   every screen size without cropping or stretching.
+   HTML. That makes all three photos exactly the same
+   height at every screen size, with no stretching.
    --------------------------------------------------------- */
 
-.sw-middle {
-    max-width: 840px;
-
+.sw-gallery {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    gap: clamp(20px, 3vw, 40px);
+    gap: clamp(16px, 2.4vw, 28px);
 }
 
 .sw-item {
@@ -808,103 +804,113 @@ a {
 }
 
 .sw-item .sw-card {
-    margin-top: 22px;
+    margin-top: 14px;
 }
 
-/* Sketch has the hip pack text sitting left of center */
-.sw-hip .sw-card {
-    align-self: flex-start;
-    margin-left: 10%;
+/* Small drop on the middle item keeps the staggered,
+   hand-placed feel of the original sketch.
+   Set to 0 for a perfectly straight row. */
+.sw-hip {
+    margin-top: 24px;
 }
 
 
 /* ---------------------------------------------------------
-   ROW 3 — bike frame bag | text
+   BOTTOM — bike frame bag | text
    --------------------------------------------------------- */
 
 .sw-bottom {
     display: grid;
-    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-    gap: clamp(24px, 4vw, 56px);
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: clamp(24px, 4vw, 48px);
     align-items: center;
-
-    max-width: 920px;
 }
 
 .sw-bottom .sw-card {
-    justify-self: start;
+    justify-self: center;
 }
 
 /* The bike frame bag photo is tall (3:4) with the bike in its
-   lower half, so crop it to a 5:4 frame anchored near the
-   bottom. Raise the second number in object-position (95%)
+   lower half, so crop it to a 3:2 frame anchored near the
+   bottom. Raise the second number in object-position (92%)
    toward 100% to show more ground, or lower it to show
    more wall above the bike. */
 .sw-bottom .sw-photo img {
-    aspect-ratio: 5 / 4;
+    aspect-ratio: 3 / 2;
     object-fit: cover;
-    object-position: center 95%;
+    object-position: center 92%;
 }
 
 
 /* ---------------------------------------------------------
-   SEWING — MOBILE (everything stacks in one column)
+   SEWING — TABLET
+   Burrito on its own row, hip pack + wallet side by side.
+   (Column sizes 1fr / 0.8fr match those two photos' ratios;
+   change them if you change the photos.)
    --------------------------------------------------------- */
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
 
     .sewing-page {
-        padding: 10px 20px 60px;
+        padding: 16px 28px 48px;
+    }
+
+    .sw-gallery {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+        gap: 20px;
+        max-width: 560px;
+    }
+
+    .sw-burrito {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: min(100%, 440px);
+    }
+
+    .sw-hip {
+        margin-top: 0;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   SEWING — PHONE
+   Everything in a single column, with tighter spacing.
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .sewing-page {
+        padding: 12px 20px 40px;
     }
 
     .sewing-title {
-        margin-bottom: 36px;
-        font-size: 2.5rem;
+        font-size: 2.3rem;
+    }
+
+    .sw-head {
+        margin-bottom: 24px;
     }
 
     .sw-row {
-        margin-bottom: 48px;
+        margin-bottom: 32px;
     }
 
-    .sw-top,
-    .sw-bottom {
+    .sw-gallery {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 28px;
     }
 
-    .sw-intro {
-        text-align: center;
-    }
-
-    .sw-top .sw-card,
-    .sw-bottom .sw-card {
+    .sw-gallery .sw-item {
+        width: 100%;
+        max-width: 420px;
         justify-self: center;
     }
 
-    /* Keep photo order natural: image first, then its text */
-    .sw-top .sw-photo {
-        order: 1;
-    }
-
-    .sw-top .sw-card {
-        order: 2;
-    }
-
-    .sw-middle {
-        flex-direction: column;
-        align-items: center;
-        gap: 48px;
-    }
-
-    .sw-item {
-        flex: none;
-        width: 100%;
-        max-width: 460px;
-    }
-
-    .sw-hip .sw-card {
-        align-self: center;
-        margin-left: 0;
+    .sw-bottom {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 }
 
