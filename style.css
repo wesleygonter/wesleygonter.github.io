@@ -819,7 +819,7 @@ a {
    color: var(--blue), var(--green), var(--espresso), etc. */
 .sw-panel {
     background: var(--purple);
-    border-color: var(--brown-dark);
+    border-color: var(--purple);
 }
 
 
