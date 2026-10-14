@@ -1155,6 +1155,254 @@ a {
 
 
 /* =========================================================
+   ACADEMIC PAPERS PAGE
+   ---------------------------------------------------------
+   A simple stacked list. Each paper is one row:
+   cover image on the left, bordered text box on the right
+   (title, source, short abstract, and PDF buttons).
+
+   To add a paper, copy an <article class="pp-entry"> block in
+   papers.html. Nothing in this CSS needs to change.
+
+   Desktop: cover beside text.
+   Phone:   cover above text.
+   ========================================================= */
+
+.papers-page {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 20px 40px 56px;
+}
+
+
+/* ---------------------------------------------------------
+   Title + intro
+   --------------------------------------------------------- */
+
+.pp-head {
+    max-width: 760px;
+    margin: 0 auto 32px;
+    text-align: center;
+}
+
+.papers-title {
+    margin: 0 0 14px;
+
+    color: var(--cream);
+    font-family: var(--sans);
+    font-size: clamp(2.4rem, 4vw, 3.8rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.04em;
+}
+
+.pp-intro {
+    margin: 0;
+
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+}
+
+
+/* ---------------------------------------------------------
+   List and entries
+   --------------------------------------------------------- */
+
+.pp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.pp-entry {
+    display: grid;
+    grid-template-columns: minmax(0, 0.38fr) minmax(0, 1fr);
+    gap: clamp(20px, 3vw, 36px);
+    align-items: center;
+
+    /* Same padding and a transparent border on every entry, so
+       adding a colored panel never changes the layout. */
+    padding: 18px;
+    border: 1px solid transparent;
+}
+
+/* Colored box around a paper. Add class "pp-panel" to an
+   <article>. To change the color, swap var(--purple) for
+   var(--blue), var(--green), var(--espresso), etc. */
+.pp-panel {
+    background: var(--purple);
+    border-color: var(--brown-dark);
+}
+
+
+/* ---------------------------------------------------------
+   Cover image
+   Sized like a letter-size page. If the image is missing, the
+   cream box with "PDF" shows instead.
+   --------------------------------------------------------- */
+
+.pp-thumb {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+
+    aspect-ratio: 8.5 / 11;
+    background: var(--cream);
+    border: 1px solid var(--line);
+}
+
+.pp-thumb::before {
+    content: "PDF";
+
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--brown-light);
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+}
+
+.pp-thumb img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+
+/* ---------------------------------------------------------
+   Text box
+   --------------------------------------------------------- */
+
+.pp-card {
+    padding: 22px 26px 24px;
+
+    border: 1px solid rgba(241, 234, 223, 0.65);
+
+    color: var(--cream);
+}
+
+.pp-meta {
+    margin: 0 0 10px;
+
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    opacity: 0.8;
+}
+
+.pp-card h2 {
+    margin: 0 0 14px;
+
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.pp-abstract {
+    margin: 0 0 20px;
+
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    letter-spacing: 0.015em;
+}
+
+.pp-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.pp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    border: 1px solid var(--brown-dark);
+    background: var(--blue);
+    color: var(--cream);
+
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+
+    transition: opacity 0.2s ease;
+}
+
+.pp-button:hover {
+    opacity: 0.85;
+}
+
+
+/* ---------------------------------------------------------
+   PAPERS — TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .papers-page {
+        padding: 16px 28px 48px;
+    }
+
+    .pp-entry {
+        grid-template-columns: minmax(0, 0.45fr) minmax(0, 1fr);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   PAPERS — PHONE
+   Cover on top, text underneath.
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .papers-page {
+        padding: 12px 20px 40px;
+    }
+
+    .papers-title {
+        font-size: 2.3rem;
+    }
+
+    .pp-head {
+        margin-bottom: 24px;
+    }
+
+    .pp-entry {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 14px;
+    }
+
+    .pp-thumb {
+        width: min(100%, 240px);
+        justify-self: center;
+    }
+
+    .pp-card {
+        padding: 18px 18px 20px;
+    }
+}
+
+
+/* =========================================================
    FOOTER
    ========================================================= */
 
