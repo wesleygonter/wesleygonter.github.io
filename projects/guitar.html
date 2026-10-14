@@ -1,229 +1,410 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>8-String Electric Guitar — Wes Gonter</title>
+    <title>Guitar — Wes Gonter</title>
 
-    <link rel="stylesheet" href="../style.css">
-
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS is one folder above guitar.html -->
+    <link rel="stylesheet" href="../style.css">
 </head>
+
 
 <body>
 
-<header class="site-header">
-    <a href="../index.html" class="logo">WES GONTER</a>
 
-    <nav>
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="site-header">
+
+    <nav class="nav-left">
         <a href="../index.html#work">WORK</a>
         <a href="../index.html#about">ABOUT</a>
-        <a href="../index.html#shop">SHOP</a>
     </nav>
+
+    <a href="../index.html" class="logo">
+        WES GONTER
+    </a>
+
+    <nav class="nav-right">
+        <a href="../index.html#shop">SHOP</a>
+        <a href="../contact.html">CONTACT</a>
+    </nav>
+
 </header>
 
 
-<main class="project-page">
+<!-- =========================================================
+     GUITAR PAGE
 
-    <!-- INTRO -->
-    <section class="project-intro">
+     IMAGE FILE NAMES: every <img> below points to ../images/.
+     Rename the files to match, or change the src values.
+       Fusion360_V1.png      Fusion screenshot, first guitar
+       CNC_Neck_V1.JPG       CNC cutting the first neck
+       GlueUp_V1.JPG         first body + neck, clamped
+       Guitar_V1_Wall.JPG    finished first guitar on the wall
+       Fusion360_V2.png      Fusion screenshot, second guitar
+       CNC_Body_V2.JPG       CNC cutting the second body
+       Raw_V2.JPG            second guitar, bare maple
+       Stained_V2.JPG        second guitar, stained and fretted
+       Guitar_V2_Carpet.JPG  finished second guitar, flat
+       Guitar_V2_Wall.JPG    finished second guitar on the wall
+     ========================================================= -->
 
-        <p class="eyebrow">DESIGN / ENGINEERING / MAKING</p>
+<main class="guitar-page">
 
-        <h1>
-            8-String<br>
-            Electric Guitar
-        </h1>
 
-        <p class="project-description">
-            A fully custom electric guitar designed and manufactured
-            from concept through functional prototype.
+    <!-- =====================================================
+         TITLE + INTRO
+         ===================================================== -->
+
+    <div class="gt-head">
+
+        <p class="gt-kicker">FEATURED PROJECT</p>
+
+        <h1 class="guitar-title">THE EIGHT-STRING</h1>
+
+        <p class="gt-intro">
+            A MULTI-YEAR BUILD OF A FULLY CUSTOM 8-STRING ELECTRIC
+            GUITAR, FROM A BLANK CAD SKETCH TO A PLAYABLE
+            INSTRUMENT. THEN I BUILT IT ALL AGAIN, THIS TIME WITH
+            EVERYTHING THE FIRST ONE TAUGHT ME.
         </p>
 
-        <div class="project-meta">
-            <div>
-                <span>ROLE</span>
-                Design · CAD · Manufacturing
+        <ul class="gt-facts">
+            <li><strong>2</strong> VERSIONS</li>
+            <li><strong>8</strong> STRINGS</li>
+            <li><strong>FUSION 360</strong> CAD + CAM</li>
+            <li><strong>3-AXIS</strong> CNC</li>
+        </ul>
+
+    </div>
+
+
+    <!-- =====================================================
+         CHAPTER 1: DESIGN (version 1 CAD)
+         ===================================================== -->
+
+    <section class="gt-chapter gt-wide">
+
+        <div class="gt-media gt-panel">
+            <figure class="gt-photo">
+                <img src="../images/Fusion360_V1.png" alt="Fusion 360 model of the first guitar body and neck">
+            </figure>
+        </div>
+
+        <div class="gt-card">
+            <p class="gt-meta">CHAPTER 01 / DESIGN</p>
+            <h2>Start in CAD</h2>
+            <p>
+                Everything began in Fusion 360. I modeled the body
+                thickness, pickup pocket depth, neck pocket
+                tolerances, bridge placement, and the internal cavity
+                routing for the electronics, with the neck and body
+                as separate parts in one assembly so I could check
+                how they fit before cutting any wood.
+            </p>
+            <p>
+                The goals were simple to state and hard to meet: a
+                design I could actually manufacture on a 3-axis CNC,
+                with room for every piece of hardware, that would
+                still play well.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CHAPTER 2: MACHINING (version 1)
+         ===================================================== -->
+
+    <section class="gt-chapter gt-reverse">
+
+        <div class="gt-media gt-pair">
+
+            <div class="gt-panel gt-item">
+                <figure class="gt-photo gt-tall">
+                    <img src="../images/CNC_Neck_V1.JPG" alt="CNC router cutting the walnut and maple neck">
+                </figure>
+                <p class="gt-caption">CUTTING THE NECK</p>
             </div>
 
-            <div>
-                <span>TOOLS</span>
-                Fusion 360 · CNC · Electronics
+            <div class="gt-panel gt-item">
+                <figure class="gt-photo gt-tall">
+                    <img src="../images/GlueUp_V1.JPG" alt="First guitar body and neck dry-fit and clamped, with pickup pockets routed">
+                </figure>
+                <p class="gt-caption">FIRST DRY FIT</p>
             </div>
 
-            <div>
-                <span>FOCUS</span>
-                Form · Structure · Ergonomics
+        </div>
+
+        <div class="gt-card">
+            <p class="gt-meta">CHAPTER 02 / MACHINING</p>
+            <h2>From model to wood</h2>
+            <p>
+                I generated toolpaths for both roughing and finishing
+                operations and designed fixtures to hold irregular
+                geometry securely while the machine worked. Grain
+                direction and stress regions drove how I oriented each
+                piece, preserving stiffness and keeping tear-out to a
+                minimum.
+            </p>
+            <p>
+                The first clamped dry fit was the moment the model
+                became a real object I could pick up.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CHAPTER 3: VERSION 1 FINISHED
+         ===================================================== -->
+
+    <section class="gt-chapter">
+
+        <div class="gt-media gt-panel gt-single">
+            <figure class="gt-photo gt-tall">
+                <img src="../images/Guitar_V1_Wall.JPG" alt="The finished first guitar hanging on a wall">
+            </figure>
+        </div>
+
+        <div class="gt-card">
+            <p class="gt-meta">CHAPTER 03 / VERSION ONE</p>
+            <h2>Strings on, truth revealed</h2>
+            <p>
+                With pickups installed, control circuitry wired, and
+                signal continuity checked, version one was a working
+                instrument. I tested structural stability under full
+                string tension, tuning stability, sustain, and
+                comfort. It held up under load.
+            </p>
+            <p>
+                It also taught me plenty. Playing it showed me where
+                the ergonomics could be better, where the machining
+                took longer than it should have, and which decisions
+                I would make differently with a second try.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CHAPTER 4: REDESIGN (version 2 CAD)
+         ===================================================== -->
+
+    <section class="gt-chapter gt-wide gt-reverse">
+
+        <div class="gt-media gt-panel">
+            <figure class="gt-photo">
+                <img src="../images/Fusion360_V2.png" alt="Fusion 360 model of the second guitar, with a full headstock">
+            </figure>
+        </div>
+
+        <div class="gt-card">
+            <p class="gt-meta">CHAPTER 04 / ITERATION</p>
+            <h2>Back to the model</h2>
+            <p>
+                Version two started as a fresh design, not a patch.
+                Reworking the body shape and the neck and headstock
+                assembly in CAD let me apply what I learned about
+                geometry and stiffness, and simplify the parts so
+                they would be quicker and cleaner to machine.
+            </p>
+            <p>
+                The model grew to dozens of revisions before I was
+                happy with it.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CHAPTER 5: MACHINING (version 2)
+         ===================================================== -->
+
+    <section class="gt-chapter">
+
+        <div class="gt-media gt-pair">
+
+            <div class="gt-panel gt-item">
+                <figure class="gt-photo gt-tall">
+                    <img src="../images/CNC_Body_V2.JPG" alt="CNC router cutting the second guitar body from a maple blank">
+                </figure>
+                <p class="gt-caption">CUTTING THE BODY</p>
             </div>
+
+            <div class="gt-panel gt-item">
+                <figure class="gt-photo gt-tall">
+                    <img src="../images/Raw_V2.JPG" alt="The second guitar in bare maple with neck attached">
+                </figure>
+                <p class="gt-caption">BARE MAPLE</p>
+            </div>
+
         </div>
 
-    </section>
-
-
-    <!-- HERO IMAGE -->
-    <section class="project-image-large">
-        <img src="../images/CompletedFloor.JPG"
-             alt="Custom 8-string electric guitar">
-    </section>
-
-
-    <!-- STORY -->
-    <section class="project-section">
-
-        <div class="section-number">01</div>
-
-        <div>
-            <p class="eyebrow">THE IDEA</p>
-
-            <h2>Designing the instrument from the ground up.</h2>
-
+        <div class="gt-card">
+            <p class="gt-meta">CHAPTER 05 / MACHINING, AGAIN</p>
+            <h2>Cutting it better</h2>
             <p>
-                This project began as an exploration of what a custom
-                electric guitar could look and feel like when the
-                instrument was designed around both the player and
-                the manufacturing process.
-            </p>
-
-            <p>
-                Rather than adapting an existing guitar body, I
-                developed the form, geometry, and construction
-                specifically for an 8-string instrument.
+                The second time through, the process was smoother.
+                Fixturing was simpler, the toolpaths were more
+                efficient, and the parts came off the machine closer
+                to finished. Bare maple, pickup pockets routed, neck
+                seated: the shape was finally right.
             </p>
         </div>
 
     </section>
 
 
-    <!-- CNC -->
-    <section class="project-image-wide">
-        <img src="../images/CNC.jpeg"
-             alt="CNC machining the guitar body">
-    </section>
+    <!-- =====================================================
+         CHAPTER 6: FINISH + HARDWARE (version 2)
+         ===================================================== -->
 
+    <section class="gt-chapter gt-reverse">
 
-    <!-- CNC STORY -->
-    <section class="project-section">
+        <div class="gt-media gt-pair">
 
-        <div class="section-number">02</div>
+            <div class="gt-panel gt-item">
+                <figure class="gt-photo gt-tall">
+                    <img src="../images/Stained_V2.JPG" alt="The second guitar stained purple with frets installed">
+                </figure>
+                <p class="gt-caption">STAIN + FRETS</p>
+            </div>
 
-        <div>
-            <p class="eyebrow">MANUFACTURE</p>
+            <div class="gt-panel gt-item">
+                <figure class="gt-photo gt-tall">
+                    <img src="../images/Guitar_V2_Carpet.JPG" alt="The finished second guitar lying flat, fully strung">
+                </figure>
+                <p class="gt-caption">FULLY STRUNG</p>
+            </div>
 
-            <h2>From CAD to chips.</h2>
+        </div>
 
+        <div class="gt-card">
+            <p class="gt-meta">CHAPTER 06 / FINISH</p>
+            <h2>Color, hardware, wiring</h2>
             <p>
-                The guitar was modeled in Fusion 360 and translated
-                into CNC toolpaths for machining the body geometry
-                and pockets.
-            </p>
-
-            <p>
-                Fixturing, grain direction, stress regions, and
-                structural stability all had to be considered while
-                developing the manufacturing process.
+                A purple stain brought out the grain, frets went in,
+                and then came the hardware and electronics: tuners,
+                bridge, pickups, switch, and controls, all wired up
+                and checked for continuity before the strings went on.
             </p>
         </div>
 
     </section>
 
 
-    <!-- RAW BODY -->
-    <section class="project-gallery two-column">
+    <!-- =====================================================
+         SIDE BY SIDE
+         ===================================================== -->
 
-        <figure>
-            <img src="../images/UnfinishedBody.jpeg"
-                 alt="Unfinished guitar body">
-            <figcaption>Unfinished body after machining.</figcaption>
-        </figure>
+    <section class="gt-compare">
 
-        <figure>
-            <img src="../images/CompletedBody.jpeg"
-                 alt="Finished guitar body">
-            <figcaption>Body after finishing and assembly work.</figcaption>
-        </figure>
+        <div class="gt-compare-head">
+            <p class="gt-meta">SIDE BY SIDE</p>
+            <h2>Version one, version two</h2>
+        </div>
+
+        <div class="gt-compare-grid">
+
+            <div class="gt-panel gt-item">
+                <figure class="gt-photo gt-tall">
+                    <img src="../images/Guitar_V1_Wall.JPG" alt="Version one of the guitar on the wall">
+                </figure>
+                <p class="gt-caption">VERSION 1</p>
+            </div>
+
+            <div class="gt-panel gt-item">
+                <figure class="gt-photo gt-tall">
+                    <img src="../images/Guitar_V2_Wall.JPG" alt="Version two of the guitar on the wall">
+                </figure>
+                <p class="gt-caption">VERSION 2</p>
+            </div>
+
+        </div>
 
     </section>
 
 
-    <!-- FINISHING -->
-    <section class="project-section">
+    <!-- =====================================================
+         ENGINEERING SUMMARY: three cards
+         ===================================================== -->
 
-        <div class="section-number">03</div>
+    <section class="gt-summary">
 
-        <div>
-            <p class="eyebrow">MATERIAL / FINISH</p>
+        <div class="gt-summary-card">
+            <h3>DESIGN OBJECTIVES</h3>
+            <ul>
+                <li>CAD geometry and tolerances</li>
+                <li>3-axis CNC manufacturability</li>
+                <li>Electronics and hardware fitment</li>
+                <li>Playability and acoustic validation</li>
+            </ul>
+        </div>
 
-            <h2>Making the material part of the design.</h2>
-
+        <div class="gt-summary-card">
+            <h3>TESTING + VALIDATION</h3>
             <p>
-                The finishing process became an important part of the
-                final character of the instrument, bringing out the
-                grain while giving the guitar its distinctive
-                purple-brown appearance.
+                Pickups installed and control circuitry wired, with
+                signal continuity validated. Tested for structural
+                stability under full string tension, tuning stability,
+                sustain, and ergonomic comfort. Results confirmed
+                stable performance under load.
+            </p>
+        </div>
+
+        <div class="gt-summary-card">
+            <h3>ENGINEERING REFLECTION</h3>
+            <p>
+                This project reinforced the relationship between
+                geometry and stiffness, material selection and
+                vibrational response, and manufacturability-driven
+                design. The redesign improved ergonomics, machining
+                efficiency, and playability.
             </p>
         </div>
 
     </section>
 
 
-    <!-- FINISHED PHOTOS -->
-    <section class="project-gallery">
-
-        <figure class="gallery-large">
-            <img src="../images/CompleteHanging.JPG"
-                 alt="Completed guitar hanging on wall">
-        </figure>
-
-    </section>
-
-
-    <!-- ENGINEERING -->
-    <section class="project-section">
-
-        <div class="section-number">04</div>
-
-        <div>
-            <p class="eyebrow">ENGINEERING / TESTING</p>
-
-            <h2>A prototype that had to actually work.</h2>
-
-            <p>
-                Beyond the visual design, the guitar was evaluated
-                for structural stability, tuning, sustain, ergonomics,
-                and electronics integration.
-            </p>
-
-            <p>
-                The second iteration incorporated improvements from
-                the first build, resulting in a more refined final
-                product.
-            </p>
-        </div>
-
-    </section>
-
-
-    <!-- FINAL -->
-    <section class="project-final">
-
-        <p class="eyebrow">RESULT</p>
-
-        <h2>
-            Designed.<br>
-            Machined.<br>
-            Played.
-        </h2>
-
-        <a href="../index.html" class="back-link">
-            ← BACK TO SELECTED WORK
-        </a>
-
-    </section>
+    <div class="gt-back">
+        <a href="../index.html#work" class="gt-button">&larr; BACK TO WORK</a>
+    </div>
 
 </main>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+    <span>WES GONTER © 2026</span>
+
+    <span>DESIGN / ENGINEERING / MANUFACTURING</span>
+
+</footer>
+
 
 </body>
 </html>
