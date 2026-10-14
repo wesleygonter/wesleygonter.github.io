@@ -1403,6 +1403,414 @@ a {
 
 
 /* =========================================================
+   GUITAR PAGE
+   ---------------------------------------------------------
+   A story page told in chapters. Each chapter is one row:
+   photo(s) on one side, a bordered text card on the other.
+   Add class "gt-reverse" to a chapter to flip its sides, and
+   "gt-wide" to give the photo more room (for screenshots).
+
+   To change a panel color, swap var(--purple) in .gt-panel
+   for var(--blue), var(--green), var(--espresso), etc.
+
+   Desktop: photo beside text.
+   Phone:   photo above text.
+   ========================================================= */
+
+.guitar-page {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 40px 64px;
+}
+
+
+/* ---------------------------------------------------------
+   Title + intro
+   --------------------------------------------------------- */
+
+.gt-head {
+    max-width: 760px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.gt-kicker {
+    margin: 0 0 14px;
+
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    opacity: 0.75;
+}
+
+.guitar-title {
+    margin: 0 0 16px;
+
+    color: var(--cream);
+    font-family: var(--sans);
+    font-size: clamp(2.4rem, 4.6vw, 4.2rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.04em;
+}
+
+.gt-intro {
+    margin: 0;
+
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+}
+
+.gt-facts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.gt-facts li {
+    padding: 10px 18px;
+
+    border: 1px solid rgba(241, 234, 223, 0.65);
+    color: var(--cream);
+
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+}
+
+.gt-facts strong {
+    margin-right: 6px;
+    font-weight: 500;
+}
+
+
+/* ---------------------------------------------------------
+   Chapters
+   --------------------------------------------------------- */
+
+.gt-chapter {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(24px, 4vw, 48px);
+    align-items: center;
+
+    max-width: 960px;
+    margin: 0 auto 56px;
+}
+
+.gt-chapter.gt-wide {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+}
+
+/* Flip photo and text. The text card is second in the HTML,
+   so "reverse" just swaps the column widths and order. */
+.gt-reverse .gt-media {
+    order: 2;
+}
+
+.gt-reverse .gt-card {
+    order: 1;
+}
+
+.gt-reverse.gt-wide {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+}
+
+.gt-media {
+    min-width: 0;
+}
+
+/* Colored box with a thin dark border. Same padding on
+   every box, so photos never change size when a color is
+   added or removed. */
+.gt-panel {
+    padding: 14px 14px 16px;
+
+    background: var(--purple);
+    border: 1px solid var(--brown-dark);
+}
+
+.gt-media.gt-panel,
+.gt-pair {
+    width: 100%;
+}
+
+.gt-pair {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(12px, 2vw, 20px);
+}
+
+.gt-pair .gt-item {
+    flex: 1 1 0%;
+    min-width: 0;
+}
+
+.gt-photo {
+    margin: 0;
+    overflow: hidden;
+}
+
+.gt-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Portrait photos (the guitars): keep them to one shape so
+   side-by-side photos line up, cropping a little if needed. */
+.gt-photo.gt-tall img {
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* A single tall photo shouldn't fill the whole column. */
+.gt-single {
+    width: min(100%, 360px);
+    justify-self: center;
+}
+
+.gt-caption {
+    margin: 10px 0 0;
+
+    color: var(--cream);
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-align: center;
+}
+
+
+/* ---------------------------------------------------------
+   Text card
+   --------------------------------------------------------- */
+
+.gt-card {
+    padding: 24px 28px 26px;
+
+    border: 1px solid rgba(241, 234, 223, 0.65);
+    color: var(--cream);
+}
+
+.gt-meta {
+    margin: 0 0 10px;
+
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    opacity: 0.8;
+}
+
+.gt-card h2 {
+    margin: 0 0 16px;
+
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.gt-card p {
+    margin: 0 0 12px;
+
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    letter-spacing: 0.015em;
+}
+
+.gt-card p:last-child {
+    margin-bottom: 0;
+}
+
+.gt-card .gt-meta {
+    margin-bottom: 10px;
+}
+
+
+/* ---------------------------------------------------------
+   Side-by-side comparison
+   --------------------------------------------------------- */
+
+.gt-compare {
+    max-width: 760px;
+    margin: 72px auto 64px;
+}
+
+.gt-compare-head {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.gt-compare-head h2 {
+    margin: 0;
+
+    color: var(--cream);
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.gt-compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(14px, 2.4vw, 28px);
+}
+
+
+/* ---------------------------------------------------------
+   Summary cards: objectives, validation, reflection
+   --------------------------------------------------------- */
+
+.gt-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+
+    max-width: 960px;
+    margin: 0 auto 48px;
+}
+
+.gt-summary-card {
+    padding: 22px 22px 24px;
+
+    border: 1px solid rgba(241, 234, 223, 0.65);
+    color: var(--cream);
+}
+
+.gt-summary-card h3 {
+    margin: 0 0 14px;
+
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+}
+
+.gt-summary-card p,
+.gt-summary-card li {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    line-height: 1.6;
+    letter-spacing: 0.015em;
+}
+
+.gt-summary-card p {
+    margin: 0;
+}
+
+.gt-summary-card ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+
+/* ---------------------------------------------------------
+   Back button
+   --------------------------------------------------------- */
+
+.gt-back {
+    text-align: center;
+}
+
+.gt-button {
+    display: inline-block;
+    padding: 12px 22px;
+
+    border: 1px solid var(--brown-dark);
+    background: var(--blue);
+    color: var(--cream);
+
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+
+    transition: opacity 0.2s ease;
+}
+
+.gt-button:hover {
+    opacity: 0.85;
+}
+
+
+/* ---------------------------------------------------------
+   GUITAR — TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .guitar-page {
+        padding: 16px 28px 52px;
+    }
+
+    .gt-chapter,
+    .gt-chapter.gt-wide,
+    .gt-reverse.gt-wide {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 560px;
+    }
+
+    /* Photo always first when stacked */
+    .gt-reverse .gt-media,
+    .gt-reverse .gt-card {
+        order: 0;
+    }
+
+    .gt-summary {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   GUITAR — PHONE
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .guitar-page {
+        padding: 12px 20px 44px;
+    }
+
+    .guitar-title {
+        font-size: 2.3rem;
+    }
+
+    .gt-head {
+        margin-bottom: 36px;
+    }
+
+    .gt-chapter {
+        margin-bottom: 40px;
+    }
+
+    .gt-card {
+        padding: 18px 18px 20px;
+    }
+
+    .gt-panel {
+        padding: 10px 10px 12px;
+    }
+
+    .gt-compare {
+        margin: 48px auto 44px;
+    }
+}
+
+
+/* =========================================================
    FOOTER
    ========================================================= */
 
