@@ -819,7 +819,7 @@ a {
    color: var(--blue), var(--green), var(--espresso), etc. */
 .sw-panel {
     background: var(--purple);
-    border-color: var(--purple);
+    border-color: var(--brown-dark);
 }
 
 
@@ -920,6 +920,236 @@ a {
         grid-template-columns: 1fr;
         gap: 16px;
         padding: 14px;
+    }
+}
+
+
+/* =========================================================
+   PAINT PAGE
+   ---------------------------------------------------------
+   Same look as the sewing page, arranged as a mosaic:
+
+   LEFT:   tall hoodie design
+   RIGHT:  row 1 = ski binding pivots | ski boots
+           row 2 = ski box | helmet
+
+   Desktop: hoodie beside the two-row stack.
+   Tablet:  hoodie on top, rows underneath.
+   Phone:   single column.
+   ========================================================= */
+
+.paint-page {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px 40px 56px;
+}
+
+
+/* ---------------------------------------------------------
+   Title + intro
+   --------------------------------------------------------- */
+
+.pt-head {
+    max-width: 760px;
+    margin: 0 auto 32px;
+    text-align: center;
+}
+
+.paint-title {
+    margin: 0 0 14px;
+
+    color: var(--cream);
+    font-family: var(--sans);
+    font-size: clamp(2.4rem, 4vw, 3.8rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.04em;
+}
+
+.pt-intro {
+    margin: 0;
+
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+}
+
+
+/* ---------------------------------------------------------
+   Layout
+   (0.57fr / 1fr sizes the hoodie column so it ends up about
+   as tall as the two rows beside it)
+   --------------------------------------------------------- */
+
+.pt-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.57fr) minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+
+    /* Wider than the sewing page so the photos can be shown
+       larger (works best with high-resolution images). */
+    max-width: 1220px;
+    margin: 0 auto;
+}
+
+.pt-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    min-width: 0;
+}
+
+/* Each row: photos get widths proportional to their aspect
+   ratio (--ratio in the HTML), so a row's photos always share
+   one height, with no stretching. */
+.pt-row {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(16px, 2.4vw, 28px);
+}
+
+.pt-item {
+    flex: var(--ratio, 1) 1 0%;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* Same padding and a transparent border on every item, so
+       adding a colored panel never changes photo heights. */
+    padding: 14px 14px 18px;
+    border: 1px solid transparent;
+}
+
+.pt-photo {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* aspect-ratio keeps each frame correct even if --ratio is
+   slightly off (the photo crops a hair instead of warping) */
+.pt-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: var(--ratio, 1);
+    object-fit: cover;
+}
+
+/* Colored box around a photo and its text.
+   Add class "pt-panel" to any .pt-item in the HTML. To change
+   the color, swap var(--purple) for var(--blue), var(--green),
+   var(--espresso), etc. */
+.pt-panel {
+    background: var(--purple);
+    border-color: var(--brown-dark);
+}
+
+
+/* ---------------------------------------------------------
+   Text box
+   --------------------------------------------------------- */
+
+.pt-card {
+    width: min(100%, 280px);
+    margin-top: 14px;
+    padding: 14px 18px 16px;
+
+    border: 1px solid rgba(241, 234, 223, 0.65);
+
+    color: var(--cream);
+    text-align: center;
+}
+
+.pt-card h2 {
+    margin: 0 0 6px;
+
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.09em;
+}
+
+.pt-card p {
+    margin: 0;
+
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    letter-spacing: 0.015em;
+}
+
+
+/* ---------------------------------------------------------
+   PAINT — TABLET
+   Hoodie on its own row at the top, photo rows below.
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .paint-page {
+        padding: 16px 28px 48px;
+    }
+
+    .pt-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 640px;
+    }
+
+    .pt-hoodie {
+        justify-self: center;
+        width: min(100%, 360px);
+    }
+
+    .pt-stack {
+        gap: 20px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   PAINT — PHONE
+   Everything in a single column, with tighter spacing.
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .paint-page {
+        padding: 12px 20px 40px;
+    }
+
+    .paint-title {
+        font-size: 2.3rem;
+    }
+
+    .pt-head {
+        margin-bottom: 24px;
+    }
+
+    .pt-layout,
+    .pt-stack {
+        gap: 28px;
+    }
+
+    .pt-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+    }
+
+    .pt-item,
+    .pt-hoodie {
+        flex: none;
+        width: 100%;
+        max-width: 420px;
+        justify-self: center;
     }
 }
 
