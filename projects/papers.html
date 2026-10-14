@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Academic Papers — Wes Gonter</title>
+    <meta name="description" content="Academic papers by Wes Gonter, available to read or download as PDFs.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS is one folder above papers.html -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="site-header">
+
+    <nav class="nav-left">
+        <a href="../index.html#work">WORK</a>
+        <a href="../index.html#about">ABOUT</a>
+    </nav>
+
+    <a href="../index.html" class="logo">
+        WES GONTER
+    </a>
+
+    <nav class="nav-right">
+        <a href="../index.html#shop">SHOP</a>
+        <a href="../contact.html">CONTACT</a>
+    </nav>
+
+</header>
+
+
+<!-- =========================================================
+     PAPERS PAGE
+     ========================================================= -->
+
+<main class="papers-page">
+
+    <!-- =====================================================
+         TITLE + INTRO  (draft intro: edit freely)
+         ===================================================== -->
+
+    <div class="pp-head">
+
+        <h1 class="papers-title">ACADEMIC PAPERS</h1>
+
+        <p class="pp-intro">
+            A SELECTION OF MY ACADEMIC WRITING AND RESEARCH.
+            EACH PAPER CAN BE READ ONLINE OR DOWNLOADED AS A PDF.
+        </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         PAPER LIST
+
+         TO ADD ANOTHER PAPER: copy one whole <article> block,
+         paste it below the last one, and change the text, PDF
+         link, and cover image.
+
+         FILES:
+           PDFs         -> papers/            (repo root)
+           Cover images -> images/papers/     (optional)
+
+         COVER IMAGE: export page 1 of the PDF as a PNG or JPG
+         (portrait, roughly 8.5 x 11). If the image is missing,
+         a plain "PDF" placeholder is shown instead.
+
+         COLORED BOX: add class "pp-panel" to an <article> to put
+         it in a colored box (remove the class to remove the box).
+         ===================================================== -->
+
+    <section class="pp-list">
+
+
+        <!-- ================= PAPER 1 ================= -->
+
+        <article class="pp-entry pp-panel">
+
+            <figure class="pp-thumb">
+                <img
+                    src="../images/papers/Paper1Cover.png"
+                    alt="First page of Paper One Title"
+                    onerror="this.style.display='none'"
+                >
+            </figure>
+
+            <div class="pp-card">
+
+                <p class="pp-meta">COURSE OR JOURNAL &middot; YEAR</p>
+
+                <h2>PAPER ONE TITLE</h2>
+
+                <p class="pp-abstract">
+                    Two or three sentences describing the question the
+                    paper asks, the approach taken, and the main
+                    finding or takeaway.
+                </p>
+
+                <div class="pp-actions">
+                    <a
+                        class="pp-button"
+                        href="../papers/Paper1.pdf"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        READ PDF <span class="arrow">↗</span>
+                    </a>
+
+                    <a
+                        class="pp-button"
+                        href="../papers/Paper1.pdf"
+                        download
+                    >
+                        DOWNLOAD
+                    </a>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- ================= PAPER 2 ================= -->
+
+        <article class="pp-entry">
+
+            <figure class="pp-thumb">
+                <img
+                    src="../images/papers/Paper2Cover.png"
+                    alt="First page of Paper Two Title"
+                    onerror="this.style.display='none'"
+                >
+            </figure>
+
+            <div class="pp-card">
+
+                <p class="pp-meta">COURSE OR JOURNAL &middot; YEAR</p>
+
+                <h2>PAPER TWO TITLE</h2>
+
+                <p class="pp-abstract">
+                    Two or three sentences describing the question the
+                    paper asks, the approach taken, and the main
+                    finding or takeaway.
+                </p>
+
+                <div class="pp-actions">
+                    <a
+                        class="pp-button"
+                        href="../papers/Paper2.pdf"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        READ PDF <span class="arrow">↗</span>
+                    </a>
+
+                    <a
+                        class="pp-button"
+                        href="../papers/Paper2.pdf"
+                        download
+                    >
+                        DOWNLOAD
+                    </a>
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+    <span>WES GONTER © 2026</span>
+
+    <span>DESIGN / ENGINEERING / MAKING</span>
+
+</footer>
+
+
+</body>
+</html>
