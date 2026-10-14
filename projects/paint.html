@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Paint — Wes Gonter</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS is one folder above paint.html -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="site-header">
+
+    <nav class="nav-left">
+        <a href="../index.html#work">WORK</a>
+        <a href="../index.html#about">ABOUT</a>
+    </nav>
+
+    <a href="../index.html" class="logo">
+        WES GONTER
+    </a>
+
+    <nav class="nav-right">
+        <a href="../index.html#shop">SHOP</a>
+        <a href="../contact.html">CONTACT</a>
+    </nav>
+
+</header>
+
+
+<!-- =========================================================
+     PAINT PAGE
+     ========================================================= -->
+
+<main class="paint-page">
+
+    <!-- =====================================================
+         TITLE + INTRO  (draft intro: edit freely)
+         ===================================================== -->
+
+    <div class="pt-head">
+
+        <h1 class="paint-title">PAINT</h1>
+
+        <p class="pt-intro">
+            HAND-PAINTED DESIGNS FOR THE GEAR I USE, FROM SKI
+            BINDINGS AND BOOTS TO A CARGO BOX AND A HELMET.
+            MOUNTAIN LANDSCAPES AND DETAILED LINEWORK TIE THE
+            PROJECTS TOGETHER, TURNING EVERYDAY EQUIPMENT INTO
+            SOMETHING PERSONAL.
+        </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         LAYOUT
+         LEFT:  tall hoodie design
+         RIGHT: two rows of photos (pivots + boots, box + helmet)
+
+         --ratio is each photo's width ÷ height. Photos in the
+         same row automatically scale to the same height.
+         Current photos: pivots 1.33, boots 1.78, hoodie 0.61,
+         box 1.33, helmet 1.33. Update them if you swap photos.
+         ===================================================== -->
+
+    <section class="pt-layout">
+
+
+        <!-- HOODIE (left, tall) -->
+
+        <div class="pt-item pt-panel pt-hoodie" style="--ratio: 0.614;">
+            <figure class="pt-photo">
+                <img src="../images/SweatshirtPaint.jpg" alt="Climbing Club UW hoodie design">
+            </figure>
+
+            <div class="pt-card">
+                <h2>CLIMBING CLUB HOODIE</h2>
+                <p>
+                    A hand-drawn mountain scene with a roped team
+                    crossing a ridge, designed for the Climbing
+                    Club UW hoodie.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="pt-stack">
+
+            <!-- Row 1: ski binding pivots + ski boots -->
+
+            <div class="pt-row">
+
+                <div class="pt-item" style="--ratio: 1.333;">
+                    <figure class="pt-photo">
+                        <img src="../images/PivotPaint.JPG" alt="Painted ski binding pivots">
+                    </figure>
+
+                    <div class="pt-card">
+                        <h2>SKI BINDINGS</h2>
+                        <p>
+                            Purple and white detailing hand-painted
+                            across a pair of binding pivots.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="pt-item" style="--ratio: 1.778;">
+                    <figure class="pt-photo">
+                        <img src="../images/BootPaint.JPG" alt="Painted mountain landscapes on ski boot heels">
+                    </figure>
+
+                    <div class="pt-card">
+                        <h2>SKI BOOTS</h2>
+                        <p>
+                            A stained-glass style mountain landscape on
+                            each heel, with a different palette for
+                            each boot.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Row 2: ski box + helmet -->
+
+            <div class="pt-row">
+
+                <div class="pt-item" style="--ratio: 1.333;">
+                    <figure class="pt-photo">
+                        <img src="../images/BoxPaint.JPG" alt="Painted roof cargo box">
+                    </figure>
+
+                    <div class="pt-card">
+                        <h2>SKI BOX</h2>
+                        <p>
+                            A night sky fading into a geometric mountain
+                            range, painted around a roof cargo box.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="pt-item pt-panel" style="--ratio: 1.333;">
+                    <figure class="pt-photo">
+                        <img src="../images/HelmetPaint.JPG" alt="Helmet with painted knotwork serpent">
+                    </figure>
+
+                    <div class="pt-card">
+                        <h2>HELMET</h2>
+                        <p>
+                            Interlaced Nordic-style knotwork drawn in
+                            metallic ink across a dark helmet.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+    <span>WES GONTER © 2026</span>
+
+    <span>DESIGN / ENGINEERING / MAKING</span>
+
+</footer>
+
+
+</body>
+</html>
