@@ -940,9 +940,9 @@ a {
 
 .paint-page {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 20px 40px 56px;
+    padding: 20px 24px 56px;
 }
 
 
@@ -991,7 +991,7 @@ a {
 
     /* Wider than the sewing page so the photos can be shown
        larger (works best with high-resolution images). */
-    max-width: 1220px;
+    max-width: 1392px;
     margin: 0 auto;
 }
 
@@ -1094,7 +1094,7 @@ a {
 @media (max-width: 900px) {
 
     .paint-page {
-        padding: 16px 28px 48px;
+        padding: 16px 20px 48px;
     }
 
     .pt-layout {
@@ -1122,7 +1122,7 @@ a {
 @media (max-width: 600px) {
 
     .paint-page {
-        padding: 12px 20px 40px;
+        padding: 12px 16px 40px;
     }
 
     .paint-title {
