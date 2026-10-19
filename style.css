@@ -1811,6 +1811,378 @@ a {
 
 
 /* =========================================================
+   WOODWORKING PAGE
+   ---------------------------------------------------------
+   LAYOUT
+   Feature rows (guitars, cutting boards): a pair of photos in
+     one colored box, with one shared text card beside them.
+     Add "ww-flip" to a feature to put the text on the left.
+   Small builds row: two photos, each with its own text card
+     underneath, scaled to share one height (see --ratio).
+
+   Desktop: side by side.
+   Phone:   single column.
+   ========================================================= */
+
+.wood-page {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 40px 64px;
+}
+
+
+/* ---------------------------------------------------------
+   Title + intro
+   --------------------------------------------------------- */
+
+.ww-head {
+    max-width: 760px;
+    margin: 0 auto 28px;
+    text-align: center;
+}
+
+.wood-title {
+    margin: 0 0 14px;
+
+    color: var(--cream);
+    font-family: var(--sans);
+    font-size: clamp(2.4rem, 4.6vw, 4.2rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.04em;
+}
+
+.ww-intro {
+    margin: 0;
+
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+}
+
+
+/* ---------------------------------------------------------
+   Striped divider (looks like a glued-up board)
+   --------------------------------------------------------- */
+
+.ww-stripes {
+    max-width: 960px;
+    height: 18px;
+    margin: 0 auto 48px;
+
+    border: 1px solid var(--brown-dark);
+    background: linear-gradient(
+        90deg,
+        #4a392f 0 22%,
+        var(--paper) 22% 30%,
+        #a5472f 30% 33%,
+        var(--paper) 33% 41%,
+        #a5472f 41% 44%,
+        var(--paper) 44% 52%,
+        #4a392f 52% 100%
+    );
+}
+
+
+/* ---------------------------------------------------------
+   Colored panels. Same padding on every one, so photos
+   never change size when a color is swapped.
+   To change a color, edit the background below.
+   --------------------------------------------------------- */
+
+.ww-panel {
+    padding: 14px;
+
+    background: var(--purple);
+    border: 1px solid var(--brown-dark);
+}
+
+.ww-panel-wood {
+    background: var(--espresso);
+}
+
+.ww-panel-green {
+    background: var(--green);
+}
+
+
+/* ---------------------------------------------------------
+   Photos
+   --------------------------------------------------------- */
+
+.ww-photo {
+    margin: 0;
+    overflow: hidden;
+}
+
+/* aspect-ratio crops each photo to its --ratio, so photos
+   sharing a row always line up at the same height */
+.ww-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: var(--ratio, 1);
+    object-fit: cover;
+}
+
+/* The lamp photo is tall; keep the base in frame */
+.ww-lamp {
+    object-position: center 62%;
+}
+
+.ww-caption {
+    margin: 10px 0 0;
+
+    color: var(--cream);
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-align: center;
+}
+
+
+/* ---------------------------------------------------------
+   Feature rows: photo pair + shared text card
+   --------------------------------------------------------- */
+
+.ww-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: clamp(24px, 4vw, 48px);
+    align-items: center;
+
+    max-width: 960px;
+    margin: 0 auto 64px;
+}
+
+.ww-flip {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+}
+
+.ww-flip .ww-pair {
+    order: 2;
+}
+
+.ww-flip .ww-card {
+    order: 1;
+}
+
+.ww-pair {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(12px, 2vw, 20px);
+}
+
+.ww-item {
+    flex: var(--ratio, 1) 1 0%;
+    min-width: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Text cards
+   --------------------------------------------------------- */
+
+.ww-card {
+    padding: 24px 28px 26px;
+
+    border: 1px solid rgba(241, 234, 223, 0.65);
+    border-left: 6px solid var(--cream);
+
+    color: var(--cream);
+}
+
+.ww-tag {
+    margin: 0 0 10px;
+
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    opacity: 0.8;
+}
+
+.ww-card h2 {
+    margin: 0 0 14px;
+
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.ww-card p {
+    margin: 0;
+
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    letter-spacing: 0.015em;
+}
+
+.ww-card .ww-tag {
+    margin-bottom: 10px;
+}
+
+.ww-link {
+    display: inline-block;
+    margin-top: 18px;
+    padding-bottom: 4px;
+
+    border-bottom: 1px solid var(--cream);
+
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+}
+
+.ww-link:hover {
+    opacity: 0.7;
+}
+
+
+/* ---------------------------------------------------------
+   Small builds row: two photos, one shared height,
+   each with its own text card underneath
+   --------------------------------------------------------- */
+
+.ww-row {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(20px, 3vw, 36px);
+
+    max-width: 960px;
+    margin: 0 auto 64px;
+}
+
+.ww-block {
+    flex: var(--ratio, 1) 1 0%;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ww-card-small {
+    padding: 18px 20px 20px;
+}
+
+.ww-card-small h2 {
+    margin-bottom: 10px;
+    font-size: clamp(1.4rem, 2vw, 1.8rem);
+}
+
+.ww-card-small p {
+    font-size: 0.76rem;
+}
+
+
+/* ---------------------------------------------------------
+   Back button
+   --------------------------------------------------------- */
+
+.ww-back {
+    text-align: center;
+}
+
+.ww-button {
+    display: inline-block;
+    padding: 12px 22px;
+
+    border: 1px solid var(--brown-dark);
+    background: var(--blue);
+    color: var(--cream);
+
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+
+    transition: opacity 0.2s ease;
+}
+
+.ww-button:hover {
+    opacity: 0.85;
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .wood-page {
+        padding: 16px 28px 52px;
+    }
+
+    .ww-feature,
+    .ww-flip {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 600px;
+    }
+
+    /* Photos always first when stacked */
+    .ww-flip .ww-pair,
+    .ww-flip .ww-card {
+        order: 0;
+    }
+
+    .ww-row {
+        max-width: 600px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   PHONE
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .wood-page {
+        padding: 12px 20px 44px;
+    }
+
+    .wood-title {
+        font-size: 2.3rem;
+    }
+
+    .ww-stripes {
+        margin-bottom: 36px;
+    }
+
+    .ww-feature,
+    .ww-flip {
+        margin-bottom: 44px;
+    }
+
+    .ww-panel {
+        padding: 10px;
+    }
+
+    .ww-card {
+        padding: 18px 18px 20px;
+    }
+
+    .ww-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        margin-bottom: 44px;
+    }
+
+    .ww-block {
+        flex: none;
+        width: 100%;
+        max-width: 420px;
+    }
+}
+
+
+/* =========================================================
    FOOTER
    ========================================================= */
 
