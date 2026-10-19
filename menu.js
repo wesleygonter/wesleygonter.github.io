@@ -20,7 +20,7 @@
     if (!header) return;
 
     // Menu order. Any extra links you add later go at the end.
-    var order = ['ABOUT', 'WORK', 'SHOP', 'CONTACT'];
+    var order = ['WORK', 'SHOP', 'CONTACT', 'ABOUT'];
 
     var links = Array.prototype.slice.call(
         header.querySelectorAll('.nav-left a, .nav-right a')
