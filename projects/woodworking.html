@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Woodworking — Wes Gonter</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main stylesheet, then the woodworking page styles.
+         Both files live one folder above this page. -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../woodworking.css">
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="site-header">
+
+    <nav class="nav-left">
+        <a href="../index.html#work">WORK</a>
+        <a href="../index.html#about">ABOUT</a>
+    </nav>
+
+    <a href="../index.html" class="logo">
+        WES GONTER
+    </a>
+
+    <nav class="nav-right">
+        <a href="../index.html#shop">SHOP</a>
+        <a href="../contact.html">CONTACT</a>
+    </nav>
+
+</header>
+
+
+<!-- =========================================================
+     WOODWORKING PAGE
+
+     IMAGE FILE NAMES: every <img> points to ../images/.
+     Rename your files to match, or change the src values.
+       Guitar_V1_Wall.JPG       first guitar, natural finish
+       Guitar_V2_Wall.JPG       second guitar, purple stain
+       Plates_Knobs.JPG         carved cover plates and knobs
+       LampBase.JPG             checkerboard lamp base
+       CuttingBoard_Large.JPG   tall striped cutting board
+       CuttingBoard_Small.JPG   walnut board with stripes
+
+     --ratio is each photo's width ÷ height. Photos in the same
+     row are scaled to share one height, so update --ratio if
+     you swap in a photo with a different shape.
+     ========================================================= -->
+
+<main class="wood-page">
+
+
+    <!-- =====================================================
+         TITLE + INTRO  (draft intro: edit freely)
+         ===================================================== -->
+
+    <div class="ww-head">
+
+        <h1 class="wood-title">WOODWORKING</h1>
+
+        <p class="ww-intro">
+            FROM INSTRUMENTS TO KITCHEN BOARDS. MOST OF WHAT I
+            BUILD STARTS WITH A PILE OF HARDWOOD, A DRAWING, AND A
+            QUESTION ABOUT HOW THE GRAIN, THE JOINTS, AND THE
+            MACHINES WILL GET ALONG.
+        </p>
+
+    </div>
+
+    <!-- Striped divider: walnut, maple, padauk, like a glue-up -->
+    <div class="ww-stripes" aria-hidden="true"></div>
+
+
+    <!-- =====================================================
+         1. GUITARS (two photos, one text box)
+         ===================================================== -->
+
+    <section class="ww-feature">
+
+        <div class="ww-pair ww-panel">
+
+            <div class="ww-item" style="--ratio: 0.75;">
+                <figure class="ww-photo">
+                    <img src="../images/Guitar_V1_Wall.JPG" alt="First version of the 8-string guitar in maple and walnut">
+                </figure>
+                <p class="ww-caption">VERSION 1</p>
+            </div>
+
+            <div class="ww-item" style="--ratio: 0.75;">
+                <figure class="ww-photo">
+                    <img src="../images/Guitar_V2_Wall.JPG" alt="Second version of the 8-string guitar stained purple">
+                </figure>
+                <p class="ww-caption">VERSION 2</p>
+            </div>
+
+        </div>
+
+        <div class="ww-card">
+            <p class="ww-tag">01 / MAPLE + WALNUT</p>
+            <h2>Eight-string guitars</h2>
+            <p>
+                The biggest woodworking projects I have taken on:
+                two fully custom guitars, designed in CAD and
+                machined on a CNC. The first pairs maple wings with
+                a walnut and maple laminated core. The second is
+                stained purple, with a maple neck.
+            </p>
+            <a href="guitar.html" class="ww-link">READ THE FULL STORY &rarr;</a>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         2. SMALLER BUILDS: carved plates + lamp base
+         Each photo has its own text box.
+         ===================================================== -->
+
+    <section class="ww-row">
+
+        <div class="ww-block" style="--ratio: 1.333;">
+            <div class="ww-panel ww-panel-wood">
+                <figure class="ww-photo">
+                    <img src="../images/Plates_Knobs.JPG" alt="Carved walnut cover plates and turned knobs for the guitars">
+                </figure>
+            </div>
+
+            <div class="ww-card ww-card-small">
+                <p class="ww-tag">02 / WALNUT</p>
+                <h2>Cover plates + knobs</h2>
+                <p>
+                    Cavity covers and control knobs for the guitars,
+                    carved with mountain and compass designs. A
+                    chance to try finer detail work and to test how
+                    walnut takes a shallow carve.
+                </p>
+            </div>
+        </div>
+
+        <div class="ww-block" style="--ratio: 0.75;">
+            <div class="ww-panel ww-panel-green">
+                <figure class="ww-photo">
+                    <img class="ww-lamp" src="../images/LampBase.JPG" alt="Checkerboard lamp base in walnut and maple">
+                </figure>
+            </div>
+
+            <div class="ww-card ww-card-small">
+                <p class="ww-tag">03 / WALNUT + MAPLE</p>
+                <h2>Checkerboard lamp</h2>
+                <p>
+                    A round lamp base built from alternating walnut
+                    and maple blocks, with the socket and wiring set
+                    into the center.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         3. CUTTING BOARDS (two photos, one text box)
+         ===================================================== -->
+
+    <section class="ww-feature ww-flip">
+
+        <div class="ww-pair ww-panel ww-panel-wood">
+
+            <div class="ww-item" style="--ratio: 0.75;">
+                <figure class="ww-photo">
+                    <img src="../images/CuttingBoard_Large.JPG" alt="Thick striped cutting board with a juice groove">
+                </figure>
+                <p class="ww-caption">END-GRAIN EDGE + JUICE GROOVE</p>
+            </div>
+
+            <div class="ww-item" style="--ratio: 1.25;">
+                <figure class="ww-photo">
+                    <img src="../images/CuttingBoard_Small.JPG" alt="Walnut cutting board with maple and padauk stripes">
+                </figure>
+                <p class="ww-caption">STRIPED SERVING BOARD</p>
+            </div>
+
+        </div>
+
+        <div class="ww-card">
+            <p class="ww-tag">04 / OAK, MAPLE, WALNUT, PADAUK</p>
+            <h2>Cutting boards</h2>
+            <p>
+                Glue-ups where the pattern comes from the species:
+                dark walnut, pale maple, and a thin red line of
+                padauk. The larger board gets a routed juice groove
+                and rounded corners, and both get a food-safe oil
+                finish.
+            </p>
+        </div>
+
+    </section>
+
+
+    <div class="ww-back">
+        <a href="../index.html#work" class="ww-button">&larr; BACK TO WORK</a>
+    </div>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+    <span>WES GONTER © 2026</span>
+
+    <span>DESIGN / ENGINEERING / MANUFACTURING</span>
+
+</footer>
+
+
+</body>
+</html>
