@@ -2549,3 +2549,154 @@ footer {
         padding: 24px 20px;
     }
 }
+
+
+/* =========================================================
+   MOBILE MENU
+   ---------------------------------------------------------
+   On phones (600px and narrower) the header links collapse
+   into a menu button that opens a small dropdown box.
+   menu.js builds the button and the box from the links
+   already in each page's header, so the header HTML on every
+   page stays as it is.
+
+   Without JavaScript, phones show the normal header, scaled
+   down, instead.
+
+   Keep this block at the very end of the file.
+   ========================================================= */
+
+.menu-button,
+.mobile-menu {
+    display: none;
+}
+
+@media (max-width: 600px) {
+
+    /* Fallback (no JavaScript): same layout as desktop, smaller */
+
+    .site-header {
+        grid-template-columns: 1fr auto 1fr;
+        padding: 18px 14px;
+    }
+
+    .nav-left,
+    .nav-right {
+        display: flex;
+        gap: 12px;
+    }
+
+    .site-header a {
+        font-size: 0.64rem;
+        letter-spacing: 0.06em;
+    }
+
+
+    /* Menu button + dropdown */
+
+    .site-header.has-menu {
+        grid-template-columns: 1fr auto;
+        padding: 14px 20px;
+    }
+
+    .site-header.has-menu .nav-left,
+    .site-header.has-menu .nav-right {
+        display: none;
+    }
+
+    .site-header.has-menu .logo {
+        justify-self: start;
+        font-size: 0.85rem;
+        letter-spacing: 0.12em;
+    }
+
+    .site-header.has-menu .menu-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        width: 42px;
+        height: 36px;
+        padding: 0;
+
+        border: 1px solid rgba(241, 234, 223, 0.65);
+        border-radius: 0;
+        background: transparent;
+        color: var(--cream);
+
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .menu-button span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background: var(--cream);
+        transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+
+    /* Bars turn into an X while the menu is open */
+    .site-header.menu-open .menu-button span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .site-header.menu-open .menu-button span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .site-header.menu-open .menu-button span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* The overlaid box (hidden until the button is tapped) */
+    .site-header.has-menu .mobile-menu {
+        display: flex;
+        flex-direction: column;
+
+        position: absolute;
+        top: 100%;
+        right: 12px;
+        width: min(240px, calc(100vw - 24px));
+        margin-top: 8px;
+
+        background: var(--brown-dark);
+        border: 1px solid rgba(241, 234, 223, 0.65);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    }
+
+    .site-header.menu-open .mobile-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none;
+    }
+
+    .site-header .mobile-menu a {
+        padding: 16px 22px;
+
+        border-top: 1px solid rgba(241, 234, 223, 0.2);
+        color: var(--cream);
+
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
+    }
+
+    .site-header .mobile-menu a:first-child {
+        border-top: 0;
+    }
+
+    .site-header .mobile-menu a:hover,
+    .site-header .mobile-menu a:focus-visible {
+        background: rgba(241, 234, 223, 0.08);
+        opacity: 1;
+    }
+}
